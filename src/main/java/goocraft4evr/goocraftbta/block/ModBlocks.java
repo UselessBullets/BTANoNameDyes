@@ -6,6 +6,7 @@ import goocraft4evr.goocraftbta.block.blockcolor.BlockColorModLampsPainted;
 import goocraft4evr.goocraftbta.block.blockcolor.BlockColorModPlanksPainted;
 import goocraft4evr.goocraftbta.block.wood.*;
 import goocraft4evr.goocraftbta.item.block.ItemModBlockPainted;
+import goocraft4evr.goocraftbta.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
@@ -47,7 +48,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
     public static final Block slabPlanksOakPainted = woodBlockBuilder
-            .setItemBlock(block -> new ItemModBlockPainted(block,true))
+            .setItemBlock(block -> new ItemModBlockSlabPainted(block))
             .setUseInternalLight()
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
@@ -112,7 +113,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.1f)
             .setResistance(0.1f)
-            .setBlockModel(new BlockModelRenderBlocks(24))
+            .setBlockModel(new BlockModelRenderBlocks(29))
             .build(new BlockNetherRoots("nether.roots", UtilIdRegistrar.nextId(), Material.plant)
             .withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH));
 
