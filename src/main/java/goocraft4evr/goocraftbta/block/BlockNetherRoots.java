@@ -12,7 +12,7 @@ import net.minecraft.core.world.WorldSource;
 public class BlockNetherRoots extends Block {
     public BlockNetherRoots(String key, int id, Material material) {
         super(key, id, material);
-        setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.0625f, 1.0f);
+        //setBlockBounds(0.0f, 0.0f, 0.0f, 1.0f, 0.0625f, 1.0f);
     }
 
     @Override

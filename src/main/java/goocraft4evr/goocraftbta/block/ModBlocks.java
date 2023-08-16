@@ -73,7 +73,7 @@ public abstract class ModBlocks {
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(22))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
-            .withTexCoords(0,0)
+            .withTexCoords(9, 1, 9, 1, 11, 1, 10, 1, 10, 1, 10, 1)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
     //TODO: This used .setDisabledStats()
@@ -112,7 +112,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.1f)
             .setResistance(0.1f)
-            //.setBlockModel(new BlockModelRenderBlocks(24))
+            .setBlockModel(new BlockModelRenderBlocks(24))
             .build(new BlockNetherRoots("nether.roots", UtilIdRegistrar.nextId(), Material.plant)
             .withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH));
 
