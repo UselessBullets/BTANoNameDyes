@@ -23,33 +23,33 @@ public abstract class EntitySheepMixin
 
     //TODO: overwrites may cause potential issues in the future! (redirectors may be more appropriate)
     //byte 16 = CCCC CCCC (C is a colour bit)
-    //byte 17 = 0000 00ES (E is an eating bit, S is a sheared bit)
+    //byte 17 = 0000 00SE (E is an eating bit, S is a sheared bit)
 
     @Overwrite
     public boolean getSheared() {
-        return (this.getEntityData().getByte(17) & 1) != 0;
+        return (this.getEntityData().getByte(17) & 2) != 0;
     }
     @Overwrite
     public void setSheared(boolean flag) {
         byte byte0 = this.getEntityData().getByte(17);
         if (flag) {
-            this.getEntityData().set(17, (byte)(byte0 | 1));
+            this.getEntityData().set(17, (byte)(byte0 | 2));
         } else {
-            this.getEntityData().set(17, (byte)(byte0 & 2));
+            this.getEntityData().set(17, (byte)(byte0 & 1));
         }
     }
 
     @Overwrite
     public boolean getIsSheepEating() {
-        return (this.getEntityData().getByte(17) & 2) != 0;
+        return (this.getEntityData().getByte(17) & 1) != 0;
     }
     @Overwrite
     public void setIsSheepEating(boolean value) {
         byte byte0 = this.getEntityData().getByte(17);
         if (value) {
-            this.getEntityData().set(17, (byte)(byte0 | 2));
+            this.getEntityData().set(17, (byte)(byte0 | 1));
         } else {
-            this.getEntityData().set(17, (byte)(byte0 & 1));
+            this.getEntityData().set(17, (byte)(byte0 & 2));
         }
     }
 
