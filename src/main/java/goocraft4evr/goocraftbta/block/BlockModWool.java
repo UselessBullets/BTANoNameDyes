@@ -24,7 +24,7 @@ public class BlockModWool extends Block {
             //generate textures for the remaining dyes to ensure they're all contiguous
             TextureHelper.registerBlockTexture(GoocraftBTA.MOD_ID, ItemModDye.dyeColors[i]+"_wool.png");
         }
-        Block block = new BlockModWool(GoocraftBTA.MOD_ID+"."+key,id);
+        Block block = new BlockModWool(key,id);
         for (int i=0;i<6;i++) block.atlasIndices[i] = woolIndex;
         return block;
     }

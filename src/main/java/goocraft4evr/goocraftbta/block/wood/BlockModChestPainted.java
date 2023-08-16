@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta.block.wood;
 
 import net.minecraft.core.block.BlockChest;
+import net.minecraft.core.block.BlockChestPainted;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
@@ -19,12 +20,14 @@ public class BlockModChestPainted extends BlockChest {
         return new ItemStack[]{new ItemStack(this, 1, meta)};
     }
 
+    @Override
     public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
-        return super.getBlockTexture(blockAccess, x, y, z, side) + texCoordToIndex(-9, 16);
+        return super.getBlockTexture(blockAccess, x, y, z, side) + BlockChestPainted.texCoordToIndex(-9, 16);
     }
 
+    @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-        return super.getBlockTextureFromSideAndMetadata(side, meta) + texCoordToIndex(-9, 16);
+        return super.getBlockTextureFromSideAndMetadata(side, meta) + BlockChestPainted.texCoordToIndex(-9, 16);
     }
 
     public static int getMetaForDyeColor(int i) {
