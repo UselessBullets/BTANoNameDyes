@@ -10,6 +10,7 @@
         "RenderEngineAccessor",
         "BlockFireAccessor",
         "BlockAccessor",
+        "EntitySheepMixin",
         "EntitySheepAccessor",
         "SlotDyeMixin",
         "FlagRendererMixin",
