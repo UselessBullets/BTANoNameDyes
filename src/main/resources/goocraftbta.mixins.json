@@ -1,0 +1,23 @@
+{
+    "required": true,
+    "minVersion": "0.8",
+    "package": "goocraft4evr.goocraftbta.mixin",
+    "compatibilityLevel": "JAVA_8",
+    "mixins": [
+        "ChunkDecoratorNetherMixin",
+        "ChunkDecoratorNetherAccessor",
+        "RenderEngineMixin",
+        "RenderEngineAccessor",
+        "BlockFireAccessor",
+        "BlockAccessor",
+        "EntitySheepAccessor",
+        "SlotDyeMixin",
+        "FlagRendererMixin",
+        "GuiEditFlagMixin"
+    ],
+    "client": [
+    ],
+    "injectors": {
+        "defaultRequire": 1
+  }
+}

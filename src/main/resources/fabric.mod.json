@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "goocraft",
+  "version": "1.0",
+
+  "name": "Goocraft BTA",
+  "description": "trying my best to get something functional.",
+  "authors": [
+    "Goocraft4Evr"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+        "goocraft4evr.goocraftbta.GoocraftBTA"
+    ]
+  },
+  "mixins": [
+      "goocraftbta.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3"
+  },
+  "suggests": {
+  }
+}
