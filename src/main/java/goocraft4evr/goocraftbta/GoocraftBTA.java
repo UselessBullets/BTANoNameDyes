@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
+import goocraft4evr.goocraftbta.container.ContainerPlayerCreativeAppender;
 import goocraft4evr.goocraftbta.crafting.ModCraftingManager;
 import goocraft4evr.goocraftbta.crafting.ModFuelFurnace;
 import goocraft4evr.goocraftbta.item.ModItems;
@@ -23,6 +24,8 @@ public class GoocraftBTA implements ModInitializer {
 
         ModFuelFurnace.register();
         ModCraftingManager.register();
+
+        ContainerPlayerCreativeAppender.appendItems();
         LOGGER.info("Goocraft initialized.");
     }
 }
