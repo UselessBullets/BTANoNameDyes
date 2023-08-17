@@ -29,6 +29,7 @@ public class ItemDyeMixin {
                           double xPlaced, double yPlaced,
                           CallbackInfoReturnable<Boolean> cir) {
         if (itemstack.getMetadata() == 15) {
+            //bonemeal items in here
             int blockId = world.getBlockId(blockX, blockY, blockZ);
             if (blockId == ModBlocks.netherRoots.id) {
                 (new WorldFeatureNetherRoots()).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ,6);
