@@ -5,7 +5,6 @@ import net.minecraft.client.render.texturepack.TexturePackBase;
 import net.minecraft.core.entity.animal.EntitySheep;
 import net.minecraft.core.util.helper.Color;
 import net.minecraft.core.util.helper.Colors;
-import org.apache.logging.log4j.core.util.ArrayUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

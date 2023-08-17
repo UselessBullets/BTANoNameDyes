@@ -48,7 +48,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
     public static final Block slabPlanksOakPainted = woodBlockBuilder
-            .setItemBlock(block -> new ItemModBlockSlabPainted(block))
+            .setItemBlock(ItemModBlockSlabPainted::new)
             .setUseInternalLight()
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
@@ -84,7 +84,7 @@ public abstract class ModBlocks {
             .setDisabledNeighborNotifyOnMetadataChange()
             .setBlockColor(new BlockColorModLampsPainted())
             .setBlockSound(BlockSounds.GLASS)
-            .setItemBlock(block -> new ItemModBlockPainted(block))
+            .setItemBlock(ItemModBlockPainted::new)
             .build(new BlockModLamp("lamp.idle",UtilIdRegistrar.nextId(),false)
             .withTags(BlockTags.MINEABLE_BY_PICKAXE))
             .withTexCoords(4, 12);
@@ -105,7 +105,7 @@ public abstract class ModBlocks {
             .setDisabledNeighborNotifyOnMetadataChange()
             .setBlockSound(BlockSounds.CLOTH)
             .setFlammability(30,60)
-            .setItemBlock(block -> new ItemModBlockPainted(block))
+            .setItemBlock(ItemModBlockPainted::new)
             .build(BlockModWool.createWool("wool",UtilIdRegistrar.nextId())
             .withTags(BlockTags.MINEABLE_BY_SHEARS));
 

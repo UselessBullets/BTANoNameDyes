@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.item.block;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.item.ItemModDye;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.ItemStack;

@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.block.wood;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import net.minecraft.core.block.BlockChest;
 import net.minecraft.core.block.BlockChestPainted;
 import net.minecraft.core.block.entity.TileEntity;

@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(value = EntitySheep.class, remap=false)
 public interface EntitySheepAccessor {
     @Accessor("fleeceColorTable")
-    public static void setFleeceColorTable(float[][] table) {
+    static void setFleeceColorTable(float[][] table) {
         throw new AssertionError();
     }
 }
