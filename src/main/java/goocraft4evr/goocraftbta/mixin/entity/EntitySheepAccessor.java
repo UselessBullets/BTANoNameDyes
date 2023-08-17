@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.entity;
 
 import net.minecraft.core.entity.animal.EntitySheep;
 import org.spongepowered.asm.mixin.Mixin;

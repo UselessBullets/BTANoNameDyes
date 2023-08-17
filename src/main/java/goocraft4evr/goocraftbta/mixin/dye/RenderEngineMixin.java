@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.dye;
 
 
 import goocraft4evr.goocraftbta.misc.ModColors;
@@ -7,8 +7,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Random;
 
 @Mixin(value = RenderEngine.class, remap = false)
 public abstract class RenderEngineMixin {

@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.dye;
 
 import net.minecraft.client.render.RenderEngine;
 import net.minecraft.client.render.texturepack.TexturePackList;

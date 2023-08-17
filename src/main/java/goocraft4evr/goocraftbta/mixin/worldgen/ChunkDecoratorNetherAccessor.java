@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.worldgen;
 
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.chunk.perlin.nether.ChunkDecoratorNether;

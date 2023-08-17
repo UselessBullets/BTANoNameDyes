@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.entity;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import net.minecraft.core.entity.EntityItem;

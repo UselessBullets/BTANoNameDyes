@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.dye;
 
 import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.item.ItemStack;

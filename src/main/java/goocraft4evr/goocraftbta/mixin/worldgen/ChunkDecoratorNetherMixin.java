@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.worldgen;
 
 import goocraft4evr.goocraftbta.worldgen.WorldFeatureNetherRoots;
 import net.minecraft.core.world.World;
