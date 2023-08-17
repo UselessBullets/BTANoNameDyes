@@ -18,46 +18,18 @@ public abstract class EntitySheepMixin
         super(world);
     }
 
-    //TODO: overwrites may cause potential issues in the future! (redirectors may be more appropriate)
-    //byte 16 = CCCC CCCC (C is a colour bit)
-    //byte 17 = 0000 00SE (E is an eating bit, S is a sheared bit)
-
-    @Overwrite
-    public boolean getSheared() {
-        return (this.getEntityData().getByte(17) & 2) != 0;
-    }
-    @Overwrite
-    public void setSheared(boolean flag) {
-        byte byte0 = this.getEntityData().getByte(17);
-        if (flag) {
-            this.getEntityData().set(17, (byte)(byte0 | 2));
-        } else {
-            this.getEntityData().set(17, (byte)(byte0 & 1));
-        }
-    }
-
-    @Overwrite
-    public boolean getIsSheepEating() {
-        return (this.getEntityData().getByte(17) & 1) != 0;
-    }
-    @Overwrite
-    public void setIsSheepEating(boolean value) {
-        byte byte0 = this.getEntityData().getByte(17);
-        if (value) {
-            this.getEntityData().set(17, (byte)(byte0 | 1));
-        } else {
-            this.getEntityData().set(17, (byte)(byte0 & 2));
-        }
-    }
+    //byte 16 = CCCS CCCC
+    //byte 17 = 0000 000E
 
     @Overwrite
     public void setFleeceColor(int i) {
-        this.getEntityData().set(16,(byte)i);
+        this.getEntityData().set(16,(byte)(i&0xF + (i<<1)&0xE0));
     }
 
     @Overwrite
     public int getFleeceColor() {
-        return this.getEntityData().getByte(16);
+        int colour = getEntityData().getByte(16);
+        return (colour&0xE0)>>1+colour&0xF;
     }
 
     @ModifyVariable(method = "interact()Z", at = @At("STORE"), name = "entityitem")
