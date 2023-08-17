@@ -14,7 +14,8 @@
         "EntitySheepAccessor",
         "SlotDyeMixin",
         "FlagRendererMixin",
-        "GuiEditFlagMixin"
+        "GuiEditFlagMixin",
+        "ItemDyeMixin"
     ],
     "client": [
     ],
