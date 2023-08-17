@@ -35,7 +35,7 @@ public abstract class ChunkDecoratorNetherMixin implements ChunkDecorator {
         int xf;
         int yf;
         int zf;
-        int max = 4 + rand.nextInt(4);
+        int max = 8;
         for(int i=0;i<max;i++) {
             xf = x + rand.nextInt(16) + 8;
             yf = minY + rand.nextInt(rangeY);

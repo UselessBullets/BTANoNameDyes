@@ -16,7 +16,7 @@ public class WorldFeatureNetherRoots extends WorldFeature {
             GoocraftBTA.LOGGER.info(String.format("Root at %d,%d,%d",x,y,z));
             //create starting block
             world.setBlock(x,y,z, ModBlocks.netherRoots.id);
-            int max = 128+random.nextInt(384);
+            int max = 64+random.nextInt(192);
             for (int i=0;i<max;i++) {
                 //pick a random direction
                 int dir = random.nextInt(4);
