@@ -18,7 +18,7 @@ public class WorldFeatureNetherRoots extends WorldFeature {
     public boolean generate(World world, Random random, int x, int y, int z, int max) {
         //ensure proper spawning conditions
         if ((world.isAirBlock(x,y,z)||world.getBlockId(x,y,z)==ModBlocks.netherRoots.id)&&world.getBlockId(x,y-1,z) == Block.netherrack.id) {
-            GoocraftBTA.LOGGER.info(String.format("Root at %d,%d,%d",x,y,z));
+            //GoocraftBTA.LOGGER.info(String.format("Root at %d,%d,%d",x,y,z));
             //create starting block
             world.setBlock(x,y,z, ModBlocks.netherRoots.id);
             for (int i=0;i<max;i++) {
