@@ -1,7 +1,7 @@
 tile.goocraft.nether.roots.name=Nether Roots
 tile.goocraft.nether.roots.desc=A prickly root that grows in the nether.
 tile.goocraft.mushroom.ink.cap.name = Shaggy Mane
-tile.goocraft.mushroom.ink.cap.desc = A not-so-tasty white mushroom. Good for dye.
+tile.goocraft.mushroom.ink.cap.desc = A white mushroom that likes open areas. Good for dye.
 
 item.goocraft.dye.crimson.name=Crimson Dye
 item.goocraft.dye.crimson.desc=Can be used to colour certain blocks crimson.
