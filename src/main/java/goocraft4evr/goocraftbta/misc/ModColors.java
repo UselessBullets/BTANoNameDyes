@@ -18,8 +18,8 @@ public abstract class ModColors {
     public static void loadColors(TexturePackBase texturePack) {
         fillColorArray(texturePack, "assets/goocraft/misc/colors_planks.png", modPlankColors);
         fillColorArray(texturePack, "assets/goocraft/misc/colors_lamps.png", modLampColors);
-        fillColorArray(texturePack, "assets/goocraft/misc/colors_lamps.png", modFlagColors);
-        initializeFleeceArray();
+        fillColorArray(texturePack, "assets/goocraft/misc/colors_flag.png", modFlagColors);
+        initializeFleeceArray(texturePack);
     }
 
     public static void fillColorArray(TexturePackBase texturePack, String path, Color[] colors) {
@@ -44,9 +44,10 @@ public abstract class ModColors {
         return new float[]{c.getRed()/255f,c.getGreen()/255f,c.getBlue()/255f};
     }
 
-    private static void initializeFleeceArray() {
+    private static void initializeFleeceArray(TexturePackBase texturePack) {
         float[][] vanillaRGB = EntitySheep.fleeceColorTable;
-        Color[] fleeceColors = modPlankColors;
+        Color[] fleeceColors = new Color[NUM_COLORS];
+        fillColorArray(texturePack, "assets/goocraft/misc/colors_fleece.png", fleeceColors);
         float[][] modRGB = new float[vanillaRGB.length+fleeceColors.length][];
         System.arraycopy(vanillaRGB, 0, modRGB, 0, vanillaRGB.length);
         for (int i=0;i<fleeceColors.length;i++) {
