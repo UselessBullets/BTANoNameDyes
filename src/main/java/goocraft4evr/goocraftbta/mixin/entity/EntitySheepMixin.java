@@ -1,5 +1,6 @@
 package goocraft4evr.goocraftbta.mixin.entity;
 
+import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.animal.EntityAnimal;
@@ -23,13 +24,15 @@ public abstract class EntitySheepMixin
 
     @Overwrite
     public void setFleeceColor(int i) {
-        this.getEntityData().set(16,(byte)(i&0xF + (i<<1)&0xE0));
+        getEntityData().set(16,(byte)
+                (getEntityData().getByte(16)&0x10|i&0xF|i<<1&0xE0)
+        );
     }
 
     @Overwrite
     public int getFleeceColor() {
         int colour = getEntityData().getByte(16);
-        return (colour&0xE0)>>1+colour&0xF;
+        return (colour&0xE0)>>1|colour&0xF;
     }
 
     @ModifyVariable(method = "interact()Z", at = @At("STORE"), name = "entityitem")
