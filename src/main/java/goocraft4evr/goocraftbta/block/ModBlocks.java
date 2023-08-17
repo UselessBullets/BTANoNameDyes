@@ -40,7 +40,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF);
 
     public static final Block fencegatePlanksOakPainted = woodBlockBuilder
-            .setItemBlock(block -> new ItemModBlockPainted(block,false))
+            .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(18))
             .build(new BlockModFenceGatePainted("fencegate.planks.oak.painted",UtilIdRegistrar.nextId()))
@@ -56,7 +56,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_AXE);
 
     public static final Block stairsPlanksOakPainted = woodBlockBuilder
-            .setItemBlock(block -> new ItemModBlockPainted(block,false))
+            .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .setUseInternalLight()
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(10))
