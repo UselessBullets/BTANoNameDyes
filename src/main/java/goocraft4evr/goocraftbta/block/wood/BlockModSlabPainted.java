@@ -1,5 +1,6 @@
 package goocraft4evr.goocraftbta.block.wood;
 
+import goocraft4evr.goocraftbta.GoocraftBTA;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSlab;
 import net.minecraft.core.entity.EntityLiving;
@@ -10,6 +11,7 @@ import net.minecraft.core.world.World;
 public class BlockModSlabPainted extends BlockSlab {
     public BlockModSlabPainted(Block modelBlock, int id) {
         super(modelBlock, id);
+        key = "funnyslab" + modelBlock.getKey().substring(5+GoocraftBTA.MOD_ID.length());
     }
 
     public static int getMetadataForColour(int i) {

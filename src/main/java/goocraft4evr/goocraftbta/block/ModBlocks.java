@@ -73,6 +73,7 @@ public abstract class ModBlocks {
             .setLightOpacity(3)
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(22))
+            .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
             .withTexCoords(9, 1, 9, 1, 11, 1, 10, 1, 10, 1, 10, 1)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
