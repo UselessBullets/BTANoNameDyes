@@ -1,5 +1,6 @@
 package goocraft4evr.goocraftbta.misc;
 
+import goocraft4evr.goocraftbta.item.ItemModDye;
 import goocraft4evr.goocraftbta.mixin.EntitySheepAccessor;
 import net.minecraft.client.render.texturepack.TexturePackBase;
 import net.minecraft.core.entity.animal.EntitySheep;
@@ -11,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
 public abstract class ModColors {
-    private static final int NUM_COLORS = 2;
+    private static final int NUM_COLORS = ItemModDye.dyeColors.length;
     public static final Color[] modPlankColors = new Color[NUM_COLORS];
     public static final Color[] modLampColors = new Color[NUM_COLORS];
     public static final Color[] modFlagColors = new Color[NUM_COLORS];
