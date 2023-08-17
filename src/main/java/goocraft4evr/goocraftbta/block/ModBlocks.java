@@ -125,7 +125,7 @@ public abstract class ModBlocks {
             .setHardness(0.0f)
             .setLuminance(1)
             .setBlockModel(new BlockModelRenderBlocks(1))
-            .build(new BlockMushroom("mushroom.ink.cap", UtilIdRegistrar.nextId())
+            .build(new BlockMushroomInkCap("mushroom.ink.cap", UtilIdRegistrar.nextId())
             .withTags(BlockTags.BROKEN_BY_FLUIDS));
 
 

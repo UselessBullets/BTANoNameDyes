@@ -6,6 +6,7 @@ import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.ChunkDecorator;
 import net.minecraft.core.world.generate.chunk.perlin.nether.ChunkDecoratorNether;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -14,11 +15,11 @@ import java.util.Random;
 
 @Mixin(value = ChunkDecoratorNether.class, remap = false)
 public abstract class ChunkDecoratorNetherMixin implements ChunkDecorator {
+    @Shadow
+    private World world;
 
     @Inject(method = "decorate()V", at = @At("TAIL"))
     private void injectMethod(Chunk chunk, CallbackInfo info) {
-        //get the world
-        World world = ((ChunkDecoratorNetherAccessor)this).getWorld();
         //define chunk vals
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;

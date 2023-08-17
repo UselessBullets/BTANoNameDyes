@@ -4,16 +4,16 @@
     "package": "goocraft4evr.goocraftbta.mixin",
     "compatibilityLevel": "JAVA_8",
     "mixins": [
-        "ChunkDecoratorNetherMixin",
-        "ChunkDecoratorNetherAccessor",
-        "RenderEngineMixin",
-        "RenderEngineAccessor",
-        "EntitySheepMixin",
-        "EntitySheepAccessor",
-        "SlotDyeMixin",
+        "worldgen.ChunkDecoratorNetherMixin",
+        "worldgen.ChunkDecoratorOverworldMixin",
+        "entity.EntitySheepMixin",
+        "entity.EntitySheepAccessor",
+        "dye.RenderEngineMixin",
+        "dye.RenderEngineAccessor",
+        "dye.SlotDyeMixin",
+        "dye.ItemDyeMixin",
         "FlagRendererMixin",
-        "GuiEditFlagMixin",
-        "ItemDyeMixin"
+        "GuiEditFlagMixin"
     ],
     "client": [
     ],
