@@ -16,7 +16,7 @@ public class WorldFeatureNetherRoots extends WorldFeature {
             GoocraftBTA.LOGGER.info(String.format("Root at %d,%d,%d",x,y,z));
             //create starting block
             world.setBlock(x,y,z, ModBlocks.netherRoots.id);
-            int max = 64+random.nextInt(192);
+            int max = 96;
             for (int i=0;i<max;i++) {
                 //pick a random direction
                 int dir = random.nextInt(4);
@@ -28,7 +28,9 @@ public class WorldFeatureNetherRoots extends WorldFeature {
                     case 3: dx--; break;
                 }
                 //check if you can move in the direction
-                if (world.isAirBlock(x+dx,y,z+dz)||world.getBlockId(x+dz,y,z+dz)== ModBlocks.netherRoots.id) {
+                if (world.isAirBlock(x+dx,y,z+dz)
+                        ||world.getBlockId(x+dz,y,z+dz) == ModBlocks.netherRoots.id
+                        ||world.getBlockId(x+dz,y,z+dz) == Block.netherrack.id && world.isAirBlock(x+dx,++y,dz)) {
                     x += dx;
                     z += dz;
                     if (world.isAirBlock(x,y,z)) {
@@ -47,7 +49,7 @@ public class WorldFeatureNetherRoots extends WorldFeature {
                         x -= dx;
                         z -= dz;
                     }
-                }
+                } else y--;
             }
             return true;
         }
