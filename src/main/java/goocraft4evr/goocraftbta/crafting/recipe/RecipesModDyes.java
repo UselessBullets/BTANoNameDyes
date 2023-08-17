@@ -23,13 +23,13 @@ public class RecipesModDyes {
         //add recipes for dyed blocks/items
         for (int dye = 0; dye < ModColors.modPlankColors.length; ++dye) {
             //wood
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencePlanksOakPainted, 6, BlockModFencePainted.getMetadataForColour(dye)), "X#X", "X#X", '#', Item.stick, 'X', new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.slabPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "###", '#', new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.stairsPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "#  ", "## ", "###", '#', new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencegatePlanksOakPainted, 3, BlockModFenceGatePainted.getMetadataForColour(dye)), "X#X", "X#X", 'X', Item.stick, '#', new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, BlockModChestPainted.getMetaForDyeColor(dye)), "###", "# #", "###", '#', new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencePlanksOakPainted, 6, BlockModFencePainted.getMetadataForColour(dye)), "X#X", "X#X", Character.valueOf('#'), Item.stick, Character.valueOf('X'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.slabPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.stairsPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "#  ", "## ", "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencegatePlanksOakPainted, 3, BlockModFenceGatePainted.getMetadataForColour(dye)), "X#X", "X#X", Character.valueOf('X'), Item.stick, Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, BlockModChestPainted.getMetaForDyeColor(dye)), "###", "# #", "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, BlockModChestPainted.getMetaForDyeColor(dye)), Block.chestPlanksOak, new ItemStack(ModItems.dye, 1, dye));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 8, BlockModPlanksPainted.getMetadataForColour(dye)), "###", "#0#", "###", '#', Block.planksOak, '0', new ItemStack(ModItems.dye, 1, dye));
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 8, BlockModPlanksPainted.getMetadataForColour(dye)), "###", "#0#", "###", Character.valueOf('#'), Block.planksOak, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
             //wool
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.wool, 1, BlockModWool.getMetadataForColour(dye)), Block.wool, new ItemStack(ModItems.dye, 1, dye));
             //lamp
@@ -40,9 +40,9 @@ public class RecipesModDyes {
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 0), ModBlocks.netherRoots);
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 1), new ItemStack(Item.dye, 1, DyeColor.DYE_BROWN.dyeMeta), new ItemStack(ModItems.dye, 1, 0));
         //readd plank recipes
-        craftingmanager.addRecipe(new ItemStack(Block.fencePlanksOak, 6), true, "#X#", "#X#", 'X', Item.stick, '#', Block.planksOak);
-        craftingmanager.addRecipe(new ItemStack(Block.fencegatePlanksOak, 3), true, "#X#", "#X#", 'X', Block.planksOak, '#', Item.stick);
-        craftingmanager.addRecipe(new ItemStack(Block.slabPlanksOak, 6), true, "###", '#', Block.planksOak);
-        craftingmanager.addRecipe(new ItemStack(Block.stairsPlanksOak, 6), true, "#  ", "## ", "###", '#', Block.planksOak);
+        craftingmanager.addRecipe(new ItemStack(Block.fencePlanksOak, 6), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Item.stick, Character.valueOf('#'), Block.planksOak});
+        craftingmanager.addRecipe(new ItemStack(Block.fencegatePlanksOak, 3), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Block.planksOak, Character.valueOf('#'), Item.stick});
+        craftingmanager.addRecipe(new ItemStack(Block.slabPlanksOak, 6), true, new Object[]{"###", Character.valueOf('#'), Block.planksOak});
+        craftingmanager.addRecipe(new ItemStack(Block.stairsPlanksOak, 6), true, new Object[]{"#  ", "## ", "###", Character.valueOf('#'), Block.planksOak});
     }
 }
