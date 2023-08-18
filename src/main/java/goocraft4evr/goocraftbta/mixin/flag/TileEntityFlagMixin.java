@@ -1,0 +1,26 @@
+package goocraft4evr.goocraftbta.mixin.flag;
+
+import goocraft4evr.goocraftbta.item.ModItems;
+import net.minecraft.core.block.entity.TileEntityFlag;
+import net.minecraft.core.item.ItemStack;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+@Mixin(value = TileEntityFlag.class, remap = false)
+public class TileEntityFlagMixin {
+    @Shadow
+    public ItemStack[] items;
+
+    @Inject(method="getColor()B",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    private void injected(int x, int y, CallbackInfoReturnable<Byte> cir, int xSample, int ySample, int colorIndex) {
+        if (cir.getReturnValue()==15&&
+            items[colorIndex] != null&&items[colorIndex].itemID == ModItems.dye.id
+        ) {
+            cir.setReturnValue((byte)(items[colorIndex].getMetadata()+16));
+        }
+    }
+}

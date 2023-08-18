@@ -12,8 +12,10 @@
         "dye.RenderEngineAccessor",
         "dye.SlotDyeMixin",
         "dye.ItemDyeMixin",
-        "FlagRendererMixin",
-        "GuiEditFlagMixin"
+        "flag.FlagRendererMixin",
+        "flag.GuiEditFlagMixin",
+        "flag.TileEntityFlagMixin",
+        "map.MapItemRendererMixin"
     ],
     "client": [
     ],

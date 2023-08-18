@@ -1,4 +1,4 @@
-package goocraft4evr.goocraftbta.mixin;
+package goocraft4evr.goocraftbta.mixin.flag;
 
 import goocraft4evr.goocraftbta.item.ModItems;
 import goocraft4evr.goocraftbta.misc.ModColors;
