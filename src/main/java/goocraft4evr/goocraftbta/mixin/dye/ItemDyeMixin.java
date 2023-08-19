@@ -32,11 +32,13 @@ public class ItemDyeMixin {
             //bonemeal items in here
             int blockId = world.getBlockId(blockX, blockY, blockZ);
             if (blockId == ModBlocks.netherRoots.id) {
-                (new WorldFeatureNetherRoots()).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ,6);
-                if (entityplayer.getGamemode().consumeBlocks) {
-                    --itemstack.stackSize;
+                if (!world.isClientSide) {
+                    (new WorldFeatureNetherRoots()).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ,6);
+                    if (entityplayer.getGamemode().consumeBlocks) {
+                        --itemstack.stackSize;
+                    }
+                    cir.setReturnValue(true);
                 }
-                cir.setReturnValue(true);
             }
         }
     }

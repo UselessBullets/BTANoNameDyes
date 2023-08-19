@@ -10,6 +10,7 @@ import goocraft4evr.goocraftbta.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockClay;
 import net.minecraft.core.block.BlockMushroom;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
@@ -128,8 +129,12 @@ public abstract class ModBlocks {
             .build(new BlockMushroomInkCap("mushroom.ink.cap", UtilIdRegistrar.nextId())
             .withTags(BlockTags.BROKEN_BY_FLUIDS));
 
-
-    //TODO: add RGB chest
+    public static final Block ochreBlock = new BlockBuilder(GoocraftBTA.MOD_ID)
+            .setTextures("ochre_block.png")
+            .setBlockSound(BlockSounds.GRAVEL)
+            .setHardness(0.6f)
+            .build(new BlockOchre("block.ochre",UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_SHOVEL);
 
     public static void register() {
 

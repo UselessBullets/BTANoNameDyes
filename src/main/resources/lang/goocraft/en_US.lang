@@ -1,7 +1,10 @@
 tile.goocraft.nether.roots.name=Nether Roots
 tile.goocraft.nether.roots.desc=A prickly root that grows in the nether.
 tile.goocraft.mushroom.ink.cap.name = Shaggy Mane
-tile.goocraft.mushroom.ink.cap.desc = A white mushroom that likes to grow around rocky paths.
+tile.goocraft.mushroom.ink.cap.desc = White mushroom that likes to grow around rocky paths.
+tile.goocraft.block.ochre.name = Block of Ochre
+tile.goocraft.block.ochre.desc = A block of compacted ochre.
+
 
 item.goocraft.dye.crimson.name=Crimson Dye
 item.goocraft.dye.crimson.desc=Can be used to colour certain blocks crimson.
@@ -78,3 +81,22 @@ tile.goocraft.lamp.idle.olive.name=Olive Lamp
 tile.goocraft.lamp.idle.olive.desc=A redstone lamp that can emit light. Tinted olive.
 tile.goocraft.wool.olive.name=Olive Wool
 tile.goocraft.wool.olive.desc=Sheep's wool, dyed olive.
+
+item.goocraft.dye.ochre.name=Ochre
+item.goocraft.dye.ochre.desc=A ferrous clay. Can be used to colour certain blocks ochre.
+tile.goocraft.planks.oak.painted.ochre.name=Ochre Wooden Planks
+tile.goocraft.planks.oak.painted.ochre.desc=Wooden planks, stained ochre.
+tile.goocraft.fence.planks.oak.painted.ochre.name=Ochre Wooden Fence
+tile.goocraft.fence.planks.oak.painted.ochre.desc=A wooden fence, stained ochre.
+tile.goocraft.fencegate.planks.oak.painted.ochre.name=Ochre Wooden Fence Gate
+tile.goocraft.fencegate.planks.oak.painted.ochre.desc=A wooden fence gate, stained ochre.
+tile.goocraft.slab.planks.oak.painted.ochre.name=Ochre Wooden Slab
+tile.goocraft.slab.planks.oak.painted.ochre.desc=A slab of wooden planks, stained ochre.
+tile.goocraft.stairs.planks.oak.painted.ochre.name=Ochre Wooden Stairs
+tile.goocraft.stairs.planks.oak.painted.ochre.desc=Wooden steps, stained ochre.
+tile.goocraft.chest.planks.oak.painted.ochre.name=Ochre Wooden Chest
+tile.goocraft.chest.planks.oak.painted.ochre.desc=A place to store your items.
+tile.goocraft.lamp.idle.ochre.name=Ochre Lamp
+tile.goocraft.lamp.idle.ochre.desc=A redstone lamp that can emit light. Tinted ochre.
+tile.goocraft.wool.ochre.name=Ochre Wool
+tile.goocraft.wool.ochre.desc=Sheep's wool, dyed ochre.

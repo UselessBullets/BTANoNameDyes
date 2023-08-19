@@ -11,7 +11,7 @@ import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.helper.TextureHelper;
 
 public class ItemModDye extends Item {
-    public static String[] dyeColors = {"crimson","maroon","ash.gray","olive"};
+    public static String[] dyeColors = {"crimson","maroon","ash.gray","olive","ochre"};
     private static int dyeIndex;
 
     //this method ensures all dye textures are contiguous
