@@ -44,25 +44,25 @@ public class ChunkDecoratorOverworldMixin {
         long l1 = rand.nextLong() / 2L * 2L + 1L;
         long l2 = rand.nextLong() / 2L * 2L + 1L;
         rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
+        int blockX, blockY, blockZ;
 
         if ((biome == Biomes.OVERWORLD_GRASSLANDS
             || biome == Biomes.OVERWORLD_MEADOW
-            || biome == Biomes.OVERWORLD_PLAINS
-            || biome == Biomes.OVERWORLD_SHRUBLAND) &&
-                rand.nextInt(3) == 0) {
-            int blockX = x + rand.nextInt(16) + 8;
-            int blockY =  + rand.nextInt(rangeY);
-            int blockZ = z + rand.nextInt(16) + 8;
+            || biome == Biomes.OVERWORLD_PLAINS) &&
+                rand.nextInt(48) == 0) {
+            blockX = x + rand.nextInt(16) + 8;
+            blockZ = z + rand.nextInt(16) + 8;
+            blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureFlowers(ModBlocks.mushroomInkCap.id).generate(world, rand, blockX, blockY, blockZ);
         }
         if ((biome == Biomes.OVERWORLD_DESERT ||
             biome == Biomes.OVERWORLD_OUTBACK ||
             biome == Biomes.OVERWORLD_OUTBACK_GRASSY)&&
-            rand.nextInt(25)==0) {
-            int k5 = x + rand.nextInt(16);
-            int l8 = minY + rand.nextInt(rangeY);
-            int k11 = z + rand.nextInt(16);
-            new WorldFeatureOchre(96).generate(this.world, rand, k5, l8, k11);
+            rand.nextInt(112)==0) {
+            blockX = x + rand.nextInt(16);
+            blockZ = z + rand.nextInt(16);
+            blockY = world.getHeightValue(blockX, blockZ);
+            new WorldFeatureOchre(96).generate(world, rand, blockX, blockY, blockZ);
             world.getWorldType().getMaxY();
         }
     }
