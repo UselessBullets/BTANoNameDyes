@@ -44,8 +44,8 @@ public class ChunkDecoratorOverworldMixin {
 
         if ((biome == Biomes.OVERWORLD_GRASSLANDS
             || biome == Biomes.OVERWORLD_MEADOW
-            || biome == Biomes.OVERWORLD_SHRUBLAND
-            || biome == Biomes.OVERWORLD_PLAINS) &&
+            || biome == Biomes.OVERWORLD_PLAINS
+            || biome == Biomes.OVERWORLD_SHRUBLAND) &&
                 rand.nextInt(3) == 0) {
             int blockX = x + rand.nextInt(16) + 8;
             int blockY = minY + rand.nextInt(rangeY);
