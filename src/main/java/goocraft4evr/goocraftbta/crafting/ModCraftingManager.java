@@ -18,7 +18,7 @@ public abstract class ModCraftingManager {
         //add recipes
         RecipesModDyes.addRecipes(CraftingManager.getInstance());
         CraftingManager.getInstance().addRecipe(
-                new ItemStack(ModBlocks.chestPlanksOakPainted, 1),
+                new ItemStack(ModBlocks.ochreBlock, 1),
                 "##", "##",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,4));
