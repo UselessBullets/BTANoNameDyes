@@ -1,16 +1,12 @@
 package goocraft4evr.goocraftbta.mixin.dye;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import goocraft4evr.goocraftbta.worldgen.WorldFeatureNetherRoots;
-import net.minecraft.core.block.*;
-import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.type.WorldTypes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

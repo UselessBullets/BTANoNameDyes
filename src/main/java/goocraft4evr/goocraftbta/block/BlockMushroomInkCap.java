@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.block;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockMushroom;
 import net.minecraft.core.world.World;

@@ -1,7 +1,6 @@
 package goocraft4evr.goocraftbta.item;
 
 import goocraft4evr.goocraftbta.GoocraftBTA;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.animal.EntitySheep;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -11,7 +10,7 @@ import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.helper.TextureHelper;
 
 public class ItemModDye extends Item {
-    public static String[] dyeColors = {"crimson","maroon","ash.gray","olive","ochre"};
+    public static String[] dyeColors = {"crimson","maroon","ash.gray","olive","ochre","buff"};
     private static int dyeIndex;
 
     //this method ensures all dye textures are contiguous

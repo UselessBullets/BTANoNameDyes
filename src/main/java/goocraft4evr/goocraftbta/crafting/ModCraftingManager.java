@@ -1,16 +1,12 @@
 package goocraft4evr.goocraftbta.crafting;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
-import goocraft4evr.goocraftbta.block.wood.BlockModChestPainted;
-import goocraft4evr.goocraftbta.block.wood.BlockModPlanksPainted;
 import goocraft4evr.goocraftbta.crafting.recipe.RecipesModDyes;
 import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.crafting.recipe.*;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.DyeColor;
 
 public abstract class ModCraftingManager {
 

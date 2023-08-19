@@ -1,17 +1,13 @@
 package goocraft4evr.goocraftbta.mixin.worldgen;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import goocraft4evr.goocraftbta.worldgen.WorldFeatureOchre;
-import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
 import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
-import net.minecraft.core.world.generate.feature.WorldFeatureClay;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

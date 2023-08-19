@@ -10,8 +10,6 @@ import goocraft4evr.goocraftbta.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockClay;
-import net.minecraft.core.block.BlockMushroom;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import turniplabs.halplibe.helper.BlockBuilder;

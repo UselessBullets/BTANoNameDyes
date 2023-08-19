@@ -42,7 +42,9 @@ public class RecipesModDyes {
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 2), ModBlocks.mushroomInkCap);
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 2), new ItemStack(Item.dye, 1, DyeColor.DYE_GREEN.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_LIGHT_GRAY.dyeMeta));
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 3), new ItemStack(Item.dye, 1, DyeColor.DYE_GREEN.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_BROWN.dyeMeta));
-        //readd plank recipes
+        craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 5), new ItemStack(Item.dye, 1, DyeColor.DYE_WHITE.dyeMeta),new ItemStack(ModItems.dye, 1, 4));
+
+        //read plank recipes
         craftingmanager.addRecipe(new ItemStack(Block.fencePlanksOak, 6), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Item.stick, Character.valueOf('#'), Block.planksOak});
         craftingmanager.addRecipe(new ItemStack(Block.fencegatePlanksOak, 3), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Block.planksOak, Character.valueOf('#'), Item.stick});
         craftingmanager.addRecipe(new ItemStack(Block.slabPlanksOak, 6), true, new Object[]{"###", Character.valueOf('#'), Block.planksOak});

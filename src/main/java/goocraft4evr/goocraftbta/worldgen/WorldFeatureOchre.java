@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.worldgen;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.util.helper.MathHelper;

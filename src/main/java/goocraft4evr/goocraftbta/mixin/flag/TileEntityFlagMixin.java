@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.mixin.flag;
 
-import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
