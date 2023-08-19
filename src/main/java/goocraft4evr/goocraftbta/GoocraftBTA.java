@@ -5,6 +5,7 @@ import goocraft4evr.goocraftbta.container.ContainerPlayerCreativeAppender;
 import goocraft4evr.goocraftbta.crafting.ModCraftingManager;
 import goocraft4evr.goocraftbta.crafting.ModFuelFurnace;
 import goocraft4evr.goocraftbta.item.ModItems;
+import goocraft4evr.goocraftbta.misc.ModColors;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

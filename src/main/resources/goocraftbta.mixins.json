@@ -9,13 +9,13 @@
         "entity.EntitySheepMixin",
         "entity.EntitySheepAccessor",
         "dye.RenderEngineMixin",
-        "dye.RenderEngineAccessor",
         "dye.SlotDyeMixin",
         "dye.ItemDyeMixin",
         "flag.FlagRendererMixin",
         "flag.GuiEditFlagMixin",
         "flag.TileEntityFlagMixin",
-        "ColorsAccessor"
+        "misc.ColorsAccessor",
+        "misc.ColorsMixin"
     ],
     "client": [
     ],
