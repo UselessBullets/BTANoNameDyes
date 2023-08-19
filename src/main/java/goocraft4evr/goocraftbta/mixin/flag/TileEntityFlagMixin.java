@@ -1,5 +1,6 @@
 package goocraft4evr.goocraftbta.mixin.flag;
 
+import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
@@ -17,10 +18,10 @@ public class TileEntityFlagMixin {
 
     @Inject(method="getColor()B",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
     private void injected(int x, int y, CallbackInfoReturnable<Byte> cir, int xSample, int ySample, int colorIndex) {
-        if (cir.getReturnValue()==15&&
-            items[colorIndex] != null&&items[colorIndex].itemID == ModItems.dye.id
+        if (items[colorIndex] != null&&items[colorIndex].itemID == ModItems.dye.id
         ) {
-            cir.setReturnValue((byte)(items[colorIndex].getMetadata()+16));
+            //I have to return a negative index to ensure waypoints display properly.
+            cir.setReturnValue((byte)(-1-items[colorIndex].getMetadata()));
         }
     }
 }

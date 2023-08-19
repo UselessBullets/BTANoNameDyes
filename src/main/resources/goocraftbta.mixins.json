@@ -15,7 +15,7 @@
         "flag.FlagRendererMixin",
         "flag.GuiEditFlagMixin",
         "flag.TileEntityFlagMixin",
-        "map.MapItemRendererMixin"
+        "ColorsAccessor"
     ],
     "client": [
     ],

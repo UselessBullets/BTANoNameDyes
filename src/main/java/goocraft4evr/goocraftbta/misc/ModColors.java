@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta.misc;
 
 import goocraft4evr.goocraftbta.item.ItemModDye;
+import goocraft4evr.goocraftbta.mixin.ColorsAccessor;
 import goocraft4evr.goocraftbta.mixin.entity.EntitySheepAccessor;
 import net.minecraft.client.render.texturepack.TexturePackBase;
 import net.minecraft.core.entity.animal.EntitySheep;
@@ -16,11 +17,13 @@ public abstract class ModColors {
     public static final Color[] modPlankColors = new Color[NUM_COLORS];
     public static final Color[] modLampColors = new Color[NUM_COLORS];
     public static final Color[] modFlagColors = new Color[NUM_COLORS];
+    public static final Color[] modChatColors = new Color[NUM_COLORS];
     public static void loadColors(TexturePackBase texturePack) {
         fillColorArray(texturePack, "assets/goocraft/misc/colors_planks.png", modPlankColors);
         fillColorArray(texturePack, "assets/goocraft/misc/colors_lamps.png", modLampColors);
         fillColorArray(texturePack, "assets/goocraft/misc/colors_flag.png", modFlagColors);
-        initializeFleeceArray(texturePack);
+        fillColorArray(texturePack, "assets/goocraft/misc/colors_flag.png", modChatColors);
+        initializeArrays(texturePack);
     }
 
     public static void fillColorArray(TexturePackBase texturePack, String path, Color[] colors) {
@@ -45,7 +48,8 @@ public abstract class ModColors {
         return new float[]{c.getRed()/255f,c.getGreen()/255f,c.getBlue()/255f};
     }
 
-    private static void initializeFleeceArray(TexturePackBase texturePack) {
+    private static void initializeArrays(TexturePackBase texturePack) {
+        //initialize the fleece array
         float[][] vanillaRGB = EntitySheep.fleeceColorTable;
         Color[] fleeceColors = new Color[NUM_COLORS];
         fillColorArray(texturePack, "assets/goocraft/misc/colors_fleece.png", fleeceColors);
@@ -55,5 +59,10 @@ public abstract class ModColors {
             modRGB[vanillaRGB.length+i] = getRGBAsFloatArr(fleeceColors[i]);
         }
         EntitySheepAccessor.setFleeceColorTable(modRGB);
+        //initialize chat array
+        Color[] newChatColors = new Color[Colors.allChatColors.length+modChatColors.length];
+        System.arraycopy(Colors.allChatColors, 0, newChatColors, 0, Colors.allChatColors.length);
+        System.arraycopy(modChatColors, 0, newChatColors, Colors.allChatColors.length, modChatColors.length);
+        ColorsAccessor.setAllChatColors(newChatColors);
     }
 }
