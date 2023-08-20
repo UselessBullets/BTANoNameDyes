@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value= Colors.class,remap=false)
-public class ColorsMixin {
+public abstract class ColorsMixin {
     @Final
     private static final Color[] allChatColors = new Color[16+ModColors.MOD_COLORS];
     @Final

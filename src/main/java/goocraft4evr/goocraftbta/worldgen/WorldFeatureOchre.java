@@ -9,7 +9,7 @@ import net.minecraft.core.world.generate.feature.WorldFeature;
 import java.util.Random;
 
 public class WorldFeatureOchre extends WorldFeature {
-    private int numberOfBlocks;
+    private final int numberOfBlocks;
 
     public WorldFeatureOchre(int numberOfBlocks) {
         this.numberOfBlocks = numberOfBlocks;

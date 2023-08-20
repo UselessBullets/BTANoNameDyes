@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(value = TileEntityFlag.class, remap = false)
-public class TileEntityFlagMixin {
+public abstract class TileEntityFlagMixin {
     @Shadow
     public ItemStack[] items;
 

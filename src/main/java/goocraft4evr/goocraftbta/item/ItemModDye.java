@@ -1,11 +1,16 @@
 package goocraft4evr.goocraftbta.item;
 
 import goocraft4evr.goocraftbta.GoocraftBTA;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.block.entity.TileEntitySign;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.entity.animal.EntitySheep;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.net.command.TextFormatting;
+import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.world.World;
 import turniplabs.halplibe.HalpLibe;
 import turniplabs.halplibe.helper.TextureHelper;
 
@@ -47,6 +52,20 @@ public class ItemModDye extends Item {
     @Override
     public int getIconFromDamage(int id) {
         return dyeIndex+id;
+    }
+
+    @Override
+    public boolean onItemUse(ItemStack itemstack, EntityPlayer entityplayer, World world, int blockX, int blockY, int blockZ, Side side, double xPlaced, double yPlaced) {
+        if (world.getBlockId(blockX, blockY, blockZ) == Block.signPostPlanksOak.id || world.getBlockId(blockX, blockY, blockZ) == Block.signWallPlanksOak.id) {
+            TileEntitySign sign = (TileEntitySign) world.getBlockTileEntity(blockX, blockY, blockZ);
+            //TODO: this will break if signs can have obfuscated text
+            if (16+itemstack.getMetadata() != sign.getColor().id) {
+                sign.setColor(TextFormatting.get(16 + itemstack.getMetadata()));
+                if (entityplayer.getGamemode().consumeBlocks) --itemstack.stackSize;
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

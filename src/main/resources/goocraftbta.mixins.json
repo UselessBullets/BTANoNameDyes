@@ -8,13 +8,14 @@
         "worldgen.ChunkDecoratorOverworldMixin",
         "entity.EntitySheepMixin",
         "entity.EntitySheepAccessor",
-        "dye.RenderEngineMixin",
         "dye.SlotDyeMixin",
         "dye.ItemDyeMixin",
         "flag.FlagRendererMixin",
         "flag.GuiEditFlagMixin",
         "flag.TileEntityFlagMixin",
-        "misc.ColorsMixin"
+        "misc.ColorsMixin",
+        "TextFormattingMixin",
+        "TileEntitySignMixin"
     ],
     "client": [
     ],

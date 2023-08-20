@@ -22,7 +22,7 @@ import java.util.Random;
 
 
 @Mixin(value= ChunkDecoratorOverworld.class, remap = false)
-public class ChunkDecoratorOverworldMixin {
+public abstract class ChunkDecoratorOverworldMixin {
     @Shadow
     private World world;
 

@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import java.util.Random;
 
 @Mixin(value= ItemDye.class, remap=false)
-public class ItemDyeMixin {
+public abstract class ItemDyeMixin {
     @Inject(method="onItemUse()Z",at=@At("TAIL"),cancellable = true)
     private void injected(ItemStack itemstack,
                           EntityPlayer entityplayer,
