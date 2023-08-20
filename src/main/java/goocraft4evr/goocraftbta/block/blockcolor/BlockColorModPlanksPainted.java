@@ -2,6 +2,7 @@ package goocraft4evr.goocraftbta.block.blockcolor;
 
 import goocraft4evr.goocraftbta.misc.ModColors;
 import net.minecraft.client.render.block.color.BlockColor;
+import net.minecraft.core.util.helper.Colors;
 import net.minecraft.core.world.World;
 
 public class BlockColorModPlanksPainted extends BlockColor {
@@ -16,7 +17,7 @@ public class BlockColorModPlanksPainted extends BlockColor {
             meta >>= 4;
         }
         try {
-            return ModColors.modPlankColors[meta].getARGB();
+            return Colors.allPlankColors[meta+16].getARGB();
         } catch (Exception var3) {
             return 16711935;
         }

@@ -21,7 +21,7 @@ public class RecipesModDyes {
         RecipeHelper.removeRecipe(Block.slabPlanksOak,0);
         RecipeHelper.removeRecipe(Block.stairsPlanksOak,0);
         //add recipes for dyed blocks/items
-        for (int dye = 0; dye < ModColors.modPlankColors.length; ++dye) {
+        for (int dye = 0; dye < ModColors.MOD_COLORS; ++dye) {
             //wood
             craftingmanager.addRecipe(new ItemStack(ModBlocks.fencePlanksOakPainted, 6, BlockModFencePainted.getMetadataForColour(dye)), "X#X", "X#X", Character.valueOf('#'), Item.stick, Character.valueOf('X'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
             craftingmanager.addRecipe(new ItemStack(ModBlocks.slabPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));

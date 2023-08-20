@@ -6,6 +6,7 @@ import net.minecraft.client.render.texturepack.TexturePackBase;
 import net.minecraft.core.entity.animal.EntitySheep;
 import net.minecraft.core.util.helper.Color;
 import net.minecraft.core.util.helper.Colors;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,16 +16,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value= Colors.class,remap=false)
 public class ColorsMixin {
-    @Shadow
-    public static Color[] allChatColors = new Color[16+ModColors.MOD_COLORS];
-    @Shadow
-    public static Color[] allPlankColors = new Color[16+ModColors.MOD_COLORS];
-    @Shadow
-    public static Color[] allLampColors = new Color[16+ModColors.MOD_COLORS];
-    @Shadow
-    public static Color[] allFlagColors = new Color[16+ModColors.MOD_COLORS];
-    @Shadow
-    public static Color[] allSignColors = new Color[16+ModColors.MOD_COLORS];
+    @Final
+    private static final Color[] allChatColors = new Color[16+ModColors.MOD_COLORS];
+    @Final
+    private static final Color[] allPlankColors = new Color[16+ModColors.MOD_COLORS];
+    @Final
+    private static final Color[] allLampColors = new Color[16+ModColors.MOD_COLORS];
+    @Final
+    private static final Color[] allFlagColors = new Color[16+ModColors.MOD_COLORS];
+    @Final
+    private static final Color[] allSignColors = new Color[16+ModColors.MOD_COLORS];
     @Redirect(method="loadColors",at=@At(value="INVOKE",target="Lnet/minecraft/core/util/helper/Colors;fillColorArray(Lnet/minecraft/client/render/texturepack/TexturePackBase;Ljava/lang/String;[Lnet/minecraft/core/util/helper/Color;)V"))
     private static void loadColorsOrSomeShit(TexturePackBase stream, String imagePath, Color[] array) {
         //only redirect methods that would throw an exception
@@ -36,7 +37,8 @@ public class ColorsMixin {
         Color[] vanillaColors = new Color[16];
         Colors.fillColorArray(stream,imagePath,vanillaColors);
         Color[] modColors = new Color[ModColors.MOD_COLORS];
-        Colors.fillColorArray(stream,imagePath,modColors);
+        String modPath = "assets/goocraft/misc"+imagePath.substring(imagePath.lastIndexOf('/'));
+        Colors.fillColorArray(stream,modPath,modColors);
         //copy both arrays into array to return
         System.arraycopy(vanillaColors, 0, array, 0, vanillaColors.length);
         System.arraycopy(modColors, 0, array, vanillaColors.length, modColors.length);

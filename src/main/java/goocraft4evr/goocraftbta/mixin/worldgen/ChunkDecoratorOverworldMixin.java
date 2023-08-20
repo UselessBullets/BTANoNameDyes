@@ -1,7 +1,9 @@
 package goocraft4evr.goocraftbta.mixin.worldgen;
 
+import goocraft4evr.goocraftbta.GoocraftBTA;
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import goocraft4evr.goocraftbta.worldgen.WorldFeatureOchre;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -9,6 +11,7 @@ import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworld;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
+import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +30,7 @@ public class ChunkDecoratorOverworldMixin {
     public void decorate(Chunk chunk, CallbackInfo info) {
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
-        int minY = world.getWorldType().getOceanY();
+        int minY = world.getWorldType().getMinY();
         int maxY = world.getWorldType().getMaxY();
         int rangeY = maxY + 1 - minY;
         BlockSand.fallInstantly = true;
@@ -42,6 +45,12 @@ public class ChunkDecoratorOverworldMixin {
         rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
         int blockX, blockY, blockZ;
 
+        for (int i=0;(float)i<1.5f*oreHeightModifier;i++) {
+            blockX = x + rand.nextInt(16);
+            blockY = minY + rand.nextInt(rangeY / 4);
+            blockZ = z + rand.nextInt(16);
+            new WorldFeatureOre(ModBlocks.oreMalachiteStone.id, 6, true).generate(world, rand, blockX, blockY, blockZ);
+        }
         if ((biome == Biomes.OVERWORLD_GRASSLANDS
             || biome == Biomes.OVERWORLD_MEADOW
             || biome == Biomes.OVERWORLD_PLAINS) &&

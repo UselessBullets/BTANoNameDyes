@@ -1,7 +1,6 @@
 package goocraft4evr.goocraftbta.mixin.dye;
 
 
-import goocraft4evr.goocraftbta.misc.ModColors;
 import net.minecraft.client.render.RenderEngine;
 import net.minecraft.client.render.texturepack.TexturePackList;
 import org.spongepowered.asm.mixin.Mixin;

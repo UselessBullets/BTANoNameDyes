@@ -8,6 +8,7 @@ import net.minecraft.client.gui.drawing.IDrawableSurface;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.Container;
+import net.minecraft.core.util.helper.Colors;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,7 +28,7 @@ public abstract class GuiEditFlagMixin extends GuiContainer implements IDrawable
         for (int i = 1; i < 4; ++i) {
             ItemStack stack = tileEntity.getStackInSlot(35 + i);
             if (stack == null || stack.getItem() != ModItems.dye) continue;
-            colors[i] = ModColors.modFlagColors[stack.getMetadata()].getARGB();
+            colors[i] = Colors.allFlagColors[16+stack.getMetadata()].getARGB();
         }
         return colors;
     }

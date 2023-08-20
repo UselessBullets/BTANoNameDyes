@@ -22,6 +22,11 @@ public abstract class ModCraftingManager {
                 "##", "##",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,4));
+        CraftingManager.getInstance().addRecipe(
+                new ItemStack(ModBlocks.blockMalachite, 1),
+                "###", "###","###",
+                Character.valueOf('#'),
+                new ItemStack(ModItems.dye, 1,6));
         //sort recipes
         CraftingManager.getInstance().getRecipeList().sort(new RecipeSorter(CraftingManager.getInstance()));
     }

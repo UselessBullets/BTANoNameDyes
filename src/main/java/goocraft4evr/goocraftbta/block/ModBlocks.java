@@ -134,6 +134,31 @@ public abstract class ModBlocks {
             .build(new BlockOchre("block.ochre",UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_SHOVEL);
 
+    private static final BlockBuilder malachiteBuilder = new BlockBuilder(GoocraftBTA.MOD_ID)
+            .setHardness(3.0f)
+            .setResistance(5.0f)
+            .setTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block oreMalachiteStone = malachiteBuilder
+            .setTextures("ore_malachite_stone.png")
+            .build(new BlockOreMalachite("ore.malachite.stone",UtilIdRegistrar.nextId()));
+
+    public static final Block oreMalachiteBasalt = malachiteBuilder
+            .setTextures("ore_malachite_basalt.png")
+            .build(new BlockOreMalachite("ore.malachite.basalt",UtilIdRegistrar.nextId()));
+
+    public static final Block oreMalachiteLimestone = malachiteBuilder
+            .setTextures("ore_malachite_limestone.png")
+            .build(new BlockOreMalachite("ore.malachite.limestone",UtilIdRegistrar.nextId()));
+
+    public static final Block oreMalachiteGranite = malachiteBuilder
+            .setTextures("ore_malachite_granite.png")
+            .build(new BlockOreMalachite("ore.malachite.granite",UtilIdRegistrar.nextId()));
+
+    public static final Block blockMalachite = malachiteBuilder
+            .setTextures("malachite_block.png")
+            .build(new Block("block.malachite",UtilIdRegistrar.nextId(),Material.stone));
+
     public static void register() {
 
     }
