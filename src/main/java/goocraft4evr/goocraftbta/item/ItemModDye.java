@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta.item;
 
 import goocraft4evr.goocraftbta.GoocraftBTA;
+import goocraft4evr.goocraftbta.TextureMap;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntitySign;
 import net.minecraft.core.entity.EntityLiving;
@@ -16,20 +17,17 @@ import turniplabs.halplibe.helper.TextureHelper;
 
 public class ItemModDye extends Item {
     public static String[] dyeColors = {"crimson","maroon","ash.gray","olive","ochre","buff","verdigris","light.yellow","indigo"};
-    private static int dyeIndex;
+    private static TextureMap textures;
 
     //this method ensures all dye textures are contiguous
     public static Item createDyes(String name, int id) {
-        //define main coords and register first texture
-        int[] mainCoords = TextureHelper.getOrCreateItemTexture(GoocraftBTA.MOD_ID, getTextureName(dyeColors[0])+"_dye.png");
-        //save the icon index for later
-        dyeIndex = Item.iconCoordToIndex(mainCoords[0],mainCoords[1]);
-        for (int i=1;i<dyeColors.length;i++) {
-            TextureHelper.getOrCreateItemTexture(GoocraftBTA.MOD_ID, getTextureName(dyeColors[i])+"_dye.png");
+        textures = new TextureMap(GoocraftBTA.MOD_ID,dyeColors.length);
+        for (int i = 0; i< textures.length(); i++) {
+            //generate textures for the remaining dyes to ensure they're all contiguous
+            textures.addItemTexture(getTextureName(dyeColors[i])+"_dye.png");
         }
         //once that's done we just create the item lol
         ItemModDye item = new ItemModDye(name, id);
-        item.setIconIndex(dyeIndex);
         item.setKey(HalpLibe.addModId(GoocraftBTA.MOD_ID, name));
         return item;
     }
@@ -51,7 +49,7 @@ public class ItemModDye extends Item {
 
     @Override
     public int getIconFromDamage(int id) {
-        return dyeIndex+id;
+        return textures.getTexture(id);
     }
 
     @Override

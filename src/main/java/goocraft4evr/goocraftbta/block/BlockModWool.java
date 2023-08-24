@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta.block;
 
 import goocraft4evr.goocraftbta.GoocraftBTA;
+import goocraft4evr.goocraftbta.TextureMap;
 import goocraft4evr.goocraftbta.item.ItemModDye;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
@@ -13,20 +14,15 @@ import net.minecraft.core.world.World;
 import turniplabs.halplibe.helper.TextureHelper;
 
 public class BlockModWool extends Block {
-    private static int woolIndex;
+    private static TextureMap textures;
 
     public static Block createWool(String key, int id) {
-        //define main coords and register first texture
-        int[] mainCoords = TextureHelper.getOrCreateBlockTexture(GoocraftBTA.MOD_ID, ItemModDye.getTextureName(ItemModDye.dyeColors[0])+"_wool.png");
-        //save the icon index for later
-        woolIndex = Item.iconCoordToIndex(mainCoords[0],mainCoords[1]);
-        for (int i = 1; i< ItemModDye.dyeColors.length; i++) {
+        textures = new TextureMap(GoocraftBTA.MOD_ID,ItemModDye.dyeColors.length);
+        for (int i = 0; i< textures.length(); i++) {
             //generate textures for the remaining dyes to ensure they're all contiguous
-            TextureHelper.getOrCreateBlockTexture(GoocraftBTA.MOD_ID, ItemModDye.getTextureName(ItemModDye.dyeColors[i])+"_wool.png");
+            textures.addBlockTexture( ItemModDye.getTextureName(ItemModDye.dyeColors[i])+"_wool.png");
         }
-        Block block = new BlockModWool(key,id);
-        for (int i=0;i<6;i++) block.atlasIndices[i] = woolIndex;
-        return block;
+        return new BlockModWool(key,id);
     }
 
     public BlockModWool(String key, int id) {
@@ -35,7 +31,7 @@ public class BlockModWool extends Block {
 
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-        return woolIndex+meta;
+        return textures.getTexture(meta);
     }
 
     @Override
