@@ -1,28 +1,24 @@
 {
   "schemaVersion": 1,
-  "id": "goocraft",
-  "version": "1.0",
+  "id": "nonamedyes",
+  "version": "0.1",
 
-  "name": "Goocraft BTA",
-  "description": "trying my best to get something functional.",
+  "name": "NoName Dyes",
+  "description": "Adds new dyes to the game.",
   "authors": [
     "Goocraft4Evr"
   ],
-  "contact": {
-    "homepage": "",
-    "sources": ""
-  },
 
   "license": "CC0-1.0",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-        "goocraft4evr.goocraftbta.GoocraftBTA"
+      "goocraft4evr.nonamedyes.NoNameDyes"
     ]
   },
   "mixins": [
-      "goocraftbta.mixins.json"
+    "nonamedyes.mixins.json"
   ],
 
   "depends": {

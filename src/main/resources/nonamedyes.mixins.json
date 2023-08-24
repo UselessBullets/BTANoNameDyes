@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "goocraft4evr.nonamedyes.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ColorPropertiesAccessor",
+    "FontRendererMixin",
+    "GuiHeldItemTooltipMixin",
+    "RenderEngineMixin",
+    "TextFormattingMixin",
+    "TileEntitySignMixin",
+    "dye.ItemDyeMixin",
+    "dye.SlotDyeMixin",
+    "entity.EntitySheepAccessor",
+    "entity.EntitySheepMixin",
+    "flag.FlagRendererMixin",
+    "flag.GuiEditFlagMixin",
+    "flag.TileEntityFlagMixin",
+    "misc.ColorsMixin",
+    "worldgen.ChunkDecoratorNetherMixin",
+    "worldgen.ChunkDecoratorOverworldMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
