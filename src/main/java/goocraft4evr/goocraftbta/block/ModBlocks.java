@@ -203,7 +203,8 @@ public abstract class ModBlocks {
             .setDisabledNeighborNotifyOnMetadataChange()
             .setBlockColor(new BlockColorLeaves("cocoa"))
             .setFlammability(30,60)
-            .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()));
+            .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
 
     public static final Block saplingCocoa = new BlockBuilder(GoocraftBTA.MOD_ID)
             .setTextures("sapling_cocoa.png")
