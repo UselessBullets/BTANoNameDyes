@@ -7,7 +7,9 @@ import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.crafting.recipe.*;
+import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.DyeColor;
 
 public abstract class ModCraftingManager {
 
@@ -29,6 +31,7 @@ public abstract class ModCraftingManager {
                 "###", "###","###",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
+        craftingManager.addShapelessRecipe(new ItemStack(ModBlocks.saplingCocoa, 1), new ItemStack(Block.saplingOak, 1),new ItemStack(Item.dye, 1, 3));
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         //sort recipes
         craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));

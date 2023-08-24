@@ -181,6 +181,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setDisabledNeighborNotifyOnMetadataChange()
+            .setFlammability(5,5)
             .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockLog("log.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
@@ -190,6 +191,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setDisabledNeighborNotifyOnMetadataChange()
+            .setFlammability(5,3)
             .build(new BlockLogCocoaRipe("log.cocoa.ripe", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
@@ -200,6 +202,7 @@ public abstract class ModBlocks {
             .setLightOpacity(1)
             .setDisabledNeighborNotifyOnMetadataChange()
             .setBlockColor(new BlockColorLeaves("cocoa"))
+            .setFlammability(30,60)
             .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()));
 
     public static final Block saplingCocoa = new BlockBuilder(GoocraftBTA.MOD_ID)
