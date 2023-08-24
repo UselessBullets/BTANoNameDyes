@@ -2,16 +2,19 @@ package goocraft4evr.goocraftbta.block.cocoa;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import goocraft4evr.goocraftbta.item.ModItems;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
-public class BlockLogCocoaRipe extends BlockLog {
+public class BlockLogCocoaRipe extends Block {
+
     public BlockLogCocoaRipe(String key, int id) {
-        super(key, id);
+        super(key, id, Material.wood);
     }
 
     @Override
