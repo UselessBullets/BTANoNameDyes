@@ -10,6 +10,7 @@ import goocraft4evr.goocraftbta.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
 import turniplabs.halplibe.helper.BlockBuilder;
@@ -158,6 +159,16 @@ public abstract class ModBlocks {
     public static final Block blockMalachite = malachiteBuilder
             .setTextures("malachite_block.png")
             .build(new Block("block.malachite",UtilIdRegistrar.nextId(),Material.stone));
+
+    public static final Block flowerIndigo = ((BlockFlower)new BlockBuilder(GoocraftBTA.MOD_ID)
+            .setTextures("indigo_flower.png")
+            .setBlockSound(BlockSounds.GRASS)
+            .setHardness(0.0f)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .build(new BlockFlower("flower.indigo", UtilIdRegistrar.nextId())))
+            .setKilledByWeather()
+            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+
 
     public static void register() {
 

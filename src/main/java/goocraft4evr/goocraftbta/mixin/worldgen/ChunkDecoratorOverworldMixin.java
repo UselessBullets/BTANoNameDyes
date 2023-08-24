@@ -2,6 +2,7 @@ package goocraft4evr.goocraftbta.mixin.worldgen;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
 import goocraft4evr.goocraftbta.worldgen.WorldFeatureOchre;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -24,7 +25,7 @@ public abstract class ChunkDecoratorOverworldMixin {
     @Shadow
     private World world;
 
-    @Inject(method="decorate()V",at=@At("HEAD"))
+    @Inject(method="decorate()V",at=@At("TAIL"))
     public void decorate(Chunk chunk, CallbackInfo info) {
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;
@@ -67,6 +68,13 @@ public abstract class ChunkDecoratorOverworldMixin {
             blockY = world.getHeightValue(blockX, blockZ);
             new WorldFeatureOchre(96).generate(world, rand, blockX, blockY, blockZ);
             world.getWorldType().getMaxY();
+        }
+        if ((biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST)
+            && rand.nextInt(2) == 0) {
+            int j15 = x + rand.nextInt(16) + 8;
+            int j17 = minY + rand.nextInt(rangeY);
+            int j20 = z + rand.nextInt(16) + 8;
+            new WorldFeatureFlowers(ModBlocks.flowerIndigo.id).generate(world, rand, j15, j17, j20);
         }
     }
 }
