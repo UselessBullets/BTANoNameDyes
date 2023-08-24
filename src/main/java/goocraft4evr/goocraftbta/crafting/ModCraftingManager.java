@@ -1,6 +1,7 @@
 package goocraft4evr.goocraftbta.crafting;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
+import goocraft4evr.goocraftbta.crafting.recipe.RecipeLabelModDye;
 import goocraft4evr.goocraftbta.crafting.recipe.RecipesModDyes;
 import goocraft4evr.goocraftbta.item.ModItems;
 import net.minecraft.core.block.Block;
@@ -16,19 +17,21 @@ public abstract class ModCraftingManager {
         addAlternatives(13,new Block[]{ModBlocks.chestPlanksOakPainted});
         appendAlternatives(new Block[]{Block.wool,ModBlocks.wool});
         //add recipes
-        RecipesModDyes.addRecipes(CraftingManager.getInstance());
-        CraftingManager.getInstance().addRecipe(
+        CraftingManager craftingManager = CraftingManager.getInstance();
+        RecipesModDyes.addRecipes(craftingManager);
+        craftingManager.addRecipe(
                 new ItemStack(ModBlocks.ochreBlock, 1),
                 "##", "##",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,4));
-        CraftingManager.getInstance().addRecipe(
+        craftingManager.addRecipe(
                 new ItemStack(ModBlocks.blockMalachite, 1),
                 "###", "###","###",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
+        craftingManager.getRecipeList().add(new RecipeLabelModDye());
         //sort recipes
-        CraftingManager.getInstance().getRecipeList().sort(new RecipeSorter(CraftingManager.getInstance()));
+        craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
     }
 
     /*

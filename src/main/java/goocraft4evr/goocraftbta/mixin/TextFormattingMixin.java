@@ -49,6 +49,6 @@ public abstract class TextFormattingMixin {
 
     @ModifyConstant(method="<init>", constant = @Constant(stringValue = "0123456789abcdefklmnor"))
     private String methodName(String variable) {
-        return variable + "ABCDEFGHIJKLMNOP";
+        return variable + "ɏɐɑɒɓɔɕɖɗɘəɚɛɜɝɞɟɠɡɢɣɤɥɦɧɨɩɪɫɬɭɮɯɰɱɲɳɴɵɶɷɸɹɺɻɼɽɾɿʀʁʂʃʄʅʆʇʈʉʊʋʌʍʎʏʐʑʒʓʔʕʖʗʘʙʚʛʜʝʞʟʠʡʢʣʤʥʦʧʨʩʪʫʬʭʮʯʰʱʲʳʴʵʶʷʸʹʺʻʼʽʾʿˀˁ˂˃˄˅ˆˇˈˉˊˋˌˍˎ";
     }
 }

@@ -1,25 +1,26 @@
 {
-    "required": true,
-    "minVersion": "0.8",
-    "package": "goocraft4evr.goocraftbta.mixin",
-    "compatibilityLevel": "JAVA_8",
-    "mixins": [
-        "worldgen.ChunkDecoratorNetherMixin",
-        "worldgen.ChunkDecoratorOverworldMixin",
-        "entity.EntitySheepMixin",
-        "entity.EntitySheepAccessor",
-        "dye.SlotDyeMixin",
-        "dye.ItemDyeMixin",
-        "flag.FlagRendererMixin",
-        "flag.GuiEditFlagMixin",
-        "flag.TileEntityFlagMixin",
-        "misc.ColorsMixin",
-        "TextFormattingMixin",
-        "TileEntitySignMixin"
-    ],
-    "client": [
-    ],
-    "injectors": {
-        "defaultRequire": 1
+  "required": true,
+  "minVersion": "0.8",
+  "package": "goocraft4evr.goocraftbta.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "FontRendererMixin",
+    "TextFormattingMixin",
+    "TileEntitySignMixin",
+    "dye.ItemDyeMixin",
+    "dye.SlotDyeMixin",
+    "entity.EntitySheepAccessor",
+    "entity.EntitySheepMixin",
+    "flag.FlagRendererMixin",
+    "flag.GuiEditFlagMixin",
+    "flag.TileEntityFlagMixin",
+    "misc.ColorsMixin",
+    "worldgen.ChunkDecoratorNetherMixin",
+    "worldgen.ChunkDecoratorOverworldMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
   }
 }
