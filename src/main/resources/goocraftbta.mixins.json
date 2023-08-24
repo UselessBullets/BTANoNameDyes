@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "FontRendererMixin",
+    "GuiHeldItemTooltipMixin",
     "TextFormattingMixin",
     "TileEntitySignMixin",
     "dye.ItemDyeMixin",

@@ -14,8 +14,6 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import java.util.Random;
-
 @Mixin(value = FontRenderer.class, remap = false)
 public abstract class FontRendererMixin {
     @Final
