@@ -1,6 +1,6 @@
 package goocraft4evr.goocraftbta.mixin;
 
-import goocraft4evr.goocraftbta.misc.ModColors;
+import goocraft4evr.goocraftbta.item.ItemModDye;
 import net.minecraft.client.option.GameSettings;
 import net.minecraft.client.render.FontRenderer;
 import net.minecraft.client.render.RenderEngine;
@@ -17,16 +17,16 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 @Mixin(value = FontRenderer.class, remap = false)
 public abstract class FontRendererMixin {
     @Final
-    private int[] colorCode = new int[32+ModColors.MOD_COLORS<<1];
+    private int[] colorCode = new int[32+ItemModDye.NUM_DYES<<1];
 
     @Inject(method="<init>",at=@At("TAIL"))
     private void injected(GameSettings gameSettings, String fontPath, RenderEngine renderEngine, CallbackInfo ci) {
-        for (int i = 0; i < ModColors.MOD_COLORS<<1; ++i) {
-            Color color = Colors.allChatColors[16+i%ModColors.MOD_COLORS];
+        for (int i = 0; i < ItemModDye.NUM_DYES<<1; ++i) {
+            Color color = Colors.allChatColors[16+i%ItemModDye.NUM_DYES];
             int r = color.getRed();
             int g = color.getGreen();
             int b = color.getBlue();
-            if (i >= ModColors.MOD_COLORS) {
+            if (i >= ItemModDye.NUM_DYES) {
                 r /= 4;
                 g /= 4;
                 b /= 4;
@@ -59,7 +59,7 @@ public abstract class FontRendererMixin {
             this.underlineStyle = false;
             this.italicStyle = false;
             if (flag) {
-                formatCode += ModColors.MOD_COLORS;
+                formatCode += ItemModDye.NUM_DYES;
             }
             this.textColor = this.colorCode[10+formatCode];
             GL11.glColor4f((float)(this.textColor >> 16) / 255.0f, (float)(this.textColor >> 8 & 0xFF) / 255.0f, (float)(this.textColor & 0xFF) / 255.0f, this.alpha);

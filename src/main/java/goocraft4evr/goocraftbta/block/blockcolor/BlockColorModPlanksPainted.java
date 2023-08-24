@@ -1,6 +1,5 @@
 package goocraft4evr.goocraftbta.block.blockcolor;
 
-import goocraft4evr.goocraftbta.misc.ModColors;
 import net.minecraft.client.render.block.color.BlockColor;
 import net.minecraft.core.util.helper.Colors;
 import net.minecraft.core.world.World;

@@ -1,7 +1,6 @@
 package goocraft4evr.goocraftbta.mixin.flag;
 
 import goocraft4evr.goocraftbta.item.ModItems;
-import goocraft4evr.goocraftbta.misc.ModColors;
 import net.minecraft.client.gui.GuiContainer;
 import net.minecraft.client.gui.GuiEditFlag;
 import net.minecraft.client.gui.drawing.IDrawableSurface;
