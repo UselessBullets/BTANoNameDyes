@@ -9,6 +9,7 @@ import net.minecraft.core.world.generate.feature.WorldFeature;
 import java.util.Random;
 
 public class WorldFeatureOchre extends WorldFeature {
+    //this class is pretty much a copy-paste of the clay class
     private final int numberOfBlocks;
 
     public WorldFeatureOchre(int numberOfBlocks) {
