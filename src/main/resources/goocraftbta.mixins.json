@@ -4,8 +4,10 @@
   "package": "goocraft4evr.goocraftbta.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "ColorPropertiesAccessor",
     "FontRendererMixin",
     "GuiHeldItemTooltipMixin",
+    "RenderEngineMixin",
     "TextFormattingMixin",
     "TileEntitySignMixin",
     "dye.ItemDyeMixin",

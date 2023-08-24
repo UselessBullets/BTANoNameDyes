@@ -10,6 +10,7 @@ import goocraft4evr.goocraftbta.block.cocoa.BlockSaplingCocoa;
 import goocraft4evr.goocraftbta.block.wood.*;
 import goocraft4evr.goocraftbta.item.block.ItemModBlockPainted;
 import goocraft4evr.goocraftbta.item.block.ItemModBlockSlabPainted;
+import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
@@ -180,6 +181,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setDisabledNeighborNotifyOnMetadataChange()
+            .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockLog("log.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
     public static final Block logCocoaRipe = new BlockBuilder(GoocraftBTA.MOD_ID)
@@ -197,10 +199,11 @@ public abstract class ModBlocks {
             .setHardness(0.2f)
             .setLightOpacity(1)
             .setDisabledNeighborNotifyOnMetadataChange()
-            .build(new BlockLeavesCocoa("leaves.cocoa", UtilIdRegistrar.nextId()));
+            .setBlockColor(new BlockColorLeaves("cocoa"))
+            .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()));
 
     public static final Block saplingCocoa = new BlockBuilder(GoocraftBTA.MOD_ID)
-            .setTopBottomTexture("sapling_cocoa.png")
+            .setTextures("sapling_cocoa.png")
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setHardness(0.0f)
