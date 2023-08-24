@@ -3,6 +3,7 @@ package goocraft4evr.nonamedyes.mixin;
 import net.minecraft.core.net.command.TextFormatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
@@ -11,6 +12,7 @@ public abstract class TextFormattingMixin {
 
     @Final
     private static final TextFormatting[] FORMATTINGS = new TextFormatting[29];
+    @Unique
     private static final TextFormatting[] modColours = {
             new TextFormatting(22).setNames("Crimson"),
             new TextFormatting(23).setNames("Maroon"),

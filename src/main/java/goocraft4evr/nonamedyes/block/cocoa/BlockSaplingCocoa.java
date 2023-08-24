@@ -16,7 +16,7 @@ public class BlockSaplingCocoa extends BlockSaplingBase {
 
     @Override
     public void growTree(World world, int x, int y, int z, Random random) {
-        WorldFeatureTree obj = null;
+        WorldFeatureTree obj;
         world.setBlock(x, y, z, 0);
         int treeHeight = 5;
         obj = new WorldFeatureTree(ModBlocks.leavesCocoa.id, ModBlocks.logCocoa.id, treeHeight);

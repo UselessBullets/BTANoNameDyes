@@ -4,9 +4,9 @@ import net.minecraft.core.block.Block;
 import turniplabs.halplibe.helper.TextureHelper;
 
 public class TextureMap {
-    private int[] textures;
+    private final int[] textures;
     private int curr;
-    private String modid;
+    private final String modid;
 
     public TextureMap(String modid, int length) {
         this.modid = modid;

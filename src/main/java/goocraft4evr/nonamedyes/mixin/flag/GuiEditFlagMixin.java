@@ -8,8 +8,8 @@ import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.util.helper.Colors;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
@@ -19,7 +19,7 @@ public abstract class GuiEditFlagMixin extends GuiContainer implements IDrawable
         super(container);
     }
 
-    @Shadow
+    @Final
     private TileEntityFlag tileEntity;
 
     @ModifyVariable(method = "renderCanvas()V", at = @At("STORE"), ordinal = 0)
