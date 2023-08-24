@@ -2,6 +2,7 @@ package goocraft4evr.goocraftbta.crafting;
 
 import goocraft4evr.goocraftbta.block.ModBlocks;
 
+import net.minecraft.core.block.Block;
 import net.minecraft.core.crafting.LookupFuelFurnace;
 
 public abstract class ModFuelFurnace {
@@ -10,5 +11,7 @@ public abstract class ModFuelFurnace {
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.slabPlanksOakPainted.id, 150);
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencePlanksOakPainted.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencegatePlanksOakPainted.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCocoa.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCocoa.id, 10);
     }
 }

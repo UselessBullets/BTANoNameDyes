@@ -16,6 +16,8 @@ public abstract class ModCraftingManager {
     public static void register() {
         //register alternatives
         addAlternatives(2,new Block[]{ModBlocks.planksOakPainted});
+        addAlternatives(6,new Block[]{ModBlocks.logCocoa});
+        addAlternatives(7,new Block[]{ModBlocks.leavesCocoa});
         addAlternatives(13,new Block[]{ModBlocks.chestPlanksOakPainted});
         appendAlternatives(new Block[]{Block.wool,ModBlocks.wool});
         //add recipes
@@ -32,6 +34,8 @@ public abstract class ModCraftingManager {
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
         craftingManager.addShapelessRecipe(new ItemStack(ModBlocks.saplingCocoa, 1), new ItemStack(Block.saplingOak, 1),new ItemStack(Item.dye, 1, 3));
+        //TODO: These probably aren't necessary
+        craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         //sort recipes
         craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
@@ -57,7 +61,7 @@ public abstract class ModCraftingManager {
         Block[] current = CraftingManager.blockAlternatives[index];
         Block[] newAlts = new Block[current.length+alternatives.length];
         System.arraycopy(current, 0, newAlts, 0, current.length);
-        System.arraycopy(alternatives, 0, newAlts, current.length + 0, alternatives.length);
+        System.arraycopy(alternatives, 0, newAlts, current.length, alternatives.length);
         CraftingManager.blockAlternatives[index] = newAlts;
     }
 
