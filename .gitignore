@@ -4,3 +4,12 @@ build/
 out/
 run/
 run-server/
+build.gradle
+gradle.properties
+gradle-wrapper.jar
+gradle-wrapper.properties
+gradlew
+gradlew.bat
+LICENSE
+README.md
+settings.gradle
