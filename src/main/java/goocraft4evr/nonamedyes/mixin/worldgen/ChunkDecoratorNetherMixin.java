@@ -18,7 +18,7 @@ public abstract class ChunkDecoratorNetherMixin implements ChunkDecorator {
     @Final
     private World world;
 
-    @Inject(method = "decorate()V", at = @At("TAIL"))
+    @Inject(method = "decorate", at = @At("TAIL"))
     private void injectMethod(Chunk chunk, CallbackInfo info) {
         //define chunk vals
         int chunkX = chunk.xPosition;

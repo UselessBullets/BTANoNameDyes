@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value= SlotDye.class, remap = false)
 public abstract class SlotDyeMixin {
-    @Inject(method="canPutStackInSlot()Z", at = @At("RETURN"), cancellable = true)
+    @Inject(method="canPutStackInSlot", at = @At("RETURN"), cancellable = true)
     private void injectedReturn(ItemStack itemstack, CallbackInfoReturnable<Boolean> cir) {
         if (itemstack != null && !cir.getReturnValue()) {
             cir.setReturnValue(itemstack.itemID == ModItems.dye.id);

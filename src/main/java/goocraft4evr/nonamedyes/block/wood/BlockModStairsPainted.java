@@ -7,7 +7,6 @@ import net.minecraft.core.block.BlockStairs;
 public class BlockModStairsPainted extends BlockStairs {
     public BlockModStairsPainted(Block modelBlock, int id) {
         super(modelBlock, id);
-        key = "funnystairs" + modelBlock.getKey().substring(5+ NoNameDyes.MOD_ID.length());
     }
 
     public static int getMetaForDyeColor(int i) {

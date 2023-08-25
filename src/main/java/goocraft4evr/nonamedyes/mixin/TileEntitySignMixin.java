@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 public abstract class TileEntitySignMixin {
     @Shadow
     private int selectedColor;
-    @Inject(method="getColor()B",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method="getColor",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
     public void injected(CallbackInfoReturnable<TextFormatting> cir) {
         if (selectedColor > 15) {
             cir.setReturnValue(TextFormatting.FORMATTINGS[selectedColor]);

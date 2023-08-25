@@ -37,7 +37,7 @@ public abstract class ColorsMixin {
         Color[] vanillaColors = new Color[16];
         Colors.fillColorArray(stream,imagePath,vanillaColors);
         Color[] modColors = new Color[ItemModDye.NUM_DYES];
-        String modPath = "assets/"+ NoNameDyes.MOD_ID +"/misc"+imagePath.substring(imagePath.lastIndexOf('/'));
+        String modPath = "/assets/"+ NoNameDyes.MOD_ID +"/misc"+imagePath.substring(imagePath.lastIndexOf('/'));
         Colors.fillColorArray(stream,modPath,modColors);
         //copy both arrays into array to return
         System.arraycopy(vanillaColors, 0, array, 0, vanillaColors.length);
@@ -49,7 +49,7 @@ public abstract class ColorsMixin {
         //initialize the fleece array
         float[][] vanillaRGB = EntitySheep.fleeceColorTable;
         Color[] fleeceColors = new Color[ItemModDye.NUM_DYES];
-        Colors.fillColorArray(texturePack, "assets/"+ NoNameDyes.MOD_ID +"/misc/colors_fleece.png", fleeceColors);
+        Colors.fillColorArray(texturePack, "/assets/"+ NoNameDyes.MOD_ID +"/misc/colors_fleece.png", fleeceColors);
         float[][] modRGB = new float[vanillaRGB.length+fleeceColors.length][];
         System.arraycopy(vanillaRGB, 0, modRGB, 0, vanillaRGB.length);
         for (int i=0;i<fleeceColors.length;i++) {

@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value= FlagRenderer.class,remap = false)
 public abstract class FlagRendererMixin {
-    @Inject(method="getColorMap()I",at=@At("RETURN"), cancellable = true)
+    @Inject(method="getColorMap",at=@At("RETURN"), cancellable = true)
     private void inject(TileEntityFlag tileEntity, int index, CallbackInfoReturnable<Integer> cir) {
         ItemStack stack;
         if (index > 0 && index <= 3 && (stack = tileEntity.getStackInSlot(35 + index)) != null && stack.getItem() == ModItems.dye) {

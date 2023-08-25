@@ -18,7 +18,7 @@ public class RenderEngineMixin {
     private void injected(CallbackInfo ci, TexturePackBase texturePack) {
         Properties colors = new Properties();
         try {
-            colors.load(texturePack.getResourceAsStream("assets/"+ NoNameDyes.MOD_ID+"/misc/colors.properties"));
+            colors.load(texturePack.getResourceAsStream("/assets/"+ NoNameDyes.MOD_ID+"/misc/colors.properties"));
         } catch (IOException iOException) {
             // empty catch block
         }

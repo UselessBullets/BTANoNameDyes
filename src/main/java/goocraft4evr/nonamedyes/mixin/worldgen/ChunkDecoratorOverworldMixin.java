@@ -24,7 +24,7 @@ public abstract class ChunkDecoratorOverworldMixin {
     @Final
     private World world;
 
-    @Inject(method="decorate()V",at=@At("TAIL"))
+    @Inject(method="decorate",at=@At("TAIL"))
     public void decorate(Chunk chunk, CallbackInfo info) {
         int chunkX = chunk.xPosition;
         int chunkZ = chunk.zPosition;

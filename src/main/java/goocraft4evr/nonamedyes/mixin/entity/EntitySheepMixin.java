@@ -34,7 +34,7 @@ public abstract class EntitySheepMixin
         return (colour&0xE0)>>1|colour&0xF;
     }
 
-    @ModifyVariable(method = "interact()Z", at = @At("STORE"), name = "entityitem")
+    @ModifyVariable(method = "interact", at = @At("STORE"), name = "entityitem")
     private EntityItem injected(EntityItem entityitem) {
         if (getFleeceColor()>15) {
             entityitem.item = new ItemStack(ModBlocks.wool.id, 1, getFleeceColor()-16);

@@ -11,7 +11,6 @@ import net.minecraft.core.world.World;
 public class BlockModSlabPainted extends BlockSlab {
     public BlockModSlabPainted(Block modelBlock, int id) {
         super(modelBlock, id);
-        key = "funnyslab" + modelBlock.getKey().substring(5+ NoNameDyes.MOD_ID.length());
     }
 
     public static int getMetadataForColour(int i) {

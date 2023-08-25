@@ -15,7 +15,7 @@ public abstract class TileEntityFlagMixin {
     @Shadow
     public ItemStack[] items;
 
-    @Inject(method="getColor()B",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method="getColor",at=@At("RETURN"),cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
     private void injected(int x, int y, CallbackInfoReturnable<Byte> cir, int xSample, int ySample, int colorIndex) {
         if (colorIndex < 0) return;
         if (items[colorIndex] != null&&items[colorIndex].itemID == ModItems.dye.id

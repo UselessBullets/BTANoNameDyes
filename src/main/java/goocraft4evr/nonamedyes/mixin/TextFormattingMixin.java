@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public abstract class TextFormattingMixin {
 
     @Final
-    private static final TextFormatting[] FORMATTINGS = new TextFormatting[29];
+    private static final TextFormatting[] FORMATTINGS = new TextFormatting[31];
     @Unique
     private static final TextFormatting[] modColours = {
             new TextFormatting(22).setNames("Crimson"),
@@ -20,7 +20,9 @@ public abstract class TextFormattingMixin {
             new TextFormatting(25).setNames("Olive"),
             new TextFormatting(26).setNames("Ochre"),
             new TextFormatting(27).setNames("Buff"),
-            new TextFormatting(28).setNames("Verdigris")
+            new TextFormatting(28).setNames("Verdigris"),
+            new TextFormatting(29).setNames("Light Yellow"),
+            new TextFormatting(30).setNames("Indigo")
     };
 
     static {
