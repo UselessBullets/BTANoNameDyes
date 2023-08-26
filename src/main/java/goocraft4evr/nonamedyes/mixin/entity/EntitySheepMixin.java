@@ -1,6 +1,8 @@
 package goocraft4evr.nonamedyes.mixin.entity;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.animal.EntityAnimal;
 import net.minecraft.core.entity.animal.EntitySheep;
@@ -8,7 +10,6 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.data.SynchedEntityData;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -22,6 +23,12 @@ public abstract class EntitySheepMixin
 
     //byte 16 = CCCS CCCC
     //byte 17 = 0000 000E
+
+    @Redirect(method="dropFewItems",at=@At(value="INVOKE",target="Lnet/minecraft/core/entity/animal/EntitySheep;spawnAtLocation(Lnet/minecraft/core/item/ItemStack;F)Lnet/minecraft/core/entity/EntityItem;"))
+    public EntityItem setDrops(EntitySheep instance, ItemStack itemStack, float shitass) {
+        if (getFleeceColor()>15) itemStack = new ItemStack(ModBlocks.wool.id, 1, getFleeceColor()-16);
+        return spawnAtLocation(itemStack, shitass);
+    }
 
     @Redirect(method="setFleeceColor",at=@At(value = "INVOKE", target = "Lnet/minecraft/core/world/data/SynchedEntityData;set(ILjava/lang/Object;)V"))
     public void setFleeceColor(SynchedEntityData instance, int id, Object value, int i) {
