@@ -33,6 +33,12 @@ public abstract class ModCraftingManager {
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
         craftingManager.addShapelessRecipe(new ItemStack(ModBlocks.saplingCocoa, 1), new ItemStack(Block.saplingOak, 1),new ItemStack(Item.dye, 1, 3));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.brickMalachite, 4),
+                "##", "##",
+                Character.valueOf('#'),
+                new ItemStack(ModItems.dye, 1,6));
+
         //TODO: These probably aren't necessary
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
         craftingManager.getRecipeList().add(new RecipeLabelModDye());

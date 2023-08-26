@@ -12,6 +12,7 @@ import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
+import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFlower;
@@ -24,7 +25,7 @@ public abstract class ModBlocks {
     private static final BlockBuilder woodBlockBuilder = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(2.0f)
             .setResistance(5.0f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setFlammability(5,20)
             .setBlockSound(BlockSounds.WOOD);
 
@@ -72,7 +73,7 @@ public abstract class ModBlocks {
     public static final Block chestPlanksOakPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(2.5f)
             .setResistance(5.0f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setBlockSound(BlockSounds.WOOD)
             .setImmovable()
             .setLightOpacity(3)
@@ -86,7 +87,7 @@ public abstract class ModBlocks {
     //TODO: This used .setDisabledStats()
     public static final Block lampIdle = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(0.5f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setBlockColor(new BlockColorModLampsPainted())
             .setBlockSound(BlockSounds.GLASS)
             .setItemBlock(ItemModBlockPainted::new)
@@ -99,7 +100,7 @@ public abstract class ModBlocks {
     public static final Block lampActive = new BlockBuilder(NoNameDyes.MOD_ID)
             .setLuminance(14)
             .setHardness(0.5f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setBlockColor(new BlockColorModLampsPainted())
             .setBlockSound(BlockSounds.GLASS)
             .build(new BlockModLamp("lamp.active",UtilIdRegistrar.nextId(),true)
@@ -107,7 +108,7 @@ public abstract class ModBlocks {
             .withTexCoords(5, 12);
     public static final Block wool = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(0.8f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setBlockSound(BlockSounds.CLOTH)
             .setFlammability(30,60)
             .setItemBlock(ItemModBlockPainted::new)
@@ -141,6 +142,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_SHOVEL);
 
     private static final BlockBuilder malachiteBuilder = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
             .setHardness(3.0f)
             .setResistance(5.0f)
             .setTags(BlockTags.MINEABLE_BY_PICKAXE);
@@ -176,20 +178,20 @@ public abstract class ModBlocks {
 
     public static final Block logCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
-            .setSides("log_cocoa_sides.png")
+            .setSideTextures("log_cocoa_sides.png")
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setFlammability(5,5)
             .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockLog("log.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
     public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
-            .setSides("log_cocoa_ripe_sides.png")
+            .setSideTextures("log_cocoa_ripe_sides.png")
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setFlammability(5,3)
             .build(new BlockLogCocoaRipe("log.cocoa.ripe", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
@@ -199,7 +201,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.2f)
             .setLightOpacity(1)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .setBlockColor(new BlockColorLeaves("cocoa"))
             .setFlammability(30,60)
             .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()))
@@ -210,10 +212,15 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setHardness(0.0f)
-            .setDisabledNeighborNotifyOnMetadataChange()
+            .setVisualUpdateOnMetadata()
             .build(new BlockSaplingCocoa("sapling.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
 
+    public static final Block brickMalachite = malachiteBuilder
+            .setResistance(10.0f)
+            .setTextures("brick_malachite.png")
+            .build(new Block("brick.malachite", UtilIdRegistrar.nextId(), Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static void register() {
 
