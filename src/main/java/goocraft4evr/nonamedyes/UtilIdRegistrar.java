@@ -1,9 +1,14 @@
 package goocraft4evr.nonamedyes;
 
 public class UtilIdRegistrar {
-    private static final int block_id = 1000;
-    private static final int item_id = 17000;
+    private static int block_id;
+    private static int item_id;
     private static int curr_id = 0;
+
+    public static void initIds(int blockId, int itemId) {
+        block_id = blockId;
+        item_id = itemId;
+    }
 
     public static int nextId() {
         return curr_id++;
