@@ -26,8 +26,8 @@ tile.nonamedyes.ore.malachite.granite.name=Granite Malachite Ore
 tile.nonamedyes.ore.malachite.granite.desc=Chunks of malachite embedded in granite.
 tile.nonamedyes.block.malachite.name=Block of Malachite
 tile.nonamedyes.block.malachite.desc=A solid block of malachite.
-tile.nonamedyes.block.brick.malachite.name=Malachite Bricks
-tile.nonamedyes.block.brick.malachite.desc=Stacked bricks of malachite.
+tile.nonamedyes.brick.malachite.name=Malachite Bricks
+tile.nonamedyes.brick.malachite.desc=Stacked bricks of malachite.
 
 
 item.nonamedyes.dye.crimson.name=Crimson Dye
