@@ -1,7 +1,6 @@
 package goocraft4evr.nonamedyes;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.container.ContainerPlayerCreativeAppender;
 import goocraft4evr.nonamedyes.crafting.ModCraftingManager;
 import goocraft4evr.nonamedyes.crafting.ModFuelFurnace;
 import goocraft4evr.nonamedyes.crafting.ModFurnaceManager;
@@ -41,7 +40,6 @@ public class NoNameDyes implements ModInitializer {
         ModFurnaceManager.register();
         ModCraftingManager.register();
 
-        ContainerPlayerCreativeAppender.appendItems();
         LOGGER.info("NoName Dyes initialized.");
     }
 }

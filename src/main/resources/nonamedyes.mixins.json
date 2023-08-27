@@ -12,6 +12,7 @@
     "TextFormattingMixin",
     "TileEntitySignMixin",
     "TileEntityTrommelMixin",
+    "container.ContainerPlayerCreativeMixin",
     "dye.ItemDyeMixin",
     "dye.SlotDyeMixin",
     "entity.EntitySheepAccessor",

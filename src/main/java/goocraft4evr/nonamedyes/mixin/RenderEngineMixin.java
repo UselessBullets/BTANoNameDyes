@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 @Mixin(value= RenderEngine.class, remap = false)
-public class RenderEngineMixin {
+public abstract class RenderEngineMixin {
     @Inject(method="refreshTextures",at=@At("TAIL"),locals = LocalCapture.CAPTURE_FAILHARD)
     private void injected(CallbackInfo ci, TexturePackBase texturePack) {
         Properties colors = new Properties();
