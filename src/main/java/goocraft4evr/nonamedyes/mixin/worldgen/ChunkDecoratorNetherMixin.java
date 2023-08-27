@@ -36,12 +36,12 @@ public abstract class ChunkDecoratorNetherMixin implements ChunkDecorator {
         int xf;
         int yf;
         int zf;
-        int max = 8+rand.nextInt(4);
+        int max = (8+rand.nextInt(4))<<2;
         for(int i=0;i<max;i++) {
             xf = x + rand.nextInt(16) + 8;
             yf = minY + rand.nextInt(rangeY);
             zf = z + rand.nextInt(16) + 8;
-            (new WorldFeatureNetherRoots(48)).generate(world, rand, xf, yf, zf);
+            (new WorldFeatureNetherRoots(24)).generate(world, rand, xf, yf, zf);
         }
     }
 }
