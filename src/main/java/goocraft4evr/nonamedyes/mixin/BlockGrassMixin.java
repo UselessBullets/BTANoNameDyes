@@ -21,7 +21,6 @@ public class BlockGrassMixin {
         Biome biome = world.getBlockBiome(x,y,z);
         if (biome == Biomes.OVERWORLD_SEASONAL_FOREST ||
                 biome == Biomes.OVERWORLD_RAINFOREST) {
-            NoNameDyes.LOGGER.info(String.format("flower at %d %d %d",x,y,z));
             return ModBlocks.flowerIndigo.id;
         }
         return id;

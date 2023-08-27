@@ -23,6 +23,6 @@ public class BlockLogCocoaRipe extends Block {
                 return new ItemStack[]{new ItemStack(this)};
             }
         }
-        return new ItemStack[]{new ItemStack(ModBlocks.logCocoa), new ItemStack(Item.dye, 2 +  world.rand.nextInt(6), 3)};
+        return new ItemStack[]{new ItemStack(ModBlocks.logCocoa), new ItemStack(Item.dye, 1 +  world.rand.nextInt(4), 3)};
     }
 }

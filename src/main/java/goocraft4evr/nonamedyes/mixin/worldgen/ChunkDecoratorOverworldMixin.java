@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Random;
 
@@ -60,20 +61,20 @@ public abstract class ChunkDecoratorOverworldMixin {
         }
         if ((biome == Biomes.OVERWORLD_DESERT ||
             biome == Biomes.OVERWORLD_OUTBACK ||
-            biome == Biomes.OVERWORLD_OUTBACK_GRASSY)&&
-            rand.nextInt(112)==0) {
+            biome == Biomes.OVERWORLD_OUTBACK_GRASSY) &&
+            rand.nextInt(6) == 0) {
             blockX = x + rand.nextInt(16);
             blockZ = z + rand.nextInt(16);
-            blockY = world.getHeightValue(blockX, blockZ);
-            new WorldFeatureOchre(96).generate(world, rand, blockX, blockY, blockZ);
+            blockY = world.getWorldType().getOceanY() + rand.nextInt(maxY + 1 - world.getWorldType().getOceanY());
+            new WorldFeatureOchre(48).generate(world, rand, blockX, blockY, blockZ);
             world.getWorldType().getMaxY();
         }
         if ((biome == Biomes.OVERWORLD_RAINFOREST || biome == Biomes.OVERWORLD_SEASONAL_FOREST)
             && rand.nextInt(2) == 0) {
-            int j15 = x + rand.nextInt(16) + 8;
-            int j17 = minY + rand.nextInt(rangeY);
-            int j20 = z + rand.nextInt(16) + 8;
-            new WorldFeatureFlowers(ModBlocks.flowerIndigo.id).generate(world, rand, j15, j17, j20);
+            blockX = x + rand.nextInt(16) + 8;
+            blockY = minY + rand.nextInt(rangeY);
+            blockZ = z + rand.nextInt(16) + 8;
+            new WorldFeatureFlowers(ModBlocks.flowerIndigo.id).generate(world, rand, blockX, blockY, blockZ);
         }
     }
 }

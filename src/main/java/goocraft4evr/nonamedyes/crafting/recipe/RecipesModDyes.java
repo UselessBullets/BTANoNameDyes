@@ -37,14 +37,21 @@ public class RecipesModDyes {
         }
         //add recipes for dye items
         //TODO: dye ids are hardcoded
+        //crimson
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 0), ModBlocks.netherRoots);
+        //maroon
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 1), new ItemStack(Item.dye, 1, DyeColor.DYE_BROWN.dyeMeta), new ItemStack(ModItems.dye, 1, 0));
+        //ash gray
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 2), ModBlocks.mushroomInkCap);
-        craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 2), new ItemStack(Item.dye, 1, DyeColor.DYE_GREEN.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_LIGHT_GRAY.dyeMeta));
+        //olive
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 3), new ItemStack(Item.dye, 1, DyeColor.DYE_GREEN.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_BROWN.dyeMeta));
+        //buff
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 5), new ItemStack(Item.dye, 1, DyeColor.DYE_WHITE.dyeMeta),new ItemStack(ModItems.dye, 1, 4));
+        //light yellow
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 7), new ItemStack(Item.dye, 1, DyeColor.DYE_YELLOW.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_WHITE.dyeMeta));
+        //indigo
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 8), new ItemStack(ModBlocks.flowerIndigo, 1));
+
         //read plank recipes
         craftingmanager.addRecipe(new ItemStack(Block.fencePlanksOak, 6), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Item.stick, Character.valueOf('#'), Block.planksOak});
         craftingmanager.addRecipe(new ItemStack(Block.fencegatePlanksOak, 3), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Block.planksOak, Character.valueOf('#'), Item.stick});

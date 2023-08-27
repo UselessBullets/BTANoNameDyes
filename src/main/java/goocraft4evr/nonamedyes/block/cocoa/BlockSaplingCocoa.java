@@ -21,7 +21,7 @@ public class BlockSaplingCocoa extends BlockSaplingBase {
         int treeHeight = 5;
         obj = new WorldFeatureTree(ModBlocks.leavesCocoa.id, ModBlocks.logCocoa.id, treeHeight);
         if (((WorldFeature)obj).generate(world, random, x, y, z)) {
-            int numCocoa = 1 + random.nextInt(3);
+            int numCocoa = 1 + random.nextInt(2);
             for (int i=0;i<numCocoa;i++) {
                 int yoff = random.nextInt(treeHeight);
                 if (world.getBlockId(x,y+yoff,z) == ModBlocks.logCocoa.id) {

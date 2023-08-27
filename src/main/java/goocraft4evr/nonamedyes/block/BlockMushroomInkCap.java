@@ -27,7 +27,7 @@ public class BlockMushroomInkCap extends BlockMushroom {
                              blockY = y + rand.nextInt(2) - rand.nextInt(2),
                              blockZ = z + rand.nextInt(3) - 1)
             && canBlockStay(world, blockX, blockY, blockZ)) {
-            int spawnChance = 75;
+            int spawnChance = 100;
             if (isAdjacentToPath(world,blockX,blockY,blockZ)) spawnChance >>= 2;
             if (world.getCurrentWeather()== Weather.overworldRain) spawnChance >>= 1;
             if (rand.nextInt(spawnChance)==0) {

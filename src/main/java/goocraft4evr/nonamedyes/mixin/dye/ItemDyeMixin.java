@@ -29,7 +29,7 @@ public abstract class ItemDyeMixin {
             int blockId = world.getBlockId(blockX, blockY, blockZ);
             if (blockId == ModBlocks.netherRoots.id) {
                 if (!world.isClientSide) {
-                    (new WorldFeatureNetherRoots()).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ,6);
+                    (new WorldFeatureNetherRoots(6)).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ);
                     if (entityplayer.getGamemode().consumeBlocks) {
                         --itemstack.stackSize;
                     }

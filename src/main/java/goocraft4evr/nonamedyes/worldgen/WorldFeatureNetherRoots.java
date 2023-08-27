@@ -8,19 +8,21 @@ import net.minecraft.core.world.generate.feature.WorldFeature;
 import java.util.Random;
 
 public class WorldFeatureNetherRoots extends WorldFeature {
+    private final int maxTries;
+
+    public WorldFeatureNetherRoots(int maxTries) {
+        super();
+        this.maxTries = maxTries;
+    }
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z) {
-        return generate(world,random,x,y,z,96);
-    }
 
-    public boolean generate(World world, Random random, int x, int y, int z, int max) {
         //ensure proper spawning conditions
         if ((world.isAirBlock(x,y,z)||world.getBlockId(x,y,z)==ModBlocks.netherRoots.id)&&world.getBlockId(x,y-1,z) == Block.netherrack.id) {
-            //GoocraftBTA.LOGGER.info(String.format("Root at %d,%d,%d",x,y,z));
             //create starting block
             world.setBlock(x,y,z, ModBlocks.netherRoots.id);
-            for (int i=0;i<max;i++) {
+            for (int i=0;i<maxTries;i++) {
                 //pick a random direction
                 int dir = random.nextInt(4);
                 int dx=0,dz=0;
