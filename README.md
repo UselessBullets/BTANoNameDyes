@@ -50,30 +50,30 @@ On a technical note, you can change the starting ID for all blocks and items, in
 
 # Obtaining/renewing dyes
 + Brown dye
-  OBTAINING: Cocoa beans are dungeon loot but also drop from ripe cocoa logs.
-  RENEWING: Ripe cocoa logs can be generated from the trees grown by cocoa saplings.
+  OBTAINING Cocoa beans are dungeon loot but also drop from ripe cocoa logs.
+  RENEWING Ripe cocoa logs can be generated from the trees grown by cocoa saplings.
 + Crimson
-  OBTAINING: Crafted from nether roots.
-  RENEWING: Nether roots can be grown with bone meal.
+  OBTAINING Crafted from nether roots.
+  RENEWING Nether roots can be grown with bone meal.
 + Maroon
   OBTAINING: Crafted from crimson dye and cocoa beans.
 + Ash Gray
-  OBTAINING: Crafted from shaggy manes.
-  RENEWING: Shaggy manes grow eventually, but grow faster near certain blocks.
+  - OBTAINING: Crafted from shaggy manes.
+  - RENEWING: Shaggy manes grow eventually, but grow faster near certain blocks.
 + Olive
-  OBTAINING: Crafted from green dye and cocoa beans.
+  - OBTAINING: Crafted from green dye and cocoa beans.
 + Ochre
-  OBTAINING: Dropped by blocks of ochre (which generate in patches), or as loot from trommelling sand and rich scorched dirt.
-  RENEWING: Effectively renewable through trommelling.
+  - OBTAINING: Dropped by blocks of ochre (which generate in patches), or as loot from trommelling sand and rich scorched dirt.
+  - RENEWING: Effectively renewable through trommelling.
 + Buff
-  OBTAINING: Crafted from ochre and bone meal.
+  - OBTAINING: Crafted from ochre and bone meal.
 + Verdigris
-  OBTAINING: From malachite, which is obtained from mining malachite ore or as loot from trommelling gravel and rich scorched dirt.
-  RENEWING: Effectively renewable through tromelling.
+  - OBTAINING: From malachite, which is obtained from mining malachite ore or as loot from trommelling gravel and rich scorched dirt.
+  - RENEWING: Effectively renewable through tromelling.
 + Light Yellow
-  OBTAINING: Crafted from dandelion yellow and bone meal.
+  - OBTAINING: Crafted from dandelion yellow and bone meal.
 + Indigo
-  OBTAINING: Crafted from indigo flowers.
-  RENEWING: Grass that grows in seasonal forests and rainforests have a chance to grow indigo flowers.
+  - OBTAINING: Crafted from indigo flowers.
+  - RENEWING: Grass that grows in seasonal forests and rainforests have a chance to grow indigo flowers.
 
 idk what else to add.
