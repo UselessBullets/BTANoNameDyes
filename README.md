@@ -20,7 +20,7 @@ On a technical note, you can change the starting ID for all blocks and items, in
   + Can be crafted from 4 ochre.
 + Malachite Ore
   + Should spawn similarily to lapis ore, just a little more rare.
-  + Drops 4+9 ochre.
+  + Drops 4+9 malachite.
 + Block of Malachite
   + Crafted using 9 malachite.
   + Would craft 9 malachite if I didn't forget to implement that recipe.
