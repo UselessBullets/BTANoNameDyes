@@ -21,7 +21,6 @@
     "flag.GuiEditFlagMixin",
     "flag.TileEntityFlagMixin",
     "misc.ColorsMixin",
-    "recipes.RecipeLabelDyeMixin",
     "recipes.RecipeLabelMixin",
     "worldgen.ChunkDecoratorNetherMixin",
     "worldgen.ChunkDecoratorOverworldMixin"

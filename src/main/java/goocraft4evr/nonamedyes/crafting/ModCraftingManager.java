@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.crafting.recipe.RecipeLabelModDye;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipesModDyes;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
@@ -38,6 +39,7 @@ public abstract class ModCraftingManager {
                 "##", "##",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
+        craftingManager.getRecipeList().add(new RecipeLabelModDye());
 
         //TODO: These probably aren't necessary
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
