@@ -2,9 +2,9 @@ package goocraft4evr.nonamedyes.block;
 
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.client.gui.GuiBleacher;
-import goocraft4evr.nonamedyes.mixin.client.entity.EntityPlayerSPAccessor;
 import goocraft4evr.nonamedyes.mixin.server.entity.player.EntityPlayerMPAccessor;
 import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
@@ -31,7 +31,7 @@ public class BlockBleacher extends BlockTileEntity {
     private void displayGUI(EntityPlayer player, TileEntityBleacher tileentitybleacher) {
         if (player instanceof EntityPlayerSP) {
             EntityPlayerSP splayer = (EntityPlayerSP)player;
-            ((EntityPlayerSPAccessor)splayer).getMc().displayGuiScreen(new GuiBleacher(splayer.inventory, tileentitybleacher));
+            Minecraft.getMinecraft(Minecraft.class).displayGuiScreen(new GuiBleacher(splayer.inventory, tileentitybleacher));
             return;
         }
         EntityPlayerMP mplayer = (EntityPlayerMP)player;

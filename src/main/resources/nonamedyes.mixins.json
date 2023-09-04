@@ -12,6 +12,7 @@
     "TextFormattingMixin",
     "TileEntitySignMixin",
     "TileEntityTrommelMixin",
+    "client.MinecraftMixin",
     "container.ContainerPlayerCreativeMixin",
     "dye.ItemDyeMixin",
     "dye.SlotDyeMixin",
@@ -27,8 +28,6 @@
     "worldgen.ChunkDecoratorOverworldMixin"
   ],
   "client": [
-    "client.MinecraftMixin",
-    "client.entity.EntityPlayerSPAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
