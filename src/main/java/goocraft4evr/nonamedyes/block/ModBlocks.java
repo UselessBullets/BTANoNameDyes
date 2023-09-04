@@ -222,6 +222,9 @@ public abstract class ModBlocks {
             .build(new Block("brick.malachite", UtilIdRegistrar.nextId(), Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+    public static final Block bleacher = new BlockBuilder(NoNameDyes.MOD_ID)
+            .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()));
+
     public static void register() {
 
     }

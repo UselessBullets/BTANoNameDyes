@@ -22,10 +22,13 @@
     "flag.TileEntityFlagMixin",
     "misc.ColorsMixin",
     "recipes.RecipeLabelMixin",
+    "server.entity.player.EntityPlayerMPAccessor",
     "worldgen.ChunkDecoratorNetherMixin",
     "worldgen.ChunkDecoratorOverworldMixin"
   ],
   "client": [
+    "client.MinecraftMixin",
+    "client.entity.EntityPlayerSPAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
