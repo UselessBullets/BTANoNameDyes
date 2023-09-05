@@ -6,6 +6,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 
 public class TileEntityBleacher extends TileEntity implements IInventory {
+    public boolean hasWaterSource;
     private ItemStack[] bleacherItemStacks = new ItemStack[9];
     @Override
     public int getSizeInventory() {

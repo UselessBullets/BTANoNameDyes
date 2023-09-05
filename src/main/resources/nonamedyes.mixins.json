@@ -7,6 +7,7 @@
     "client.render.colorizer.ColorPropertiesAccessor",
     "core.block.BlockGrassMixin",
     "core.block.entity.TileEntityFlagMixin",
+    "core.block.entity.TileEntityMixin",
     "core.block.entity.TileEntitySignMixin",
     "core.block.entity.TileEntityTrommelMixin",
     "core.crafting.recipe.RecipeLabelMixin",

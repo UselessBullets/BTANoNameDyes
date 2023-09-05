@@ -1,6 +1,5 @@
 package goocraft4evr.nonamedyes.mixin.core.block;
 
-import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockGrass;
@@ -14,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import java.util.Random;
 
 @Mixin(value= BlockGrass.class,remap=false)
-public class BlockGrassMixin {
+public abstract class BlockGrassMixin {
     @ModifyVariable(method="updateTick",at=@At(value="LOAD"),name="idToSpawn")
     private int updateId(int id, World world, int x, int y, int z, Random rand) {
         if (!(id == Block.flowerRed.id && rand.nextInt(2) == 0)) return id;
