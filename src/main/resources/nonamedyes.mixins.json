@@ -4,6 +4,7 @@
   "package": "goocraft4evr.nonamedyes.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "client.net.handler.NetClientHandlerMixin",
     "client.render.colorizer.ColorPropertiesAccessor",
     "core.block.BlockGrassMixin",
     "core.block.entity.TileEntityFlagMixin",

@@ -1,13 +1,11 @@
 package goocraft4evr.nonamedyes.block;
 
-import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.client.gui.GuiBleacher;
 import goocraft4evr.nonamedyes.mixin.server.entity.player.EntityPlayerMPAccessor;
 import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
-import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -23,48 +21,35 @@ public class BlockBleacher extends BlockTileEntity {
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        updateWaterSource(world,x,y,z);
-    }
-
-    private void updateWaterSource(World world, int x, int y, int z) {
-        TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
-        if (tileEntityBleacher == null) {
-            NoNameDyes.LOGGER.info("tile entity is null!");
-            return;
-        }
-        int blockId;
-        tileEntityBleacher.hasWaterSource =
-                (((blockId = world.getBlockId(x,y-1,z)) == Block.fluidWaterStill.id ||
-                blockId == Block.fluidWaterFlowing.id) &&
-                world.getBlockMetadata(x,y-1,z) == 0);
+        ((TileEntityBleacher)world.getBlockTileEntity(x,y,z)).updateWaterSource(world);
     }
 
     @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
         if (!world.isClientSide) {
             TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
-            updateWaterSource(world,x,y,z);
-            displayGUI(player,tileEntityBleacher);
+            tileEntityBleacher.updateWaterSource(world);
+            if ((player instanceof EntityPlayerSP)) displayGUIBleacherClient((EntityPlayerSP) player, tileEntityBleacher);
+            else displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
         }
         return true;
     }
 
-    private void displayGUI(EntityPlayer player, TileEntityBleacher tileentitybleacher) {
-        if (player instanceof EntityPlayerSP) {
-            EntityPlayerSP splayer = (EntityPlayerSP)player;
-            Minecraft.getMinecraft(Minecraft.class).displayGuiScreen(new GuiBleacher(splayer.inventory, tileentitybleacher));
-            return;
-        }
-        EntityPlayerMP mplayer = (EntityPlayerMP)player;
-        ((EntityPlayerMPAccessor)mplayer).invokeGetNextWindowId();
-        mplayer.playerNetServerHandler.sendPacket(new Packet100OpenWindow(
-                ((EntityPlayerMPAccessor)mplayer).getCurrentWindowId(),
+    public static void displayGUIBleacherClient(EntityPlayerSP player, TileEntityBleacher tileentitybleacher) {
+        tileentitybleacher.updateWaterSource(player.world);
+        Minecraft.getMinecraft(Minecraft.class).displayGuiScreen(new GuiBleacher(player.inventory, tileentitybleacher));
+    }
+
+    public static void displayGUIBleacherServer(EntityPlayerMP player, TileEntityBleacher tileentitybleacher) {
+        ((EntityPlayerMPAccessor)player).invokeGetNextWindowId();
+        player.playerNetServerHandler.sendPacket(new Packet100OpenWindow(
+                ((EntityPlayerMPAccessor)player).getCurrentWindowId(),
                 8,
                 tileentitybleacher.getInvName(),
                 tileentitybleacher.getSizeInventory()));
-        mplayer.craftingInventory = new ContainerBleacher(mplayer.inventory, tileentitybleacher);
-        mplayer.craftingInventory.windowId = ((EntityPlayerMPAccessor)mplayer).getCurrentWindowId();
-        mplayer.craftingInventory.onContainerInit(mplayer);
+        player.craftingInventory = new ContainerBleacher(player.inventory, tileentitybleacher);
+        player.craftingInventory.windowId = ((EntityPlayerMPAccessor)player).getCurrentWindowId();
+        player.craftingInventory.onContainerInit(player);
     }
 
     @Override

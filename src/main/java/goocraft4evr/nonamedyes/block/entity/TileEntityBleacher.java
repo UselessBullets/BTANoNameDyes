@@ -1,9 +1,12 @@
 package goocraft4evr.nonamedyes.block.entity;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
+import net.minecraft.core.world.World;
 
 public class TileEntityBleacher extends TileEntity implements IInventory {
     public boolean hasWaterSource;
@@ -19,6 +22,17 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
     @Override
     public ItemStack getStackInSlot(int i) {
         return bleacherItemStacks[i];
+    }
+
+    public void updateWaterSource(World world) {
+        int blockId;
+        NoNameDyes.LOGGER.info(String.format("coords are %d %d %d",xCoord,yCoord,zCoord));
+        NoNameDyes.LOGGER.info(String.format("is world client side? %b",world.isClientSide));
+        int memedata = world.getBlockMetadata(xCoord,yCoord-1,zCoord);
+        hasWaterSource =
+                (((blockId = world.getBlockId(xCoord,yCoord-1,zCoord)) == Block.fluidWaterStill.id ||
+                        blockId == Block.fluidWaterFlowing.id) &&
+                        memedata == 0);
     }
 
     @Override
