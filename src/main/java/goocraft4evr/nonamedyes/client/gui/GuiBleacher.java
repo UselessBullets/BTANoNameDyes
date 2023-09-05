@@ -34,5 +34,9 @@ public class GuiBleacher extends GuiContainer {
             this.drawTexturedModalRect(j + 18, k + 16, 176, 0, 3, 16);
             this.drawTexturedModalRect(j + 33, k + 16, 179, 0, 3, 16);
         }
+        //TODO: implement progress bar
+        if (false) {
+            this.drawTexturedModalRect(j + 91, k + 25, 176, 32, 24, 16);
+        }
     }
 }

@@ -1,6 +1,5 @@
 package goocraft4evr.nonamedyes.player.inventory;
 
-import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.player.inventory.slot.SlotBleaching;
 import net.minecraft.core.InventoryAction;
@@ -8,7 +7,6 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.player.inventory.Container;
 import net.minecraft.core.player.inventory.InventoryPlayer;
 import net.minecraft.core.player.inventory.slot.Slot;
-import net.minecraft.core.player.inventory.slot.SlotFurnace;
 
 import java.util.List;
 
@@ -28,7 +26,6 @@ public class ContainerBleacher extends Container {
         //output slots
         for (int i = 0; i < 2; ++i) {
             for (int j = 0; j < 2; ++j) {
-                NoNameDyes.LOGGER.info(String.format("slot is %d.",i*2+j+5));
                 this.addSlot(new SlotBleaching(tileentitybleacher, i*2+j+5, 122+j * 18, 17+i * 18));
             }
         }
@@ -44,12 +41,34 @@ public class ContainerBleacher extends Container {
     }
 
     @Override
-    public List<Integer> getMoveSlots(InventoryAction inventoryAction, Slot slot, int i, EntityPlayer entityPlayer) {
+    public List<Integer> getMoveSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
         return null;
     }
 
     @Override
-    public List<Integer> getTargetSlots(InventoryAction inventoryAction, Slot slot, int i, EntityPlayer entityPlayer) {
+    public List<Integer> getTargetSlots(InventoryAction action, Slot slot, int target, EntityPlayer player) {
+        if (slot.id >= 10 && slot.id <= 39) {
+            if (action != InventoryAction.MOVE_ALL) {
+                if (target == 1) {
+                    return this.getSlots(0, 1, false);
+                }
+                if (target == 9) {
+                    return this.getSlots(1, 1, false);
+                }
+            }
+            if (slot.id <= 29) {
+                return this.getSlots(30, 9, false);
+            }
+            if (slot.id >= 31 && slot.id <= 38) {
+                return this.getSlots(10, 27, false);
+            }
+        }
+        if (slot.id >= 0 && slot.id <= 9) {
+            if (slot.id == 9) {
+                return this.getSlots(10, 36, true);
+            }
+            return this.getSlots(10, 36, false);
+        }
         return null;
     }
 

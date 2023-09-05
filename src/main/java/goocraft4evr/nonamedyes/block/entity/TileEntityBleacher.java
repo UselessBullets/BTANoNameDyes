@@ -23,17 +23,32 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
 
     @Override
     public ItemStack decrStackSize(int i, int j) {
+        if (this.bleacherItemStacks[i] != null) {
+            if (bleacherItemStacks[i].stackSize <= j) {
+                ItemStack itemstack = bleacherItemStacks[i];
+                bleacherItemStacks[i] = null;
+                return itemstack;
+            }
+            ItemStack itemstack1 = bleacherItemStacks[i].splitStack(j);
+            if (bleacherItemStacks[i].stackSize <= 0) {
+                bleacherItemStacks[i] = null;
+            }
+            return itemstack1;
+        }
         return null;
     }
 
     @Override
-    public void setInventorySlotContents(int i, ItemStack itemStack) {
-
+    public void setInventorySlotContents(int i, ItemStack itemstack) {
+        bleacherItemStacks[i] = itemstack;
+        if (itemstack != null && itemstack.stackSize > this.getInventoryStackLimit()) {
+            itemstack.stackSize = this.getInventoryStackLimit();
+        }
     }
 
     @Override
     public String getInvName() {
-        return null;
+        return "Bleacher";
     }
 
     @Override
