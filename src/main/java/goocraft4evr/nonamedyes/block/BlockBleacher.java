@@ -1,5 +1,6 @@
 package goocraft4evr.nonamedyes.block;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.client.gui.GuiBleacher;
 import goocraft4evr.nonamedyes.mixin.server.entity.player.EntityPlayerMPAccessor;
@@ -7,7 +8,6 @@ import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.block.BlockFluid;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -16,10 +16,7 @@ import net.minecraft.core.net.packet.Packet100OpenWindow;
 import net.minecraft.core.world.World;
 import net.minecraft.server.entity.player.EntityPlayerMP;
 
-import java.util.Random;
-
 public class BlockBleacher extends BlockTileEntity {
-    TileEntityBleacher tileEntityBleacher;
     public BlockBleacher(String key, int id) {
         super(key, id, Material.stone);
     }
@@ -30,15 +27,22 @@ public class BlockBleacher extends BlockTileEntity {
     }
 
     private void updateWaterSource(World world, int x, int y, int z) {
-        if (tileEntityBleacher == null) return;
-        int blockId = world.getBlockId(x,y-1,z);
-        tileEntityBleacher.hasWaterSource = (blockId == Block.fluidWaterFlowing.id || blockId ==Block.fluidWaterStill.id);
+        TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
+        if (tileEntityBleacher == null) {
+            NoNameDyes.LOGGER.info("tile entity is null!");
+            return;
+        }
+        int blockId;
+        tileEntityBleacher.hasWaterSource =
+                (((blockId = world.getBlockId(x,y-1,z)) == Block.fluidWaterStill.id ||
+                blockId == Block.fluidWaterFlowing.id) &&
+                world.getBlockMetadata(x,y-1,z) == 0);
     }
 
     @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
         if (!world.isClientSide) {
-            if (tileEntityBleacher == null) tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
+            TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
             updateWaterSource(world,x,y,z);
             displayGUI(player,tileEntityBleacher);
         }
