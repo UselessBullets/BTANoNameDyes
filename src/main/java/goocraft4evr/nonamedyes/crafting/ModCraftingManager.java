@@ -40,6 +40,7 @@ public abstract class ModCraftingManager {
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
+        craftingManager.addShapelessRecipe(new ItemStack(ModItems.bleachingPowder, 4), new ItemStack(Item.dye, 1,15),new ItemStack(Item.sulphur, 1),new ItemStack(Block.cobbleLimestone, 1));
 
         //TODO: These probably aren't necessary
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
