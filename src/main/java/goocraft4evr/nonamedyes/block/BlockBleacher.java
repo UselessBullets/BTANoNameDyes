@@ -7,6 +7,7 @@ import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.block.BlockFluid;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -24,13 +25,14 @@ public class BlockBleacher extends BlockTileEntity {
     }
 
     @Override
-    public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
+    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
         updateWaterSource(world,x,y,z);
     }
 
     private void updateWaterSource(World world, int x, int y, int z) {
         if (tileEntityBleacher == null) return;
-        tileEntityBleacher.hasWaterSource = world.getBlockId(x,y-1,z) == Block.fluidWaterStill.id;
+        int blockId = world.getBlockId(x,y-1,z);
+        tileEntityBleacher.hasWaterSource = (blockId == Block.fluidWaterFlowing.id || blockId ==Block.fluidWaterStill.id);
     }
 
     @Override
