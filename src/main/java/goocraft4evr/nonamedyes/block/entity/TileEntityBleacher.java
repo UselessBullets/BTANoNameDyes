@@ -1,6 +1,8 @@
 package goocraft4evr.nonamedyes.block.entity;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
+import goocraft4evr.nonamedyes.crafting.recipe.RecipesBleacher;
+import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
@@ -69,17 +71,19 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
     public void updateEntity() {
         boolean isFuelTimeHigherThan0 = currentFuelTime > 0;
         boolean requiresUpdate = false;
-        if (currentFuelTime > 0) currentFuelTime--;
+        if (isFuelled()) currentFuelTime--;
         if (!this.worldObj.isClientSide) {
             updateWaterSource();
             if (currentFuelTime == 0 && canBleach()) {
                 //NOTE: max fuel time is hardcoded to 8 items
-                maxFuelTime = currentFuelTime = 1600;
-                requiresUpdate = true;
-                if (bleacherItemStacks[0] != null) {
-                    bleacherItemStacks[0].stackSize--;
-                    if (bleacherItemStacks[0].stackSize <= 0) {
-                        bleacherItemStacks[0] = null;
+                maxFuelTime = currentFuelTime = getFuelTime();
+                if (currentFuelTime > 0) {
+                    requiresUpdate = true;
+                    if (bleacherItemStacks[0] != null) {
+                        bleacherItemStacks[0].stackSize--;
+                        if (bleacherItemStacks[0].stackSize <= 0) {
+                            bleacherItemStacks[0] = null;
+                        }
                     }
                 }
             }
@@ -91,7 +95,7 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
                     bleachItem();
                     requiresUpdate = true;
                 }
-            } currentBleachTime = 0;
+            } else currentBleachTime = 0;
             //update the furnace if
             if (isFuelTimeHigherThan0 != currentFuelTime > 0) {
                 requiresUpdate = true;
@@ -104,16 +108,67 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
         }
     }
 
-    //TODO: finish method
+    private int getFuelTime() {
+        ItemStack itemStack = bleacherItemStacks[0];
+        if (itemStack == null) return 0;
+        return itemStack.itemID == ModItems.bleachingPowder.id?1600:0;
+    }
+
     private void bleachItem() {
+        if (!canBleach()) return;
+        ItemStack itemstack;
+        int emptyIndex = -1;
+        boolean hasOutput = false;
+        for (int i=0;i<4;i++) {
+            if (bleacherItemStacks[1+i] == null) continue;
+            itemstack = RecipesBleacher.bleaching().getBleachingResult(bleacherItemStacks[1+i].getItem().id);
+            if (itemstack == null) continue;
+            for (int j=0;j<4;j++) {
+                if (bleacherItemStacks[5+j] == null) {
+                    if (emptyIndex == -1) emptyIndex = j;
+                    continue;
+                }
+                if (bleacherItemStacks[5+j].isItemEqual(itemstack) &&
+                    (bleacherItemStacks[5+j].stackSize < getInventoryStackLimit() &&
+                    bleacherItemStacks[5+j].stackSize < bleacherItemStacks[5+j].getMaxStackSize())) {
+                    bleacherItemStacks[5+j].stackSize++;
+                    hasOutput = true;
+                    break;
+                }
+            }
+            if (emptyIndex != -1) {
+                bleacherItemStacks[5+emptyIndex] = itemstack.copy();
+                hasOutput = true;
+            }
+            if (hasOutput) {
+                bleacherItemStacks[1+i].stackSize--;
+                if (bleacherItemStacks[1+i].stackSize <= 0) bleacherItemStacks[1+i] = null;
+                return;
+            }
+        }
     }
 
-    //TODO: finish method
-    private boolean isFuelled() {
+    public boolean isFuelled() {
+        return hasWaterSource && currentFuelTime > 0;
     }
 
-    //TODO: finish method
     private boolean canBleach() {
+        ItemStack itemstack;
+        for (int i=0;i<4;i++) {
+            if (bleacherItemStacks[1+i] == null) continue;
+            itemstack = RecipesBleacher.bleaching().getBleachingResult(bleacherItemStacks[1+i].getItem().id);
+            if (itemstack == null) continue;
+            for (int j=0;j<4;j++) {
+                if (bleacherItemStacks[5+j] == null) return true;
+                if (!bleacherItemStacks[5+j].isItemEqual(itemstack)) continue;
+                if ((bleacherItemStacks[5+j].stackSize < getInventoryStackLimit() &&
+                    bleacherItemStacks[5+j].stackSize < bleacherItemStacks[5+j].getMaxStackSize())||
+                    bleacherItemStacks[5+j].stackSize < itemstack.getMaxStackSize()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
@@ -127,5 +182,15 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
             return false;
         }
         return entityPlayer.distanceToSqr((double)this.xCoord + 0.5, (double)this.yCoord + 0.5, (double)this.zCoord + 0.5) <= 64.0;
+    }
+
+    public int getFuelRemainingScaled(int i) {
+        if (maxFuelTime == 0) return 0;
+        return currentFuelTime * i / maxFuelTime;
+    }
+
+    public int getBleachProgressScaled(int i) {
+        if (maxBleachTime == 0) return 0;
+        return currentBleachTime * i / maxBleachTime;
     }
 }

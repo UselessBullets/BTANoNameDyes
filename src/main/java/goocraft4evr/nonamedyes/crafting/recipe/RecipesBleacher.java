@@ -1,8 +1,7 @@
 package goocraft4evr.nonamedyes.crafting.recipe;
 
+import goocraft4evr.nonamedyes.block.ModBlocks;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.crafting.recipe.RecipesFurnace;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 
 import java.util.HashMap;
@@ -17,19 +16,32 @@ public class RecipesBleacher {
     }
 
     private RecipesBleacher() {
-        this.addBleaching(Block.oreCoalStone.id, new ItemStack(Item.coal));
-        //TODO: add more recipes
+        addBleaching(Block.planksOakPainted.id, new ItemStack(Block.planksOak));
+        addBleaching(Block.fencePlanksOakPainted.id, new ItemStack(Block.fencePlanksOak));
+        addBleaching(Block.fencegatePlanksOakPainted.id, new ItemStack(Block.fencegatePlanksOak));
+        addBleaching(Block.slabPlanksOakPainted.id, new ItemStack(Block.slabPlanksOak));
+        addBleaching(Block.stairsPlanksOakPainted.id, new ItemStack(Block.stairsPlanksOak));
+        addBleaching(Block.chestPlanksOakPainted.id, new ItemStack(Block.chestPlanksOak));
+        addBleaching(Block.wool.id, new ItemStack(Block.wool));
+
+        addBleaching(ModBlocks.planksOakPainted.id, new ItemStack(Block.planksOak));
+        addBleaching(ModBlocks.fencePlanksOakPainted.id, new ItemStack(Block.fencePlanksOak));
+        addBleaching(ModBlocks.fencegatePlanksOakPainted.id, new ItemStack(Block.fencegatePlanksOak));
+        addBleaching(ModBlocks.slabPlanksOakPainted.id, new ItemStack(Block.slabPlanksOak));
+        addBleaching(ModBlocks.stairsPlanksOakPainted.id, new ItemStack(Block.stairsPlanksOak));
+        addBleaching(ModBlocks.chestPlanksOakPainted.id, new ItemStack(Block.chestPlanksOak));
+        addBleaching(ModBlocks.wool.id, new ItemStack(Block.wool));
     }
 
     public void addBleaching(int i, ItemStack itemstack) {
-        this.bleachingList.put(i, itemstack);
+        bleachingList.put(i, itemstack);
     }
 
     public ItemStack getBleachingResult(int i) {
-        return (ItemStack)this.bleachingList.get(i);
+        return (ItemStack)bleachingList.get(i);
     }
 
     public Map getBleachingList() {
-        return this.bleachingList;
+        return bleachingList;
     }
 }

@@ -8,35 +8,39 @@ import net.minecraft.core.player.inventory.InventoryPlayer;
 import org.lwjgl.opengl.GL11;
 
 public class GuiBleacher extends GuiContainer {
-    private TileEntityBleacher bleacher;
+    private final TileEntityBleacher bleacher;
 
     public GuiBleacher(InventoryPlayer inventoryplayer, TileEntityBleacher tileentitybleacher) {
         super(new ContainerBleacher(inventoryplayer, tileentitybleacher));
         ySize = 148;
-        this.bleacher = tileentitybleacher;
+        bleacher = tileentitybleacher;
     }
 
     @Override
     protected void drawGuiContainerForegroundLayer() {
-        this.fontRenderer.drawString("Bleacher", 60, 6, 0x404040);
-        this.fontRenderer.drawString("Inventory", 8, this.ySize - 112 + 18, 0x404040);
+        fontRenderer.drawString("Bleacher", 60, 6, 0x404040);
+        fontRenderer.drawString("Inventory", 8, ySize - 112 + 18, 0x404040);
     }
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float f) {
-        int guiTexture = this.mc.renderEngine.getTexture(String.format("/assets/%s/gui/bleaching.png", NoNameDyes.MOD_ID));
+        int guiTexture = mc.renderEngine.getTexture(String.format("/assets/%s/gui/bleaching.png", NoNameDyes.MOD_ID));
         GL11.glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
-        this.mc.renderEngine.bindTexture(guiTexture);
-        int j = (this.width - this.xSize) / 2;
-        int k = (this.height - this.ySize) / 2;
-        this.drawTexturedModalRect(j, k, 0, 0, this.xSize, this.ySize);
+        mc.renderEngine.bindTexture(guiTexture);
+        int j = (width - xSize) / 2;
+        int k = (height - ySize) / 2;
+        drawTexturedModalRect(j, k, 0, 0, xSize, ySize);
         if (bleacher.hasWaterSource) {
-            this.drawTexturedModalRect(j + 18, k + 16, 176, 0, 3, 16);
-            this.drawTexturedModalRect(j + 33, k + 16, 179, 0, 3, 16);
+            drawTexturedModalRect(j + 18, k + 16, 176, 0, 3, 16);
+            drawTexturedModalRect(j + 33, k + 16, 179, 0, 3, 16);
         }
-        //TODO: implement progress bar
-        if (false) {
-            this.drawTexturedModalRect(j + 91, k + 25, 176, 32, 24, 16);
+        if (bleacher.currentFuelTime > 0) {
+            int len = bleacher.getFuelRemainingScaled(16);
+            drawTexturedModalRect(j + 21, k + 16 + 16 - len, 176, 32 - len, 12, len + 2);
+        }
+        if (bleacher.isFuelled()) {
+            int len = bleacher.getBleachProgressScaled(24);
+            drawTexturedModalRect(j + 91, k + 25, 176, 32, len + 1, 16);
         }
     }
 }
