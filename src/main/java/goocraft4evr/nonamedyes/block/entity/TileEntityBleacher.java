@@ -6,11 +6,14 @@ import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
-import net.minecraft.core.world.World;
 
 public class TileEntityBleacher extends TileEntity implements IInventory {
+    private final ItemStack[] bleacherItemStacks = new ItemStack[9];
     public boolean hasWaterSource;
-    private ItemStack[] bleacherItemStacks = new ItemStack[9];
+    public int maxFuelTime = 0;
+    public int currentFuelTime = 0;
+    public int currentBleachTime = 0;
+    public int maxBleachTime = 200;
     @Override
     public int getSizeInventory() {
         return bleacherItemStacks.length;
@@ -24,28 +27,25 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
         return bleacherItemStacks[i];
     }
 
-    public void updateWaterSource(World world) {
+    public void updateWaterSource() {
         int blockId;
-        NoNameDyes.LOGGER.info(String.format("coords are %d %d %d",xCoord,yCoord,zCoord));
-        NoNameDyes.LOGGER.info(String.format("is world client side? %b",world.isClientSide));
-        int memedata = world.getBlockMetadata(xCoord,yCoord-1,zCoord);
         hasWaterSource =
-                (((blockId = world.getBlockId(xCoord,yCoord-1,zCoord)) == Block.fluidWaterStill.id ||
+                (((blockId = worldObj.getBlockId(xCoord,yCoord-1,zCoord)) == Block.fluidWaterStill.id ||
                         blockId == Block.fluidWaterFlowing.id) &&
-                        memedata == 0);
+                        worldObj.getBlockMetadata(xCoord,yCoord-1,zCoord) == 0);
     }
 
     @Override
-    public ItemStack decrStackSize(int i, int j) {
-        if (this.bleacherItemStacks[i] != null) {
-            if (bleacherItemStacks[i].stackSize <= j) {
-                ItemStack itemstack = bleacherItemStacks[i];
-                bleacherItemStacks[i] = null;
+    public ItemStack decrStackSize(int slot, int numOfItems) {
+        if (this.bleacherItemStacks[slot] != null) {
+            if (bleacherItemStacks[slot].stackSize <= numOfItems) {
+                ItemStack itemstack = bleacherItemStacks[slot];
+                bleacherItemStacks[slot] = null;
                 return itemstack;
             }
-            ItemStack itemstack1 = bleacherItemStacks[i].splitStack(j);
-            if (bleacherItemStacks[i].stackSize <= 0) {
-                bleacherItemStacks[i] = null;
+            ItemStack itemstack1 = bleacherItemStacks[slot].splitStack(numOfItems);
+            if (bleacherItemStacks[slot].stackSize <= 0) {
+                bleacherItemStacks[slot] = null;
             }
             return itemstack1;
         }
@@ -63,6 +63,57 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
     @Override
     public String getInvName() {
         return "Bleacher";
+    }
+
+    @Override
+    public void updateEntity() {
+        boolean isFuelTimeHigherThan0 = currentFuelTime > 0;
+        boolean requiresUpdate = false;
+        if (currentFuelTime > 0) currentFuelTime--;
+        if (!this.worldObj.isClientSide) {
+            updateWaterSource();
+            if (currentFuelTime == 0 && canBleach()) {
+                //NOTE: max fuel time is hardcoded to 8 items
+                maxFuelTime = currentFuelTime = 1600;
+                requiresUpdate = true;
+                if (bleacherItemStacks[0] != null) {
+                    bleacherItemStacks[0].stackSize--;
+                    if (bleacherItemStacks[0].stackSize <= 0) {
+                        bleacherItemStacks[0] = null;
+                    }
+                }
+            }
+            if (isFuelled() && canBleach()) {
+                currentBleachTime++;
+                if (currentBleachTime == maxBleachTime) {
+                    //smelt an item and update the furnace
+                    currentBleachTime = 0;
+                    bleachItem();
+                    requiresUpdate = true;
+                }
+            } currentBleachTime = 0;
+            //update the furnace if
+            if (isFuelTimeHigherThan0 != currentFuelTime > 0) {
+                requiresUpdate = true;
+                //TODO: update block
+            }
+        }
+        //change the inventory if the furnace has been updated
+        if (requiresUpdate) {
+            this.onInventoryChanged();
+        }
+    }
+
+    //TODO: finish method
+    private void bleachItem() {
+    }
+
+    //TODO: finish method
+    private boolean isFuelled() {
+    }
+
+    //TODO: finish method
+    private boolean canBleach() {
     }
 
     @Override

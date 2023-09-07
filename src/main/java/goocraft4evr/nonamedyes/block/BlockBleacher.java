@@ -21,14 +21,14 @@ public class BlockBleacher extends BlockTileEntity {
 
     @Override
     public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        ((TileEntityBleacher)world.getBlockTileEntity(x,y,z)).updateWaterSource(world);
+        ((TileEntityBleacher)world.getBlockTileEntity(x,y,z)).updateWaterSource();
     }
 
     @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
         if (!world.isClientSide) {
             TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
-            tileEntityBleacher.updateWaterSource(world);
+            tileEntityBleacher.updateWaterSource();
             if ((player instanceof EntityPlayerSP)) displayGUIBleacherClient((EntityPlayerSP) player, tileEntityBleacher);
             else displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
         }
@@ -36,7 +36,6 @@ public class BlockBleacher extends BlockTileEntity {
     }
 
     public static void displayGUIBleacherClient(EntityPlayerSP player, TileEntityBleacher tileentitybleacher) {
-        tileentitybleacher.updateWaterSource(player.world);
         Minecraft.getMinecraft(Minecraft.class).displayGuiScreen(new GuiBleacher(player.inventory, tileentitybleacher));
     }
 
