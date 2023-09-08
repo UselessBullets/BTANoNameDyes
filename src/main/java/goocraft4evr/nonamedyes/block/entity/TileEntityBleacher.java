@@ -31,10 +31,14 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
 
     public void updateWaterSource() {
         int blockId;
-        hasWaterSource =
+        boolean test =
                 (((blockId = worldObj.getBlockId(xCoord,yCoord-1,zCoord)) == Block.fluidWaterStill.id ||
                         blockId == Block.fluidWaterFlowing.id) &&
                         worldObj.getBlockMetadata(xCoord,yCoord-1,zCoord) == 0);
+        if (test != hasWaterSource) {
+            hasWaterSource = test;
+            this.onInventoryChanged();
+        }
     }
 
     @Override

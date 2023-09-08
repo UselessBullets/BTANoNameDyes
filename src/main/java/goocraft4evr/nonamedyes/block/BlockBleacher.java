@@ -26,15 +26,9 @@ public class BlockBleacher extends BlockTileEntity {
     }
 
     @Override
-    public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
-        ((TileEntityBleacher)world.getBlockTileEntity(x,y,z)).updateWaterSource();
-    }
-
-    @Override
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
         if (!world.isClientSide) {
             TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
-            tileEntityBleacher.updateWaterSource();
             if ((player instanceof EntityPlayerSP)) displayGUIBleacherClient((EntityPlayerSP) player, tileEntityBleacher);
             else displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
         }

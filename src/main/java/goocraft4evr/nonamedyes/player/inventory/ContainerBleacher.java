@@ -57,17 +57,14 @@ public class ContainerBleacher extends Container {
             if (currentBleachTime != tileEntity.currentBleachTime) {
                 icrafting.updateCraftingInventoryInfo(this, 1, tileEntity.currentBleachTime);
             }
-            if (currentBleachTime != tileEntity.currentBleachTime) {
-                icrafting.updateCraftingInventoryInfo(this, 2, tileEntity.currentBleachTime);
-            }
             if (currentFuelTime != tileEntity.currentFuelTime) {
-                icrafting.updateCraftingInventoryInfo(this, 3, tileEntity.currentFuelTime);
+                icrafting.updateCraftingInventoryInfo(this, 2, tileEntity.currentFuelTime);
             }
             if (itemBleachTime != tileEntity.maxBleachTime) {
-                icrafting.updateCraftingInventoryInfo(this, 4, tileEntity.maxBleachTime);
+                icrafting.updateCraftingInventoryInfo(this, 3, tileEntity.maxBleachTime);
             }
             if (itemFuelTime == tileEntity.maxFuelTime) continue;
-            icrafting.updateCraftingInventoryInfo(this, 5, tileEntity.maxFuelTime);
+            icrafting.updateCraftingInventoryInfo(this, 4, tileEntity.maxFuelTime);
         }
         hasWaterSource = tileEntity.hasWaterSource;
         currentBleachTime = tileEntity.currentBleachTime;
