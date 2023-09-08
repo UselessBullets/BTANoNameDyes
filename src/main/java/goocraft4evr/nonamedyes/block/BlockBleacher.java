@@ -8,10 +8,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
-import net.minecraft.core.block.entity.TileEntityFurnace;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.player.EntityPlayer;
+import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.net.packet.Packet100OpenWindow;
 import net.minecraft.core.world.World;
@@ -21,6 +21,7 @@ import java.util.Random;
 
 public class BlockBleacher extends BlockTileEntity {
     protected Random bleacherRand = new Random();
+
     public BlockBleacher(String key, int id) {
         super(key, id, Material.stone);
     }
@@ -54,6 +55,18 @@ public class BlockBleacher extends BlockTileEntity {
     @Override
     protected TileEntity getNewBlockEntity() {
         return new TileEntityBleacher();
+    }
+
+    @Override
+    public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+        switch (dropCause) {
+            case PICK_BLOCK:
+            case PROPER_TOOL:
+            case SILK_TOUCH: {
+                return new ItemStack[]{new ItemStack(ModBlocks.bleacher)};
+            }
+        }
+        return null;
     }
 
     @Override

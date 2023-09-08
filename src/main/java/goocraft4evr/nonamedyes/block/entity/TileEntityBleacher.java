@@ -1,6 +1,5 @@
 package goocraft4evr.nonamedyes.block.entity;
 
-import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipesBleacher;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;

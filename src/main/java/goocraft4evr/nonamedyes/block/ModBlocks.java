@@ -12,7 +12,6 @@ import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
-import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFlower;
@@ -223,7 +222,16 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block bleacher = new BlockBuilder(NoNameDyes.MOD_ID)
-            .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()));
+            .setVisualUpdateOnMetadata()
+            .setImmovable()
+            .setHardness(3.5f)
+            .setBlockSound(BlockSounds.STONE)
+            .setBlockModel(new BlockModelRenderBlocks(172))
+            .setTopTexture("bleacher_top_empty.png")
+            .setSideTextures("bleacher_sides.png")
+            .setBottomTexture("bleacher_bottom.png")
+            .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static void register() {
 

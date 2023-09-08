@@ -41,8 +41,13 @@ public abstract class ModCraftingManager {
                 new ItemStack(ModItems.dye, 1,6));
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.addShapelessRecipe(new ItemStack(ModItems.bleachingPowder, 4), new ItemStack(Item.dye, 1,15),new ItemStack(Item.sulphur, 1),new ItemStack(Block.cobbleLimestone, 1));
-
-        //TODO: These probably aren't necessary
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.bleacher, 1),
+                "C C", "S S", "SSS",
+                Character.valueOf('C'),
+                new ItemStack(Block.cobbleStone, 1),
+                Character.valueOf('S'),
+                new ItemStack(Block.stonePolished, 1));
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
         //sort recipes
         craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
