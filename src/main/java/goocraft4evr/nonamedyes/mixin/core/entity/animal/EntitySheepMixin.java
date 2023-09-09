@@ -29,8 +29,8 @@ public abstract class EntitySheepMixin
     }
 
     @Redirect(method="setFleeceColor",at=@At(value = "INVOKE", target = "Lnet/minecraft/core/world/data/SynchedEntityData;set(ILjava/lang/Object;)V"))
-    public void setFleeceColor(SynchedEntityData instance, int id, Object value, int i) {
-        getEntityData().set(16,(byte) (i<<1&0xE0| (Byte) value));
+    public void setFleeceColor(SynchedEntityData instance, int id, Object data, int dye) {
+        getEntityData().set(16,(byte) (dye<<1&0xE0 | ((Byte) data&0x1F)));
     }
 
     @Inject(method="getFleeceColor",at=@At("RETURN"),cancellable = true)
