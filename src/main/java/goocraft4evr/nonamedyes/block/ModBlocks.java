@@ -18,6 +18,7 @@ import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public abstract class ModBlocks {
@@ -226,10 +227,8 @@ public abstract class ModBlocks {
             .setImmovable()
             .setHardness(3.5f)
             .setBlockSound(BlockSounds.STONE)
-            .setBlockModel(new BlockModelRenderBlocks(172))
-            .setTopTexture("bleacher_top_empty.png")
             .setSideTextures("bleacher_sides.png")
-            .setBottomTexture("bleacher_bottom.png")
+            .setTopBottomTexture("bleacher_bottom.png")
             .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 

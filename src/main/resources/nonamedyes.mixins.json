@@ -4,8 +4,6 @@
   "package": "goocraft4evr.nonamedyes.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "client.net.handler.NetClientHandlerMixin",
-    "client.render.colorizer.ColorPropertiesAccessor",
     "core.block.BlockGrassMixin",
     "core.block.entity.TileEntityFlagMixin",
     "core.block.entity.TileEntityMixin",
@@ -14,6 +12,7 @@
     "core.crafting.recipe.RecipeLabelMixin",
     "core.entity.animal.EntitySheepAccessor",
     "core.entity.animal.EntitySheepMixin",
+    "core.entity.fx.EntityBubbleFXMixin",
     "core.item.ItemDyeMixin",
     "core.net.command.TextFormattingMixin",
     "core.player.inventory.ContainerPlayerCreativeMixin",
@@ -26,9 +25,12 @@
     "client.MinecraftMixin",
     "client.gui.GuiEditFlagMixin",
     "client.gui.GuiHeldItemTooltipMixin",
+    "client.net.handler.NetClientHandlerMixin",
     "client.render.FlagRendererMixin",
     "client.render.FontRendererMixin",
-    "client.render.RenderEngineMixin"
+    "client.render.RenderBlocksMixin",
+    "client.render.RenderEngineMixin",
+    "client.render.colorizer.ColorPropertiesAccessor"
   ],
   "server": [
     "server.entity.player.EntityPlayerMPAccessor"

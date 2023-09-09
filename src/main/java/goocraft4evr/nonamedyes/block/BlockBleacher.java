@@ -1,11 +1,15 @@
 package goocraft4evr.nonamedyes.block;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
+import goocraft4evr.nonamedyes.TextureMap;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.client.gui.GuiBleacher;
+import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.mixin.server.entity.player.EntityPlayerMPAccessor;
 import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.EntityPlayerSP;
+import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockTileEntity;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
@@ -14,16 +18,38 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.enums.EnumDropCause;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.net.packet.Packet100OpenWindow;
+import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 import net.minecraft.server.entity.player.EntityPlayerMP;
 
 import java.util.Random;
 
 public class BlockBleacher extends BlockTileEntity {
+    public final TextureMap textures;
     protected Random bleacherRand = new Random();
 
     public BlockBleacher(String key, int id) {
         super(key, id, Material.stone);
+        textures = new TextureMap(NoNameDyes.MOD_ID, 3);
+        textures.addBlockTexture("bleacher_top_empty.png");
+        textures.addBlockTexture("bleacher_top_water.png");
+        textures.addBlockTexture("bleacher_top_bleach.png");
+    }
+
+    @Override
+    public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
+        TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
+        if (tileEntityBleacher.isFuelled()) {
+            float particleX = (float)x + rand.nextFloat();
+            float particleY = (float)y + 1.0f;
+            float particleZ = (float)z + rand.nextFloat();
+            float motionX = rand.nextFloat()*0.01f-0.02f;
+            float motionY = rand.nextFloat()*0.04f;
+            float motionZ = rand.nextFloat()*0.01f-0.02f;
+            world.spawnParticle("bubble",
+                    particleX, particleY, particleZ,
+                    motionX, motionY, motionZ);
+        }
     }
 
     @Override
