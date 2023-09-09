@@ -228,7 +228,8 @@ public abstract class ModBlocks {
             .setHardness(3.5f)
             .setBlockSound(BlockSounds.STONE)
             .setSideTextures("bleacher_sides.png")
-            .setTopBottomTexture("bleacher_bottom.png")
+            .setBottomTexture("bleacher_bottom.png")
+            .setTopTexture("bleacher_top_empty.png")
             .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 

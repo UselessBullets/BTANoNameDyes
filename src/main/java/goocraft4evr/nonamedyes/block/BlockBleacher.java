@@ -20,6 +20,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.net.packet.Packet100OpenWindow;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 import net.minecraft.server.entity.player.EntityPlayerMP;
 
 import java.util.Random;
@@ -60,6 +61,14 @@ public class BlockBleacher extends BlockTileEntity {
             else displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
         }
         return true;
+    }
+
+    @Override
+    public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
+        if (side != Side.TOP) return super.getBlockTexture(blockAccess,x,y,z,side);
+        TileEntityBleacher tileentitybleacher = (TileEntityBleacher)blockAccess.getBlockTileEntity(x, y, z);
+        int state = tileentitybleacher.isFuelled()?2:(tileentitybleacher.hasWaterSource?1:0);
+        return textures.getTexture(state);
     }
 
     public static void displayGUIBleacherClient(EntityPlayerSP player, TileEntityBleacher tileentitybleacher) {

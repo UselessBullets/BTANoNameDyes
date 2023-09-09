@@ -1,9 +1,11 @@
 package goocraft4evr.nonamedyes.block.entity;
 
+import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipesBleacher;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.entity.TileEntity;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
@@ -99,10 +101,9 @@ public class TileEntityBleacher extends TileEntity implements IInventory {
                     requiresUpdate = true;
                 }
             } else currentBleachTime = 0;
-            //update the furnace if
             if (isFuelTimeHigherThan0 != currentFuelTime > 0) {
                 requiresUpdate = true;
-                //TODO: update block
+                worldObj.markBlockNeedsUpdate(xCoord,yCoord,zCoord);
             }
         }
         //change the inventory if the furnace has been updated
