@@ -8,6 +8,7 @@ import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
 import goocraft4evr.nonamedyes.block.cocoa.BlockSaplingCocoa;
 import goocraft4evr.nonamedyes.block.wood.*;
+import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
@@ -18,7 +19,6 @@ import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
-import net.minecraft.core.util.helper.Side;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public abstract class ModBlocks {
@@ -120,7 +120,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.1f)
             .setResistance(0.1f)
-            .setBlockModel(new BlockModelRenderBlocks(29))
+            .setBlockModel(new BlockModelNo3dRender())
             .build(new BlockNetherRoots("nether.roots", UtilIdRegistrar.nextId(), Material.plant)
             .withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH));
 

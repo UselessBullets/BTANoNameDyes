@@ -32,9 +32,19 @@ public class BlockBleacher extends BlockTileEntity {
     public BlockBleacher(String key, int id) {
         super(key, id, Material.stone);
         textures = new TextureMap(NoNameDyes.MOD_ID, 3);
-        textures.addBlockTexture("bleacher_top_empty.png");
-        textures.addBlockTexture("bleacher_top_water.png");
-        textures.addBlockTexture("bleacher_top_bleach.png");
+        textures.addBlockTexture("bleacher_fluid_water.png");
+        textures.addBlockTexture("bleacher_fluid_bleach.png");
+        textures.addBlockTexture("bleacher_top.png");
+    }
+
+    @Override
+    public boolean renderAsNormalBlock() {
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube() {
+        return false;
     }
 
     @Override
@@ -66,9 +76,7 @@ public class BlockBleacher extends BlockTileEntity {
     @Override
     public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
         if (side != Side.TOP) return super.getBlockTexture(blockAccess,x,y,z,side);
-        TileEntityBleacher tileentitybleacher = (TileEntityBleacher)blockAccess.getBlockTileEntity(x, y, z);
-        int state = tileentitybleacher.isFuelled()?2:(tileentitybleacher.hasWaterSource?1:0);
-        return textures.getTexture(state);
+        return textures.getTexture(2);
     }
 
     public static void displayGUIBleacherClient(EntityPlayerSP player, TileEntityBleacher tileentitybleacher) {
