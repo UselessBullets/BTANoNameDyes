@@ -8,6 +8,8 @@ tile.nonamedyes.flower.indigo.name = Indigo Flower
 tile.nonamedyes.flower.indigo.desc = A beautiful indigo flower.
 item.nonamedyes.bleaching.powder.name = Bleaching Powder
 item.nonamedyes.bleaching.powder.desc = Great for removing colors, horrible for consumption.
+tile.nonamedyes.bleacher.name = Bleaching Basin
+tile.nonamedyes.bleacher.desc = Removes dyes from blocks.
 
 tile.nonamedyes.log.cocoa.name = Cocoa Log
 tile.nonamedyes.log.cocoa.desc = A log from a cocoa tree.

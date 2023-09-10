@@ -18,7 +18,7 @@ public class GuiBleacher extends GuiContainer {
 
     @Override
     protected void drawGuiContainerForegroundLayer() {
-        fontRenderer.drawString("Bleacher", 60, 6, 0x404040);
+        fontRenderer.drawString("Bleaching Basin", 40, 6, 0x404040);
         fontRenderer.drawString("Inventory", 8, ySize - 112 + 18, 0x404040);
     }
 

@@ -23,6 +23,7 @@ public class RecipesBleacher {
         addBleaching(Block.stairsPlanksOakPainted.id, new ItemStack(Block.stairsPlanksOak));
         addBleaching(Block.chestPlanksOakPainted.id, new ItemStack(Block.chestPlanksOak));
         addBleaching(Block.wool.id, new ItemStack(Block.wool));
+        addBleaching(Block.lampIdle.id, new ItemStack(Block.lampIdle));
 
         addBleaching(ModBlocks.planksOakPainted.id, new ItemStack(Block.planksOak));
         addBleaching(ModBlocks.fencePlanksOakPainted.id, new ItemStack(Block.fencePlanksOak));
@@ -31,6 +32,7 @@ public class RecipesBleacher {
         addBleaching(ModBlocks.stairsPlanksOakPainted.id, new ItemStack(Block.stairsPlanksOak));
         addBleaching(ModBlocks.chestPlanksOakPainted.id, new ItemStack(Block.chestPlanksOak));
         addBleaching(ModBlocks.wool.id, new ItemStack(Block.wool));
+        addBleaching(ModBlocks.lampIdle.id, new ItemStack(Block.lampIdle));
     }
 
     public void addBleaching(int i, ItemStack itemstack) {
