@@ -14,17 +14,34 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class ContainerPlayerCreativeMixin {
     @Inject(method="<clinit>",at=@At("TAIL"))
     private static void inject(CallbackInfo ci) {
-        for (int i = 1; i< ItemModDye.dyeColors.length; i++) {
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.planksOakPainted, 1, i));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.fencePlanksOakPainted, 1, i));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.fencegatePlanksOakPainted, 1, i<<4));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.slabPlanksOakPainted, 1, i<<4));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.stairsPlanksOakPainted, 1, i<<4));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, i<<4));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.lampIdle, 1, i));
-            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.wool, 1, i));
+        ContainerPlayerCreative.creativeItems.remove(new ItemStack(ModItems.dye,1,0));
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
             ContainerPlayerCreative.creativeItems.add(new ItemStack(ModItems.dye, 1, i));
         }
-        ContainerPlayerCreative.creativeItemsCount += (ItemModDye.dyeColors.length-1)*9;
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.planksOakPainted, 1, i));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.fencePlanksOakPainted, 1, i));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.fencegatePlanksOakPainted, 1, i<<4));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.wool, 1, i));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.slabPlanksOakPainted, 1, i<<4));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.stairsPlanksOakPainted, 1, i<<4));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, i<<4));
+        }
+        for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.lampIdle, 1, i));
+        }
+        ContainerPlayerCreative.creativeItemsCount += (ItemModDye.dyeColors.length)*9;
     }
 }
