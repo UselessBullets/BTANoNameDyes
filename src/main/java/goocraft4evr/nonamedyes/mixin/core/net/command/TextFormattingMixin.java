@@ -1,5 +1,6 @@
 package goocraft4evr.nonamedyes.mixin.core.net.command;
 
+import goocraft4evr.nonamedyes.item.ItemModDye;
 import net.minecraft.core.net.command.TextFormatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,19 +12,20 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public abstract class TextFormattingMixin {
 
     @Final
-    private static final TextFormatting[] FORMATTINGS = new TextFormatting[31];
+    private static final TextFormatting[] FORMATTINGS = new TextFormatting[22+ItemModDye.NUM_DYES];
+
     @Unique
-    private static final TextFormatting[] modColours = {
-            new TextFormatting(22).setNames("Crimson"),
-            new TextFormatting(23).setNames("Maroon"),
-            new TextFormatting(24).setNames("Ash Gray", "Ash Grey"),
-            new TextFormatting(25).setNames("Olive"),
-            new TextFormatting(26).setNames("Ochre"),
-            new TextFormatting(27).setNames("Buff"),
-            new TextFormatting(28).setNames("Verdigris"),
-            new TextFormatting(29).setNames("Light Yellow"),
-            new TextFormatting(30).setNames("Indigo")
-    };
+    private static String getNameFromKey(String key) {
+        StringBuilder sb = new StringBuilder();
+        boolean capitalize = true;
+        for (int i=0;i<key.length();i++) {
+            char c = (capitalize?key.toUpperCase():key).charAt(i);
+            capitalize = c == '.';
+            if (capitalize) c = ' ';
+            sb.append(c);
+        }
+        return sb.toString();
+    }
 
     static {
         FORMATTINGS[0] = TextFormatting.WHITE;
@@ -48,7 +50,9 @@ public abstract class TextFormattingMixin {
         FORMATTINGS[19] = TextFormatting.UNDERLINE;
         FORMATTINGS[20] = TextFormatting.ITALIC;
         FORMATTINGS[21] = TextFormatting.RESET;
-        System.arraycopy(modColours, 0, FORMATTINGS, 22, modColours.length);
+        for (int i=0;i<ItemModDye.NUM_DYES;i++) {
+            FORMATTINGS[22+i] = new TextFormatting(22+i).setNames(getNameFromKey(ItemModDye.dyeColors[i]));
+        }
     }
 
     @ModifyConstant(method="<init>", constant = @Constant(stringValue = "0123456789abcdefklmnor"))
