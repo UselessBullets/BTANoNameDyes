@@ -233,6 +233,12 @@ public abstract class ModBlocks {
             .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+    public static final Block netherrackVile = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setTextures("netherrack_vile.png")
+            .setHardness(0.4f)
+            .setInfiniburn()
+            .build(new Block("netherrack.vile", UtilIdRegistrar.nextId(),Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
     public static void register() {
 
     }
