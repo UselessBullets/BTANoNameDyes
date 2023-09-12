@@ -4,6 +4,7 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModLampsPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModPlanksPainted;
+import goocraft4evr.nonamedyes.block.cinnamon.BlockSaplingCinnamon;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
 import goocraft4evr.nonamedyes.block.cocoa.BlockSaplingCocoa;
@@ -239,6 +240,15 @@ public abstract class ModBlocks {
             .setInfiniburn()
             .build(new Block("netherrack.vile", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block saplingCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setHardness(0.0f)
+            .setVisualUpdateOnMetadata()
+            .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+
     public static void register() {
 
     }
