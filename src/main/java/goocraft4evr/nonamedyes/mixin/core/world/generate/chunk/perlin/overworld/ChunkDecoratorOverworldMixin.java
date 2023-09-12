@@ -1,7 +1,9 @@
 package goocraft4evr.nonamedyes.mixin.core.world.generate.chunk.perlin.overworld;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.worldgen.WorldFeatureOchre;
+import goocraft4evr.nonamedyes.world.biome.ModBiomes;
+import goocraft4evr.nonamedyes.world.worldgen.WorldFeatureOchre;
 import net.minecraft.core.block.BlockSand;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.biome.Biome;
@@ -42,6 +44,10 @@ public abstract class ChunkDecoratorOverworldMixin {
         long l2 = rand.nextLong() / 2L * 2L + 1L;
         rand.setSeed((long)chunkX * l1 + (long)chunkZ * l2 ^ this.world.getRandomSeed());
         int blockX, blockY, blockZ;
+
+        if (biome == ModBiomes.OVERWORLD_CINNAMON_FOREST) {
+            NoNameDyes.LOGGER.info(String.format("FOUND at %d %d %d",x,y,z));
+        }
 
         for (int i=0;(float)i<1.5f*oreHeightModifier;i++) {
             blockX = x + rand.nextInt(16);

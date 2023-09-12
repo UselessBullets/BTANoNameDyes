@@ -1,7 +1,7 @@
 package goocraft4evr.nonamedyes.block.cinnamon;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.worldgen.WorldFeatureTreeCinnamon;
+import goocraft4evr.nonamedyes.world.worldgen.WorldFeatureTreeCinnamon;
 import net.minecraft.core.block.BlockSaplingBase;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.generate.feature.WorldFeature;

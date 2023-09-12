@@ -1,8 +1,7 @@
 package goocraft4evr.nonamedyes.mixin.core.world.generate.chunk.perlin.nether;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.worldgen.WorldFeatureNetherRoots;
-import net.minecraft.core.block.Block;
+import goocraft4evr.nonamedyes.world.worldgen.WorldFeatureNetherRoots;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.ChunkDecorator;

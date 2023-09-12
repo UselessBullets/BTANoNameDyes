@@ -1,7 +1,7 @@
 package goocraft4evr.nonamedyes.mixin.core.item;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.worldgen.WorldFeatureNetherRoots;
+import goocraft4evr.nonamedyes.world.worldgen.WorldFeatureNetherRoots;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;

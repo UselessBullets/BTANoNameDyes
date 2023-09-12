@@ -1,4 +1,4 @@
-package goocraft4evr.nonamedyes.worldgen;
+package goocraft4evr.nonamedyes.world.worldgen;
 
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.tag.BlockTags;
