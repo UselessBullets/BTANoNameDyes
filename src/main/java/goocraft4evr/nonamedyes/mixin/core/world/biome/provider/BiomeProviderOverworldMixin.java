@@ -17,11 +17,11 @@ public abstract class BiomeProviderOverworldMixin {
     @Inject(method="init",at=@At(value = "INVOKE",ordinal=15,target = "Lnet/minecraft/core/world/biome/data/BiomeRangeMap;addRange(Lnet/minecraft/core/world/biome/Biome;[Lnet/minecraft/core/world/biome/data/BiomeRange;)V"))
     private static void init(CallbackInfo ci) {
         brm.addRange(ModBiomes.OVERWORLD_CINNAMON_FOREST, new BiomeRange(
-                0.0,
+                0.5,
                 1.0,
-                0.0,
+                0.8,
                 1.0,
-                0.0,
+                0.3,
                 1.0,
                 0.0,
                 1.0));
