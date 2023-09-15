@@ -9,7 +9,6 @@ public abstract class ModBiomes {
     public static final Biome OVERWORLD_CINNAMON_FOREST =
             Biomes.register(NoNameDyes.MOD_ID+":overworld.cinnamon_forest",
                     new BiomeCinnamonForest()
-                    .setColor(588342)
                     .setBlockedWeathers(Weather.overworldSnow));
 
 }

@@ -53,7 +53,7 @@ public abstract class ChunkDecoratorOverworldMixin {
         int spicy = (int)((this.treeDensityNoise.get((double)x * d, (double)z * d) / 8.0 + rand.nextDouble() * 4.0 + 4.0) / 3.0);
         int treeDensity = 0;
         if (biome == ModBiomes.OVERWORLD_CINNAMON_FOREST) {
-            treeDensity += spicy+7;
+            treeDensity += spicy+8;
         }
         for (int i11 = 0; i11 < treeDensity; ++i11) {
             int l13 = x + rand.nextInt(16) + 8;
