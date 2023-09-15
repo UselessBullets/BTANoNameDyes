@@ -49,6 +49,15 @@ public abstract class ModCraftingManager {
                 Character.valueOf('S'),
                 new ItemStack(Block.stonePolished, 1));
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
+        craftingManager.addRecipe(
+                new ItemStack(ModItems.foodSnickerdoodle, 8),
+                " S ", "WCW",
+                Character.valueOf('C'),
+                new ItemStack(ModItems.dye, 1,10),
+                Character.valueOf('S'),
+                new ItemStack(Item.dustSugar),
+                Character.valueOf('W'),
+                new ItemStack(Item.wheat));
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());
