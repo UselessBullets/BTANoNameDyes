@@ -10,14 +10,15 @@ import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.crafting.recipe.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.DyeColor;
 
 public abstract class ModCraftingManager {
 
     public static void register() {
         //register alternatives
         addAlternatives(2,new Block[]{ModBlocks.planksOakPainted});
-        addAlternatives(6,new Block[]{ModBlocks.logCocoa});
-        addAlternatives(7,new Block[]{ModBlocks.leavesCocoa});
+        addAlternatives(6,new Block[]{ModBlocks.logCocoa,ModBlocks.logCinnamon});
+        addAlternatives(7,new Block[]{ModBlocks.leavesCocoa,ModBlocks.leavesCinnamon});
         addAlternatives(13,new Block[]{ModBlocks.chestPlanksOakPainted});
         appendAlternatives(new Block[]{Block.wool,ModBlocks.wool});
         //add recipes
@@ -58,6 +59,7 @@ public abstract class ModCraftingManager {
                 new ItemStack(Item.dustSugar),
                 Character.valueOf('W'),
                 new ItemStack(Item.wheat));
+        craftingManager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 4, 10), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logCinnamon});
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());
