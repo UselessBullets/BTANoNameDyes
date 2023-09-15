@@ -17,7 +17,7 @@ public class BlockSaplingCinnamon extends BlockSaplingBase {
     public void growTree(World world, int x, int y, int z, Random random) {
         WorldFeatureTreeCinnamon obj;
         world.setBlock(x, y, z, 0);
-        obj = new WorldFeatureTreeCinnamon(ModBlocks.leavesCocoa.id, ModBlocks.logCocoa.id);
+        obj = new WorldFeatureTreeCinnamon(ModBlocks.leavesCinnamon.id, ModBlocks.logCinnamon.id);
         if (!((WorldFeature)obj).generate(world, random, x, y, z)) world.setBlock(x, y, z, this.id);
     }
 }

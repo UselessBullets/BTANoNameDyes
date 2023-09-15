@@ -4,6 +4,7 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModLampsPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModPlanksPainted;
+import goocraft4evr.nonamedyes.block.cinnamon.BlockLeavesCinnamon;
 import goocraft4evr.nonamedyes.block.cinnamon.BlockSaplingCinnamon;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
@@ -248,6 +249,29 @@ public abstract class ModBlocks {
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
+
+    public static final Block logCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setTopBottomTexture("log_cinnamon_top.png")
+            .setSideTextures("log_cinnamon_sides.png")
+            .setBlockSound(BlockSounds.WOOD)
+            .setHardness(2.0f)
+            .setVisualUpdateOnMetadata()
+            .setFlammability(5,5)
+            .setBlockModel(new BlockModelRenderBlocks(27))
+            .build(new BlockLog("log.cinnamon", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+
+    //HAS DISABLED STATS
+    public static final Block leavesCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setHardness(0.2f)
+            .setLightOpacity(1)
+            .setVisualUpdateOnMetadata()
+            .setBlockColor(new BlockColorLeaves("cinnamon"))
+            .setFlammability(30,60)
+            .build(new BlockLeavesCinnamon("leaves.cinnamon", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
+
 
     public static void register() {
 
