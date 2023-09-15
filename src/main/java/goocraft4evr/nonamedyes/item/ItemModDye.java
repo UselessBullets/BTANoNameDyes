@@ -15,7 +15,18 @@ import net.minecraft.core.world.World;
 import turniplabs.halplibe.HalpLibe;
 
 public class ItemModDye extends Item {
-    public static String[] dyeColors = {"crimson","maroon","ash.gray","olive","ochre","buff","verdigris","light.yellow","indigo","xanthic"};
+    public static String[] dyeColors = {
+            "crimson",
+            "maroon",
+            "ash.gray",
+            "olive",
+            "ochre",
+            "buff",
+            "verdigris",
+            "light.yellow",
+            "indigo",
+            "xanthic",
+            "cinnamon"};
     public static final int NUM_DYES = dyeColors.length;
     private static TextureMap textures;
 
