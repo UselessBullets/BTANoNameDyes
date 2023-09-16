@@ -242,14 +242,6 @@ public abstract class ModBlocks {
             .build(new Block("netherrack.vile", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    public static final Block saplingCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
-            .setBlockSound(BlockSounds.GRASS)
-            .setBlockModel(new BlockModelRenderBlocks(1))
-            .setHardness(0.0f)
-            .setVisualUpdateOnMetadata()
-            .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.BROKEN_BY_FLUIDS);
-
     public static final Block logCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cinnamon_top.png")
             .setSideTextures("log_cinnamon_sides.png")
@@ -272,6 +264,14 @@ public abstract class ModBlocks {
             .build(new BlockLeavesCinnamon("leaves.cinnamon", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
 
+    public static final Block saplingCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setHardness(0.0f)
+            .setTextures("sapling_cinnamon.png")
+            .setVisualUpdateOnMetadata()
+            .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.BROKEN_BY_FLUIDS);
 
     public static void register() {
 
