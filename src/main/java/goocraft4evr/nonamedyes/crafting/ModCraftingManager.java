@@ -10,7 +10,6 @@ import net.minecraft.core.crafting.CraftingManager;
 import net.minecraft.core.crafting.recipe.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.DyeColor;
 
 public abstract class ModCraftingManager {
 
