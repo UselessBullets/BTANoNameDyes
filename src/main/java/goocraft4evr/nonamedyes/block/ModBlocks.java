@@ -273,6 +273,20 @@ public abstract class ModBlocks {
             .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
 
+    public static final Block blightstone = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.5f)
+            .setTextures("blightstone.png")
+            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone));
+
+    public static final Block blightsource = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GLASS)
+            .setHardness(0.5f)
+            .setLuminance(12)
+            .setTextures("blightsource.png")
+            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone))
+            .withOverbright();
+
     public static void register() {
 
     }
