@@ -276,16 +276,19 @@ public abstract class ModBlocks {
     public static final Block blightstone = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.5f)
+            .setInfiniburn()
             .setTextures("blightstone.png")
-            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone));
+            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block blightsource = new BlockBuilder(NoNameDyes.MOD_ID)
-            .setBlockSound(BlockSounds.GLASS)
-            .setHardness(0.5f)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
             .setLuminance(12)
+            .setInfiniburn()
             .setTextures("blightsource.png")
-            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone))
-            .withOverbright();
+            .build(new Block("blightsource", UtilIdRegistrar.nextId(),Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static void register() {
 
