@@ -276,6 +276,7 @@ public abstract class ModBlocks {
     public static final Block blightstone = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.5f)
+            .setResistance(8.0f)
             .setInfiniburn()
             .setTextures("blightstone.png")
             .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone))
@@ -284,10 +285,19 @@ public abstract class ModBlocks {
     public static final Block blightsource = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
+            .setResistance(7.0f)
             .setLuminance(12)
             .setInfiniburn()
             .setTextures("blightsource.png")
             .build(new Block("blightsource", UtilIdRegistrar.nextId(),Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block soulReactor = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(2.0f)
+            .setResistance(15.0f)
+            .setTextures("soul_reactor_0.png")
+            .build(new BlockSoulReactor("soul.reactor", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static void register() {
