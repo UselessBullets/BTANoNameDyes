@@ -13,13 +13,9 @@ public class BlockLeavesCocoa extends BlockLeavesBase {
 
     public BlockLeavesCocoa(String key, int id) {
         super(key, id, Material.leaves, false);
-    }
-
-    public static Block createBlock(String key, int id) {
         textures = new TextureMap(NoNameDyes.MOD_ID,2);
         textures.addBlockTexture("leaves_cocoa_fancy.png");
         textures.addBlockTexture("leaves_cocoa.png");
-        return new BlockLeavesCocoa(key,id);
     }
 
     @Override
