@@ -8,11 +8,11 @@ import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
 import goocraft4evr.nonamedyes.block.cocoa.BlockSaplingCocoa;
 import goocraft4evr.nonamedyes.block.wood.*;
+import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
-import net.minecraft.client.sound.block.BlockSound;
 import net.minecraft.client.sound.block.BlockSounds;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockFlower;
@@ -35,7 +35,7 @@ public abstract class ModBlocks {
             .setBlockColor(new BlockColorModPlanksPainted(false))
             .build(new BlockModPlanksPainted("planks.oak.painted",UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block fencePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
@@ -43,7 +43,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(11))
             .build(new BlockModFencePainted("fence.planks.oak.painted",UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block fencegatePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
@@ -51,7 +51,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(18))
             .build(new BlockModFenceGatePainted("fencegate.planks.oak.painted",UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block slabPlanksOakPainted = woodBlockBuilder
             .setItemBlock(ItemModBlockSlabPainted::new)
@@ -59,7 +59,7 @@ public abstract class ModBlocks {
             .setBlockColor(new BlockColorModPlanksPainted(true))
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
-            .withTags(BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block stairsPlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
@@ -68,7 +68,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(10))
             .build(new BlockModStairsPainted(planksOakPainted,UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
-            .withTags(BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block chestPlanksOakPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(2.5f)
@@ -82,7 +82,7 @@ public abstract class ModBlocks {
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
             .withTexCoords(9, 1, 9, 1, 11, 1, 10, 1, 10, 1, 10, 1)
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     //TODO: This used .setDisabledStats()
     public static final Block lampIdle = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -92,7 +92,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GLASS)
             .setItemBlock(ItemModBlockPainted::new)
             .build(new BlockModLamp("lamp.idle",UtilIdRegistrar.nextId(),false)
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU))
             .withTexCoords(4, 12);
 
 
@@ -113,14 +113,14 @@ public abstract class ModBlocks {
             .setFlammability(30,60)
             .setItemBlock(ItemModBlockPainted::new)
             .build(BlockModWool.createWool("wool",UtilIdRegistrar.nextId())
-            .withTags(BlockTags.MINEABLE_BY_SHEARS));
+            .withTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU));
 
     public static final Block netherRoots = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTextures("nether_roots.png")
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.1f)
             .setResistance(0.1f)
-            .setBlockModel(new BlockModelRenderBlocks(29))
+            .setBlockModel(new BlockModelNo3dRender())
             .build(new BlockNetherRoots("nether.roots", UtilIdRegistrar.nextId(), Material.plant)
             .withTags(BlockTags.MINEABLE_BY_SHEARS,BlockTags.SHEARS_DO_SILK_TOUCH));
 
@@ -222,6 +222,23 @@ public abstract class ModBlocks {
             .build(new Block("brick.malachite", UtilIdRegistrar.nextId(), Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+    public static final Block bleacher = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setVisualUpdateOnMetadata()
+            .setImmovable()
+            .setHardness(3.5f)
+            .setBlockSound(BlockSounds.STONE)
+            .setSideTextures("bleacher_sides.png")
+            .setBottomTexture("bleacher_bottom.png")
+            .setTopTexture("bleacher_top_empty.png")
+            .build(new BlockBleacher("bleacher", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block netherrackVile = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setTextures("netherrack_vile.png")
+            .setHardness(0.4f)
+            .setInfiniburn()
+            .build(new Block("netherrack.vile", UtilIdRegistrar.nextId(),Material.stone))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
     public static void register() {
 
     }

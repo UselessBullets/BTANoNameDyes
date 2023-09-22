@@ -47,6 +47,17 @@ On a technical note, you can change the starting ID for all blocks and items, in
   + Functions like other saplings.
 + Malachite Bricks
   + 4 malachite crafts 4 bricks.
++ Bleaching Basin
+  + Crafted from 2 cobblestone and 5 polished stone.
+  + Bleaches blocks in its gui when placed above water and given bleaching powder.
++ Vile Netherrack
+  + Generates in clumps in the nether.
+  + Can be smelted to produce xanthic dye.
+
+# Items
++ Bleaching Powder
+  + 1 bone meal, 1 cobbled limestone and 1 yields 4 bleaching powder.
+  + bleaches 8 blocks when used in a bleaching basin.
 
 # Obtaining/renewing dyes
 + Brown dye
@@ -75,5 +86,8 @@ On a technical note, you can change the starting ID for all blocks and items, in
 + Indigo
   - OBTAINING: Crafted from indigo flowers.
   - RENEWING: Grass that grows in seasonal forests and rainforests have a chance to grow indigo flowers.
++ Xanthic
+  - OBTAINING: Smelted from vile netherrack.
+  - RENEWING: TBA
 
 idk what else to add.
