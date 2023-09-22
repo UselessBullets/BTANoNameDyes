@@ -114,7 +114,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.CLOTH)
             .setFlammability(30,60)
             .setItemBlock(ItemModBlockPainted::new)
-            .build(BlockModWool.createWool("wool",UtilIdRegistrar.nextId())
+            .build(new BlockModWool("wool",UtilIdRegistrar.nextId())
             .withTags(BlockTags.MINEABLE_BY_SHEARS, BlockTags.NOT_IN_CREATIVE_MENU));
 
     public static final Block netherRoots = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -204,9 +204,11 @@ public abstract class ModBlocks {
             .setHardness(0.2f)
             .setLightOpacity(1)
             .setVisualUpdateOnMetadata()
+            .setTickOnLoad()
             .setBlockColor(new BlockColorLeaves("cocoa"))
             .setFlammability(30,60)
-            .build(BlockLeavesCocoa.createBlock("leaves.cocoa", UtilIdRegistrar.nextId()))
+            .build(new BlockLeavesCocoa("leaves.cocoa", UtilIdRegistrar.nextId()))
+            .withDisabledStats()
             .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
 
     public static final Block saplingCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -214,6 +216,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setHardness(0.0f)
+            .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingCocoa("sapling.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
@@ -259,9 +262,11 @@ public abstract class ModBlocks {
             .setHardness(0.2f)
             .setLightOpacity(1)
             .setVisualUpdateOnMetadata()
+            .setTickOnLoad()
             .setBlockColor(new BlockColorLeaves("cinnamon"))
             .setFlammability(30,60)
             .build(new BlockLeavesCinnamon("leaves.cinnamon", UtilIdRegistrar.nextId()))
+            .withDisabledStats()
             .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
 
     public static final Block saplingCinnamon = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -269,6 +274,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(1))
             .setHardness(0.0f)
             .setTextures("sapling_cinnamon.png")
+            .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
