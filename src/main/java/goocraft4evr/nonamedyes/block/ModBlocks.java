@@ -9,6 +9,8 @@ import goocraft4evr.nonamedyes.block.cinnamon.BlockSaplingCinnamon;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
 import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
 import goocraft4evr.nonamedyes.block.cocoa.BlockSaplingCocoa;
+import goocraft4evr.nonamedyes.block.ebony.BlockLeavesEbony;
+import goocraft4evr.nonamedyes.block.ebony.BlockSaplingEbony;
 import goocraft4evr.nonamedyes.block.wood.*;
 import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
@@ -305,6 +307,39 @@ public abstract class ModBlocks {
             .setTextures("soul_reactor_0.png")
             .build(new BlockSoulReactor("soul.reactor", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block logEbony = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setTopBottomTexture("log_cinnamon_top.png")
+            .setSideTextures("log_cinnamon_sides.png")
+            .setBlockSound(BlockSounds.WOOD)
+            .setHardness(2.0f)
+            .setVisualUpdateOnMetadata()
+            .setFlammability(5,5)
+            .setBlockModel(new BlockModelRenderBlocks(27))
+            .build(new BlockLog("log.ebony", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+
+    //HAS DISABLED STATS
+    public static final Block leavesEbony = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setHardness(0.2f)
+            .setLightOpacity(1)
+            .setVisualUpdateOnMetadata()
+            .setTickOnLoad()
+            .setBlockColor(new BlockColorLeaves("ebony"))
+            .setFlammability(30,60)
+            .build(new BlockLeavesEbony("leaves.ebony", UtilIdRegistrar.nextId()))
+            .withDisabledStats()
+            .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
+
+    public static final Block saplingEbony = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.GRASS)
+            .setBlockModel(new BlockModelRenderBlocks(1))
+            .setHardness(0.0f)
+            .setTextures("sapling_ebony.png")
+            .setTickOnLoad()
+            .setVisualUpdateOnMetadata()
+            .build(new BlockSaplingEbony("sapling.ebony", UtilIdRegistrar.nextId()));
 
     public static void register() {
 

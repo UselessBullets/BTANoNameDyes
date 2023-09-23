@@ -11,4 +11,7 @@ public abstract class ModBiomes {
                     new BiomeCinnamonForest()
                     .setBlockedWeathers(Weather.overworldSnow));
 
+    public static final Biome OVERWORLD_EBONY_FOREST =
+            Biomes.register(NoNameDyes.MOD_ID+":overworld.ebony_forest",
+                    new BiomeEbonyForest());
 }

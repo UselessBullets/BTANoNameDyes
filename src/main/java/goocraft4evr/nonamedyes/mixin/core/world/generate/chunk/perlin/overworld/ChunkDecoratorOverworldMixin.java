@@ -57,6 +57,9 @@ public abstract class ChunkDecoratorOverworldMixin {
         if (biome == ModBiomes.OVERWORLD_CINNAMON_FOREST) {
             treeDensity += spicy+8;
         }
+        if (biome == ModBiomes.OVERWORLD_EBONY_FOREST) {
+            treeDensity += spicy+2;
+        }
         for (int i11 = 0; i11 < treeDensity; ++i11) {
             int l13 = x + rand.nextInt(16) + 8;
             int j14 = z + rand.nextInt(16) + 8;
@@ -68,6 +71,9 @@ public abstract class ChunkDecoratorOverworldMixin {
         int byte1 = 0;
         if (biome == ModBiomes.OVERWORLD_CINNAMON_FOREST) {
             byte1 = 10;
+        }
+        if (biome == ModBiomes.OVERWORLD_EBONY_FOREST) {
+            byte1 = 2;
         }
         for (int l14 = 0; l14 < byte1; ++l14) {
             int type = Block.tallgrass.id;
