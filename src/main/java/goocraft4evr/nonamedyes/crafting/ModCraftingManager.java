@@ -73,6 +73,7 @@ public abstract class ModCraftingManager {
                 new ItemStack(Item.dustGlowstone),
                 Character.valueOf('B'),
                 new ItemStack(ModBlocks.blightstone));
+        craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, 15), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logEbony});
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());
