@@ -134,6 +134,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.0f)
             .setLuminance(1)
+            .setTickOnLoad()
             .setBlockModel(new BlockModelRenderBlocks(1))
             .build(new BlockMushroomInkCap("mushroom.ink.cap", UtilIdRegistrar.nextId())
             .withTags(BlockTags.BROKEN_BY_FLUIDS));
@@ -281,23 +282,12 @@ public abstract class ModBlocks {
             .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
 
-    public static final Block blightstone = new BlockBuilder(NoNameDyes.MOD_ID)
+    public static final Block gallstone = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.5f)
             .setResistance(8.0f)
-            .setInfiniburn()
-            .setTextures("blightstone.png")
-            .build(new Block("blightstone", UtilIdRegistrar.nextId(),Material.stone))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
-
-    public static final Block blightsource = new BlockBuilder(NoNameDyes.MOD_ID)
-            .setBlockSound(BlockSounds.STONE)
-            .setHardness(1.0f)
-            .setResistance(7.0f)
-            .setLuminance(12)
-            .setInfiniburn()
-            .setTextures("blightsource.png")
-            .build(new Block("blightsource", UtilIdRegistrar.nextId(),Material.stone))
+            .setTextures("gallstone.png")
+            .build(new Block("gallstone", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block soulReactor = new BlockBuilder(NoNameDyes.MOD_ID)

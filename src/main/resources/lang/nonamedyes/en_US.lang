@@ -12,10 +12,6 @@ tile.nonamedyes.bleacher.name = Bleaching Basin
 tile.nonamedyes.bleacher.desc = Removes dyes from blocks.
 tile.nonamedyes.netherrack.vile.name = Vile Netherrack
 tile.nonamedyes.netherrack.vile.desc = Dark red rock with a sickly acidic scent.
-tile.nonamedyes.blightstone.name = Blightstone
-tile.nonamedyes.blightstone.desc = Dense rock brimming with tormented souls.
-tile.nonamedyes.blightsource.name = Blightsource
-tile.nonamedyes.blightsource.desc = Emits an eerie glow.
 
 tile.nonamedyes.log.cocoa.name = Cocoa Log
 tile.nonamedyes.log.cocoa.desc = A log from a cocoa tree.
