@@ -60,6 +60,25 @@ public abstract class ModCraftingManager {
                 new ItemStack(Item.wheat));
         craftingManager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 4, 10), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logCinnamon});
         craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, 15), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logEbony});
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.gallstone),
+                "VVV", "VVV", "VVV",
+                Character.valueOf('V'),
+                new ItemStack(ModItems.vileShard));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.netherrackVile,2),
+                "NV", "VN",
+                Character.valueOf('N'),
+                new ItemStack(Block.netherrack),
+                Character.valueOf('V'),
+                new ItemStack(ModItems.vileShard));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.soulReactor),
+                "VGV", "G G","VGV",
+                Character.valueOf('G'),
+                new ItemStack(ModBlocks.gallstone),
+                Character.valueOf('V'),
+                new ItemStack(ModBlocks.netherrackVile));
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());

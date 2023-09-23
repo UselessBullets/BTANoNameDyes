@@ -15,6 +15,7 @@ public abstract class ModFurnaceManager {
         smeltingBase.addSmelting(ModBlocks.oreMalachiteGranite.id, new ItemStack(ModItems.dye, 1, 6));
         smeltingBase.addSmelting(ModBlocks.logCocoa.id, new ItemStack(Item.coal, 1, 1));
         smeltingBase.addSmelting(ModBlocks.logCinnamon.id, new ItemStack(Item.coal, 1, 1));
-        smeltingBase.addSmelting(ModBlocks.netherrackVile.id, new ItemStack(ModItems.dye,1,9));
+        smeltingBase.addSmelting(ModBlocks.netherrackVile.id, new ItemStack(ModItems.vileShard));
+        smeltingBase.addSmelting(ModItems.vileShard.id, new ItemStack(ModItems.dye,1,9));
     }
 }

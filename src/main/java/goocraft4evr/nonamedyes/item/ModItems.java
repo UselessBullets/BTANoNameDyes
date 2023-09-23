@@ -4,7 +4,6 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemFoodStackable;
-import net.minecraft.core.item.tag.ItemTags;
 import turniplabs.halplibe.helper.ItemHelper;
 
 public class ModItems {
@@ -22,6 +21,12 @@ public class ModItems {
             new ItemFoodStackable("snickerdoodle", UtilIdRegistrar.nextId(), 1, false, 8),
             "snickerdoodle",
             "snickerdoodle.png");
+
+    public static Item vileShard = ItemHelper.createItem(
+            NoNameDyes.MOD_ID,
+            new Item(UtilIdRegistrar.nextId()),
+            "vileshard",
+            "vile_shard.png");
     public static void register() {
 
     }
