@@ -309,8 +309,8 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block logEbony = new BlockBuilder(NoNameDyes.MOD_ID)
-            .setTopBottomTexture("log_cinnamon_top.png")
-            .setSideTextures("log_cinnamon_sides.png")
+            .setTopBottomTexture("log_ebony_top.png")
+            .setSideTextures("log_ebony_sides.png")
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setVisualUpdateOnMetadata()
