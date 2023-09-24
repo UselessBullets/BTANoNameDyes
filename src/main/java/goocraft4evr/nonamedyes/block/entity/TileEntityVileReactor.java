@@ -16,22 +16,23 @@ import net.minecraft.core.sound.SoundType;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.World;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class TileEntityVileReactor extends TileEntity {
     public int killCount = 0;
+    private final int range = 4;
+    private final int killLimit = 15;
+    private final int killMark = killLimit/3;
     private static final WeightedRandomBag<WeightedRandomLootObject> reactorDrops = new WeightedRandomBag();
 
     @Override
     public void updateEntity() {
         if (!worldObj.isClientSide&&
             worldObj.dimension == Dimension.nether) {
-            int range = 4;
             List<Entity> list = worldObj.getEntitiesWithinAABB(Entity.class,AABB.getBoundingBoxFromPool(xCoord-range, yCoord-range, zCoord-range, xCoord+range, yCoord+range, zCoord+range));
-                    if (!list.isEmpty()) {
+            if (!list.isEmpty()) {
                 for (Entity e : list) {
                     if (!(e instanceof EntityLiving)) continue;
                     EntityLiving entity = (EntityLiving)e;
@@ -46,8 +47,6 @@ public class TileEntityVileReactor extends TileEntity {
     }
 
     private void onEntityKilled() {
-        int killLimit = 6;
-        int killMark = killLimit/3;
         if (killCount>=killLimit) {
             worldObj.setBlockWithNotify(xCoord,yCoord,zCoord,0);
             generateNetherrack(worldObj,worldObj.rand,xCoord,yCoord-1,zCoord);
@@ -65,6 +64,8 @@ public class TileEntityVileReactor extends TileEntity {
         }
         worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,xCoord,yCoord,zCoord,"random.fizz",1.0f,0.2f);
     }
+
+
 
     private void generateItems(World world, Random rand, int x, int y, int z) {
         int chances = 10 + rand.nextInt(15);

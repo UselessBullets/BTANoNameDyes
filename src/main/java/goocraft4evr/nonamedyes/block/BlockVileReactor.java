@@ -9,8 +9,10 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.world.World;
 
 public class BlockVileReactor extends BlockTileEntity {
+    private static boolean addSoulless = false;
     public BlockVileReactor(String key, int id) {
         super(key,id,Material.stone);
+        BlockTileEntity.isBlockContainer[id] = false;
     }
 
     @Override
@@ -18,16 +20,24 @@ public class BlockVileReactor extends BlockTileEntity {
         return new TileEntityVileReactor();
     }
 
+    //TODO: figure out why this causes duplicate tile entities
     public static void updateReactorBlockState(World world, int x, int y, int z) {
         TileEntity tileentity = world.getBlockTileEntity(x,y,z);
         int blockId = world.getBlockId(x,y,z);
+        addSoulless = true;
         if (blockId == ModBlocks.vileReactorActive.id) {
             world.setBlockWithNotify(x, y, z, ModBlocks.vileReactorVeryActive.id);
         } else if (blockId == ModBlocks.vileReactorIdle.id) {
             world.setBlockWithNotify(x, y, z, ModBlocks.vileReactorActive.id);
         }
+        addSoulless = false;
         tileentity.validate();
         world.setBlockTileEntity(x,y,z,tileentity);
+    }
+
+    @Override
+    public void onBlockAdded(World world, int i, int j, int k) {
+        if (!addSoulless) super.onBlockAdded(world,i,j,k);
     }
 
     @Override
