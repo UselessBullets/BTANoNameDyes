@@ -73,7 +73,7 @@ public abstract class ModCraftingManager {
                 Character.valueOf('V'),
                 new ItemStack(ModItems.vileShard));
         craftingManager.addRecipe(
-                new ItemStack(ModBlocks.soulReactor),
+                new ItemStack(ModBlocks.vileReactorIdle),
                 "VGV", "G G","VGV",
                 Character.valueOf('G'),
                 new ItemStack(ModBlocks.gallstone),

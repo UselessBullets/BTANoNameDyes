@@ -290,13 +290,31 @@ public abstract class ModBlocks {
             .build(new Block("gallstone", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    public static final Block soulReactor = new BlockBuilder(NoNameDyes.MOD_ID)
+    public static final Block vileReactorIdle = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(2.0f)
             .setResistance(15.0f)
-            .setTextures("soul_reactor_0.png")
-            .build(new BlockSoulReactor("soul.reactor", UtilIdRegistrar.nextId()))
+            .setTextures("vile_reactor_0.png")
+            .build(new BlockVileReactor("vile.reactor.idle", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block vileReactorActive = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(2.0f)
+            .setResistance(15.0f)
+            .setLuminance(6)
+            .setTextures("vile_reactor_1.png")
+            .build(new BlockVileReactor("vile.reactor.active", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
+
+    public static final Block vileReactorVeryActive = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(2.0f)
+            .setResistance(15.0f)
+            .setLuminance(12)
+            .setTextures("vile_reactor_2.png")
+            .build(new BlockVileReactor("vile.reactor.veryactive", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block logEbony = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_ebony_top.png")
