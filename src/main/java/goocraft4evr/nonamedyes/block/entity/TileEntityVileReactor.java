@@ -23,7 +23,7 @@ import java.util.Random;
 public class TileEntityVileReactor extends TileEntity {
     public int killCount = 0;
     private final int range = 4;
-    private final int killLimit = 15;
+    private final int killLimit = 10;
     private final int killMark = killLimit/3;
     private static final WeightedRandomBag<WeightedRandomLootObject> reactorDrops = new WeightedRandomBag();
 
@@ -52,9 +52,7 @@ public class TileEntityVileReactor extends TileEntity {
             generateNetherrack(worldObj,worldObj.rand,xCoord,yCoord-1,zCoord);
             generateItems(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
             worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,xCoord,yCoord,zCoord,"random.explode",1.0f,1.0f);
-            //I don't think this works lol
-            worldObj.spawnParticle("smoke", xCoord+0.5,yCoord+0.5,zCoord+0.5,0.0f,0.0f,0.0f);
-            worldObj.spawnParticle("explode", xCoord,yCoord,zCoord,0.0f,0.0f,0.0f);
+            doBusrtFx(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
             worldObj.removeBlockTileEntity(xCoord,yCoord,zCoord);
             return;
         } else if (killCount==killMark*2) {
@@ -63,9 +61,32 @@ public class TileEntityVileReactor extends TileEntity {
             BlockVileReactor.updateReactorBlockState(worldObj,xCoord,yCoord,zCoord);
         }
         worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,xCoord,yCoord,zCoord,"random.fizz",1.0f,0.2f);
+        doSmokeFx(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
     }
 
+    private  void doBusrtFx(World world, Random rand, int x, int y, int z) {
+        for (int i=0;i<30+rand.nextInt(30);i++) {
+            double particleX = (float)x + 0.5f;
+            double particleY = (float)y + 0.5f;
+            double particleZ = (float)z + 0.5f;
+            double motionX = 1.3*(rand.nextFloat()-0.5);
+            double motionY = 1.3*(rand.nextFloat()-0.5);
+            double motionZ = 1.3*(rand.nextFloat()-0.5);
+            world.spawnParticle("explode", particleX, particleY, particleZ, motionX, motionY, motionZ);
+        }
+    }
 
+    private void doSmokeFx(World world, Random rand, int x, int y, int z) {
+        for (int i=0;i<10+rand.nextInt(20);i++) {
+            double particleX = (float)x + rand.nextFloat();
+            double particleY = (float)y + 1.0f;
+            double particleZ = (float)z + rand.nextFloat();
+            double motionX = 0.2*(rand.nextFloat()-0.5);
+            double motionY = 0.1*rand.nextFloat();
+            double motionZ = 0.2*(rand.nextFloat()-0.5);
+            world.spawnParticle("largesmoke", particleX, particleY, particleZ, motionX, motionY, motionZ);
+        }
+    }
 
     private void generateItems(World world, Random rand, int x, int y, int z) {
         int chances = 10 + rand.nextInt(15);
@@ -91,8 +112,8 @@ public class TileEntityVileReactor extends TileEntity {
     private void generateNetherrack(World world, Random random, int x, int y, int z) {
         int minrad = 1;
         int maxrad = 2;
-        int mindepth = 1;
-        int maxdepth = 4;
+        int mindepth = 2;
+        int maxdepth = 5;
         int minradX = -minrad - random.nextInt(maxrad+1-minrad);
         int maxradX = minrad + random.nextInt(maxrad+1-minrad);
         int minradZ = -minrad - random.nextInt(maxrad+1-minrad);
