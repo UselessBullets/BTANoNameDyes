@@ -12,6 +12,19 @@ tile.nonamedyes.bleacher.name = Bleaching Basin
 tile.nonamedyes.bleacher.desc = Removes dyes from blocks.
 tile.nonamedyes.netherrack.vile.name = Vile Netherrack
 tile.nonamedyes.netherrack.vile.desc = Dark red rock with a sickly acidic scent.
+tile.nonamedyes.gallstone.name = Gallstone
+tile.nonamedyes.gallstone.desc = A block of vile shards.
+item.nonamedyes.vileshard.name = Vile Shard
+item.nonamedyes.vileshard.desc = A somewhat caustic yellow crystal.
+tile.nonamedyes.vile.reactor.idle.name = Vile Reactor
+tile.nonamedyes.vile.reactor.idle.desc = Entraps hellbound souls.
+
+tile.nonamedyes.log.ebony.name = Ebony Log
+tile.nonamedyes.log.ebony.desc = A log from an ebony tree.
+tile.nonamedyes.leaves.ebony.name = Ebony Leaves
+tile.nonamedyes.leaves.ebony.desc = Leaves from an ebony tree.
+tile.nonamedyes.sapling.ebony.name = Ebony Sapling
+tile.nonamedyes.sapling.ebony.desc = Plant to grow an ebony tree.
 
 tile.nonamedyes.log.cocoa.name = Cocoa Log
 tile.nonamedyes.log.cocoa.desc = A log from a cocoa tree.

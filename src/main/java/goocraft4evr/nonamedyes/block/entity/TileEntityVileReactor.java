@@ -133,12 +133,11 @@ public class TileEntityVileReactor extends TileEntity {
         }
     }
 
-    //static might be a bad idea?
     static {
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(ModItems.vileShard), 2, 6), 25.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.bone), 2, 5), 15.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.dye,1,15), 1, 3), 12.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.sulphur), 1, 3), 7.0);
-        reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(ModBlocks.netherrackVile), 1, 2), 2.5);
+        //reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(ModBlocks.netherrackVile), 1, 2), 2.5);
     }
 }

@@ -20,7 +20,6 @@ public class BlockVileReactor extends BlockTileEntity {
         return new TileEntityVileReactor();
     }
 
-    //TODO: figure out why this causes duplicate tile entities
     public static void updateReactorBlockState(World world, int x, int y, int z) {
         TileEntity tileentity = world.getBlockTileEntity(x,y,z);
         int blockId = world.getBlockId(x,y,z);
@@ -37,6 +36,7 @@ public class BlockVileReactor extends BlockTileEntity {
 
     @Override
     public void onBlockAdded(World world, int i, int j, int k) {
+        //not ideal but it prevents duplicate tile entities.
         if (!addSoulless) super.onBlockAdded(world,i,j,k);
     }
 
