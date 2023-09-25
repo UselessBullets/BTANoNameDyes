@@ -102,7 +102,7 @@ public abstract class ModCraftingManager {
                 new ItemStack(ModBlocks.tileCeramic,2),
                 "C", "C",
                 Character.valueOf('C'),
-                new ItemStack(ModBlocks.tileCeramic));
+                new ItemStack(ModBlocks.blockCeramic));
         craftingManager.addShapelessRecipe(new ItemStack(ModItems.ceramic), new ItemStack(ModBlocks.blockCeramic));
 
         //add IRecipes here

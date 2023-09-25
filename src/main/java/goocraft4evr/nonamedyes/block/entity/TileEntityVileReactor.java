@@ -113,7 +113,7 @@ public class TileEntityVileReactor extends TileEntity {
         int minrad = 1;
         int maxrad = 2;
         int mindepth = 2;
-        int maxdepth = 5;
+        int maxdepth = 7;
         int minradX = -minrad - random.nextInt(maxrad+1-minrad);
         int maxradX = minrad + random.nextInt(maxrad+1-minrad);
         int minradZ = -minrad - random.nextInt(maxrad+1-minrad);
