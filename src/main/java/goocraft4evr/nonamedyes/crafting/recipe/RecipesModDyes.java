@@ -66,6 +66,8 @@ public class RecipesModDyes {
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 7), new ItemStack(Item.dye, 1, DyeColor.DYE_YELLOW.dyeMeta),new ItemStack(Item.dye, 1, DyeColor.DYE_WHITE.dyeMeta));
         //indigo
         craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 8), new ItemStack(ModBlocks.flowerIndigo, 1));
+        //navy blue
+        craftingmanager.addShapelessRecipe(new ItemStack(ModItems.dye, 2, 11), new ItemStack(Item.dye, 1, DyeColor.DYE_BLACK.dyeMeta),new ItemStack(ModItems.dye, 1, 8));
 
         //read plank recipes
         craftingmanager.addRecipe(new ItemStack(Block.fencePlanksOak, 6), true, new Object[]{"#X#", "#X#", Character.valueOf('X'), Item.stick, Character.valueOf('#'), Block.planksOak});
