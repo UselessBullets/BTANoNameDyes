@@ -89,7 +89,7 @@ public class TileEntityVileReactor extends TileEntity {
     }
 
     private void generateItems(World world, Random rand, int x, int y, int z) {
-        int chances = 10 + rand.nextInt(15);
+        int chances = 15 + rand.nextInt(10);
         for (int i=0;i<chances;i++) {
             ItemStack itemstack = reactorDrops.getRandom().getItemStack();
             float f = rand.nextFloat() * 0.8f + 0.1f;
@@ -134,7 +134,7 @@ public class TileEntityVileReactor extends TileEntity {
     }
 
     static {
-        reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(ModItems.vileShard), 2, 6), 25.0);
+        reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(ModItems.vileShard), 2, 6), 30.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.bone), 2, 5), 15.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.dye,1,15), 1, 3), 12.0);
         reactorDrops.addEntry(new WeightedRandomLootObject(new ItemStack(Item.sulphur), 1, 3), 7.0);
