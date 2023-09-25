@@ -2,6 +2,7 @@ package goocraft4evr.nonamedyes.block;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
+import goocraft4evr.nonamedyes.block.blockcolor.BlockColorCeramicPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModLampsPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModPlanksPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorPlasterPainted;
@@ -361,11 +362,43 @@ public abstract class ModBlocks {
     public static final Block plasterPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
-            .setHardness(0.8f)
+            .setHardness(0.4f)
             .setTextures("plaster_painted.png")
             .setBlockColor(new BlockColorPlasterPainted())
             .build(new BlockPlasterPainted("plaster.painted", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
+
+    public static final Block blockCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setTextures("ceramic_block.png")
+            .build(new BlockPlasterPainted("block.ceramic", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block tileCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setTextures("ceramic_tile.png")
+            .build(new BlockPlasterPainted("tile.ceramic", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block blockCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setItemBlock(ItemBlockPlasterPainted::new)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setTextures("ceramic_block_painted.png")
+            .setBlockColor(new BlockColorCeramicPainted())
+            .build(new BlockPlasterPainted("block.ceramic.painted", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+
+    public static final Block tileCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
+            .setItemBlock(ItemBlockPlasterPainted::new)
+            .setBlockSound(BlockSounds.STONE)
+            .setHardness(1.0f)
+            .setTextures("ceramic_tile_painted.png")
+            .setBlockColor(new BlockColorCeramicPainted())
+            .build(new BlockPlasterPainted("tile.ceramic.painted", UtilIdRegistrar.nextId()))
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
 
     public static void register() {

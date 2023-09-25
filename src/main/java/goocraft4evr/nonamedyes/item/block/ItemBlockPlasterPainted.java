@@ -23,7 +23,7 @@ public class ItemBlockPlasterPainted extends ItemBlock {
     public String getLanguageKey(ItemStack itemstack) {
         String langkey = super.getKey() + ".";
         try {
-            langkey += itemstack.getMetadata() < 15? ItemDye.dyeColors[15^itemstack.getMetadata()]:ItemModDye.dyeColors[itemstack.getMetadata()-16];
+            langkey += itemstack.getMetadata() < 16? ItemDye.dyeColors[15^itemstack.getMetadata()]:ItemModDye.dyeColors[itemstack.getMetadata()-16];
         } catch (ArrayIndexOutOfBoundsException e) {
             langkey += "meta"+itemstack.getMetadata();
         }
