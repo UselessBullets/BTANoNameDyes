@@ -354,7 +354,7 @@ public abstract class ModBlocks {
 
     public static final Block plaster = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
-            .setHardness(0.8f)
+            .setHardness(0.3f)
             .setTextures("plaster.png")
             .build(new Block("plaster", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
@@ -362,7 +362,7 @@ public abstract class ModBlocks {
     public static final Block plasterPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
-            .setHardness(0.4f)
+            .setHardness(0.3f)
             .setTextures("plaster_painted.png")
             .setBlockColor(new BlockColorPlasterPainted())
             .build(new BlockPlasterPainted("plaster.painted", UtilIdRegistrar.nextId()))
