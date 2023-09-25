@@ -79,6 +79,21 @@ public abstract class ModCraftingManager {
                 new ItemStack(ModBlocks.gallstone),
                 Character.valueOf('V'),
                 new ItemStack(ModBlocks.netherrackVile));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.plaster, 4),
+                false,
+                false,
+                false, new Object[]{
+                "CGC", "SBS", "CGC",
+                Character.valueOf('C'),
+                Item.clay,
+                Character.valueOf('B'),
+                Item.bucketWater,
+                Character.valueOf('G'),
+                Block.tallgrass,
+                Character.valueOf('S'),
+                Block.sand});
+
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());

@@ -2,6 +2,7 @@ package goocraft4evr.nonamedyes.crafting.recipe;
 
 import goocraft4evr.nonamedyes.block.BlockModLamp;
 import goocraft4evr.nonamedyes.block.BlockModWool;
+import goocraft4evr.nonamedyes.block.BlockPlasterPainted;
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.block.wood.*;
 import goocraft4evr.nonamedyes.item.ItemModDye;
@@ -34,6 +35,12 @@ public class RecipesModDyes {
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.wool, 1, BlockModWool.getMetadataForColour(dye)), Block.wool, new ItemStack(ModItems.dye, 1, dye));
             //lamp
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.lampIdle, 1, BlockModLamp.getMetadataForColour(dye)), new ItemStack(ModItems.dye, 1, dye), new ItemStack(Item.itemsList[Block.lampIdle.id], 1, 0));
+            //plaster
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.plasterPainted, 8, 16+dye), "###", "#0#", "###", Character.valueOf('#'), ModBlocks.plaster, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
+        }
+        for (int dye = 0; dye < 16; ++dye) {
+            //plaster
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.plasterPainted, 8, dye), "###", "#0#", "###", Character.valueOf('#'), ModBlocks.plaster, Character.valueOf('0'), new ItemStack(Item.dye, 1, 15^dye));
         }
         //add recipes for dye items
         //TODO: dye ids are hardcoded
