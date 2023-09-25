@@ -37,10 +37,18 @@ public class RecipesModDyes {
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.lampIdle, 1, BlockModLamp.getMetadataForColour(dye)), new ItemStack(ModItems.dye, 1, dye), new ItemStack(Item.itemsList[Block.lampIdle.id], 1, 0));
             //plaster
             craftingmanager.addRecipe(new ItemStack(ModBlocks.plasterPainted, 8, 16+dye), "###", "#0#", "###", Character.valueOf('#'), ModBlocks.plaster, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
+            //ceramic
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.blockCeramicPainted, 8, 16+dye), "###", "#0#", "###", Character.valueOf('#'), ModItems.ceramic, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
+            //ceramic tiles
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.tileCeramicPainted, 2, 16+dye), "#", "#", Character.valueOf('#'), new ItemStack(ModBlocks.blockCeramicPainted, 1, 16+dye));
         }
         for (int dye = 0; dye < 16; ++dye) {
             //plaster
             craftingmanager.addRecipe(new ItemStack(ModBlocks.plasterPainted, 8, dye), "###", "#0#", "###", Character.valueOf('#'), ModBlocks.plaster, Character.valueOf('0'), new ItemStack(Item.dye, 1, 15^dye));
+            //ceramic
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.blockCeramicPainted, 8, dye), "###", "#0#", "###", Character.valueOf('#'), ModItems.ceramic, Character.valueOf('0'), new ItemStack(Item.dye, 1, 15^dye));
+            //ceramic tiles
+            craftingmanager.addRecipe(new ItemStack(ModBlocks.tileCeramicPainted, 2, dye), "#", "#", Character.valueOf('#'), new ItemStack(ModBlocks.blockCeramicPainted, 1, dye));
         }
         //add recipes for dye items
         //TODO: dye ids are hardcoded

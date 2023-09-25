@@ -10,6 +10,7 @@
     "core.block.entity.TileEntitySignMixin",
     "core.block.entity.TileEntityTrommelMixin",
     "core.crafting.recipe.RecipeLabelMixin",
+    "core.crafting.recipe.RecipesBlastFurnaceAccessor",
     "core.entity.animal.EntitySheepAccessor",
     "core.entity.animal.EntitySheepMixin",
     "core.entity.fx.EntityBubbleFXMixin",

@@ -93,6 +93,17 @@ public abstract class ModCraftingManager {
                 Block.tallgrass,
                 Character.valueOf('S'),
                 Block.sand});
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.blockCeramic,4),
+                "CC", "CC",
+                Character.valueOf('C'),
+                new ItemStack(ModItems.ceramic));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.tileCeramic,2),
+                "C", "C",
+                Character.valueOf('C'),
+                new ItemStack(ModBlocks.tileCeramic));
+        craftingManager.addShapelessRecipe(new ItemStack(ModItems.ceramic), new ItemStack(ModBlocks.blockCeramic));
 
         //add IRecipes here
         craftingManager.getRecipeList().add(new RecipeLabelModDye());

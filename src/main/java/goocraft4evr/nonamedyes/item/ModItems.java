@@ -27,6 +27,13 @@ public class ModItems {
             new Item(UtilIdRegistrar.nextId()),
             "vileshard",
             "vile_shard.png");
+
+    public static Item ceramic = ItemHelper.createItem(
+            NoNameDyes.MOD_ID,
+            new Item(UtilIdRegistrar.nextId()),
+            "ceramic",
+            "ceramic.png");
+
     public static void register() {
 
     }

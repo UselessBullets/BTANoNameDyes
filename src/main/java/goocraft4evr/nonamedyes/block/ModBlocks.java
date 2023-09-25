@@ -389,7 +389,7 @@ public abstract class ModBlocks {
             .setTextures("ceramic_block_painted.png")
             .setBlockColor(new BlockColorCeramicPainted())
             .build(new BlockPlasterPainted("block.ceramic.painted", UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block tileCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
@@ -398,7 +398,7 @@ public abstract class ModBlocks {
             .setTextures("ceramic_tile_painted.png")
             .setBlockColor(new BlockColorCeramicPainted())
             .build(new BlockPlasterPainted("tile.ceramic.painted", UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 
     public static void register() {

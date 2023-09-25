@@ -3,7 +3,7 @@ package goocraft4evr.nonamedyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.crafting.ModCraftingManager;
 import goocraft4evr.nonamedyes.crafting.ModFuelFurnace;
-import goocraft4evr.nonamedyes.crafting.ModFurnaceManager;
+import goocraft4evr.nonamedyes.crafting.ModSmeltingManager;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -38,7 +38,7 @@ public class NoNameDyes implements ModInitializer {
         ModItems.register();
 
         ModFuelFurnace.register();
-        ModFurnaceManager.register();
+        ModSmeltingManager.register();
         ModCraftingManager.register();
 
         CommandHelper.createCommand(new CommandFindBiome());
