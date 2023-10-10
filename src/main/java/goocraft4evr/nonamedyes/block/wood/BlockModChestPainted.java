@@ -17,7 +17,7 @@ public class BlockModChestPainted extends BlockChest {
     }
 
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-        return new ItemStack[]{new ItemStack(this, 1, meta)};
+        return new ItemStack[]{new ItemStack(this, 1, meta&0xF0)};
     }
 
     @Override
