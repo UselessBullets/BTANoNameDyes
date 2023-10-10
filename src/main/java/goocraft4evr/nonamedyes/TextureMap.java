@@ -15,6 +15,7 @@ public class TextureMap {
     }
 
     public int getTexture(int index) {
+        if (index<0 || index>textures.length-1) return 0;
         return textures[index];
     }
 
