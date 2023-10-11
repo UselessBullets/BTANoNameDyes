@@ -14,17 +14,13 @@ import net.minecraft.core.world.World;
 public class BlockModWool extends Block {
     private static TextureMap textures;
 
-    public static Block createWool(String key, int id) {
+    public BlockModWool(String key, int id) {
+        super(key, id, Material.cloth);
         textures = new TextureMap(NoNameDyes.MOD_ID,ItemModDye.dyeColors.length);
         for (int i = 0; i< textures.length(); i++) {
             //generate textures for the remaining dyes to ensure they're all contiguous
             textures.addBlockTexture( ItemModDye.getTextureName(ItemModDye.dyeColors[i])+"_wool.png");
         }
-        return new BlockModWool(key,id);
-    }
-
-    public BlockModWool(String key, int id) {
-        super(key, id, Material.cloth);
     }
 
     @Override

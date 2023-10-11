@@ -25,6 +25,8 @@ public abstract class RenderEngineMixin {
         }
         //color loading code
         ColorPropertiesAccessor.invokeRegisterLeavesColor("cocoa",colors);
+        ColorPropertiesAccessor.invokeRegisterLeavesColor("cinnamon",colors);
+        ColorPropertiesAccessor.invokeRegisterLeavesColor("ebony",colors);
     }
 }
 

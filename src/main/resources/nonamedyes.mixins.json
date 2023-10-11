@@ -10,6 +10,7 @@
     "core.block.entity.TileEntitySignMixin",
     "core.block.entity.TileEntityTrommelMixin",
     "core.crafting.recipe.RecipeLabelMixin",
+    "core.crafting.recipe.RecipesBlastFurnaceAccessor",
     "core.entity.animal.EntitySheepAccessor",
     "core.entity.animal.EntitySheepMixin",
     "core.entity.fx.EntityBubbleFXMixin",
@@ -18,6 +19,7 @@
     "core.player.inventory.ContainerPlayerCreativeMixin",
     "core.player.inventory.slot.SlotDyeMixin",
     "core.util.helper.ColorsMixin",
+    "core.world.biome.provider.BiomeProviderOverworldMixin",
     "core.world.generate.chunk.perlin.nether.ChunkDecoratorNetherMixin",
     "core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworldMixin"
   ],

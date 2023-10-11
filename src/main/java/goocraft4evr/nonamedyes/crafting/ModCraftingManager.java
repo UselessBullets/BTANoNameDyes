@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.crafting.recipe.RecipeCinnamon;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipeLabelModDye;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipesModDyes;
 import goocraft4evr.nonamedyes.item.ModItems;
@@ -15,8 +16,8 @@ public abstract class ModCraftingManager {
     public static void register() {
         //register alternatives
         addAlternatives(2,new Block[]{ModBlocks.planksOakPainted});
-        addAlternatives(6,new Block[]{ModBlocks.logCocoa});
-        addAlternatives(7,new Block[]{ModBlocks.leavesCocoa});
+        addAlternatives(6,new Block[]{ModBlocks.logCocoa,ModBlocks.logCinnamon});
+        addAlternatives(7,new Block[]{ModBlocks.leavesCocoa,ModBlocks.leavesCinnamon});
         addAlternatives(13,new Block[]{ModBlocks.chestPlanksOakPainted});
         appendAlternatives(new Block[]{Block.wool,ModBlocks.wool});
         //add recipes
@@ -39,7 +40,6 @@ public abstract class ModCraftingManager {
                 "##", "##",
                 Character.valueOf('#'),
                 new ItemStack(ModItems.dye, 1,6));
-        craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.addShapelessRecipe(new ItemStack(ModItems.bleachingPowder, 4), new ItemStack(Item.dye, 1,15),new ItemStack(Item.sulphur, 1),new ItemStack(Block.cobbleLimestone, 1));
         craftingManager.addRecipe(
                 new ItemStack(ModBlocks.bleacher, 1),
@@ -49,6 +49,65 @@ public abstract class ModCraftingManager {
                 Character.valueOf('S'),
                 new ItemStack(Block.stonePolished, 1));
         craftingManager.addShapelessRecipe(new ItemStack(Block.planksOak, 4), new ItemStack(ModBlocks.logCocoa, 1));
+        craftingManager.addRecipe(
+                new ItemStack(ModItems.foodSnickerdoodle, 8),
+                " S ", "WCW",
+                Character.valueOf('C'),
+                new ItemStack(ModItems.dye, 1,10),
+                Character.valueOf('S'),
+                new ItemStack(Item.dustSugar),
+                Character.valueOf('W'),
+                new ItemStack(Item.wheat));
+        craftingManager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 4, 10), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logCinnamon});
+        craftingManager.addRecipe(new ItemStack(Block.planksOakPainted, 4, 15), false, new Object[]{"#", Character.valueOf('#'), ModBlocks.logEbony});
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.gallstone),
+                "VVV", "VVV", "VVV",
+                Character.valueOf('V'),
+                new ItemStack(ModItems.vileShard));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.netherrackVile,2),
+                "NV", "VN",
+                Character.valueOf('N'),
+                new ItemStack(Block.netherrack),
+                Character.valueOf('V'),
+                new ItemStack(ModItems.vileShard));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.vileReactorIdle),
+                "VGV", "G G","VGV",
+                Character.valueOf('G'),
+                new ItemStack(ModBlocks.gallstone),
+                Character.valueOf('V'),
+                new ItemStack(ModBlocks.netherrackVile));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.plaster, 4),
+                false,
+                false,
+                false, new Object[]{
+                "CGC", "SBS", "CGC",
+                Character.valueOf('C'),
+                Item.clay,
+                Character.valueOf('B'),
+                Item.bucketWater,
+                Character.valueOf('G'),
+                Block.tallgrass,
+                Character.valueOf('S'),
+                Block.sand});
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.blockCeramic,4),
+                "CC", "CC",
+                Character.valueOf('C'),
+                new ItemStack(ModItems.ceramic));
+        craftingManager.addRecipe(
+                new ItemStack(ModBlocks.tileCeramic,2),
+                "C", "C",
+                Character.valueOf('C'),
+                new ItemStack(ModBlocks.blockCeramic));
+        craftingManager.addShapelessRecipe(new ItemStack(ModItems.ceramic), new ItemStack(ModBlocks.blockCeramic));
+
+        //add IRecipes here
+        craftingManager.getRecipeList().add(new RecipeLabelModDye());
+        craftingManager.getRecipeList().add(new RecipeCinnamon());
         //sort recipes
         craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
     }

@@ -42,6 +42,15 @@ public abstract class ContainerPlayerCreativeMixin {
         for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
             ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.lampIdle, 1, i));
         }
-        ContainerPlayerCreative.creativeItemsCount += (ItemModDye.dyeColors.length)*9;
+        for (int i = 0; i<16+ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.plasterPainted, 1, i));
+        }
+        for (int i = 0; i<16+ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i));
+        }
+        for (int i = 0; i<16+ItemModDye.dyeColors.length; i++) {
+            ContainerPlayerCreative.creativeItems.add(new ItemStack(ModBlocks.tileCeramicPainted, 1, i));
+        }
+        ContainerPlayerCreative.creativeItemsCount += (ItemModDye.dyeColors.length)*12+48;
     }
 }

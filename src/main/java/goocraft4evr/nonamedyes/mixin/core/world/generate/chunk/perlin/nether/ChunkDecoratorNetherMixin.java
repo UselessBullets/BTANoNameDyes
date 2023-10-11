@@ -1,8 +1,7 @@
 package goocraft4evr.nonamedyes.mixin.core.world.generate.chunk.perlin.nether;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.worldgen.WorldFeatureNetherRoots;
-import net.minecraft.core.block.Block;
+import goocraft4evr.nonamedyes.world.worldgen.WorldFeatureNetherRoots;
 import net.minecraft.core.world.World;
 import net.minecraft.core.world.chunk.Chunk;
 import net.minecraft.core.world.generate.chunk.ChunkDecorator;
@@ -36,21 +35,24 @@ public abstract class ChunkDecoratorNetherMixin implements ChunkDecorator {
         int maxY = world.getWorldType().getMaxY();
         int rangeY = maxY + 1 - minY;
 
+
         int xf;
         int yf;
         int zf;
+
+        if (rand.nextInt(12) == 0) {
+            xf = x + rand.nextInt(16);
+            yf = minY + rand.nextInt(rangeY - 8) + 4;
+            zf = z + rand.nextInt(16);
+            new WorldFeatureOre(ModBlocks.netherrackVile.id, 16+rand.nextInt(16), false).generate(this.world, rand, xf, yf, zf);
+        }
+
         int max = (8+rand.nextInt(4))<<2;
         for(int i=0;i<max;i++) {
             xf = x + rand.nextInt(16) + 8;
             yf = minY + rand.nextInt(rangeY);
             zf = z + rand.nextInt(16) + 8;
             (new WorldFeatureNetherRoots(24)).generate(world, rand, xf, yf, zf);
-        }
-        if (rand.nextInt(8) == 0) {
-            xf = x + rand.nextInt(16);
-            yf = minY + rand.nextInt(rangeY - 8) + 4;
-            zf = z + rand.nextInt(16);
-            new WorldFeatureOre(ModBlocks.netherrackVile.id, 16+rand.nextInt(32), false).generate(this.world, rand, xf, yf, zf);
         }
     }
 }

@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.mixin.core.util.helper;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
+import goocraft4evr.nonamedyes.helper.ModColors;
 import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.mixin.core.entity.animal.EntitySheepAccessor;
 import net.minecraft.client.render.texturepack.TexturePackBase;
@@ -42,6 +43,7 @@ public abstract class ColorsMixin {
         //copy both arrays into array to return
         System.arraycopy(vanillaColors, 0, array, 0, vanillaColors.length);
         System.arraycopy(modColors, 0, array, vanillaColors.length, modColors.length);
+        ModColors.loadColors(stream);
     }
 
     @Inject(method="loadColors",at=@At("TAIL"))

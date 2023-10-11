@@ -1,4 +1,4 @@
-package goocraft4evr.nonamedyes.worldgen;
+package goocraft4evr.nonamedyes.world.worldgen;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import net.minecraft.core.block.Block;
