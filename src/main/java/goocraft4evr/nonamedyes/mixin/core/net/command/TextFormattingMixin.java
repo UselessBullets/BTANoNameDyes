@@ -4,9 +4,13 @@ import goocraft4evr.nonamedyes.item.ItemModDye;
 import net.minecraft.core.net.command.TextFormatting;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value= TextFormatting.class,remap = false)
 public abstract class TextFormattingMixin {
@@ -25,6 +29,22 @@ public abstract class TextFormattingMixin {
             sb.append(c);
         }
         return sb.toString();
+    }
+    @Shadow
+    private static String simpleName(String str) {
+        return "";
+    }
+    @Inject(method = "getColorFormatting(Ljava/lang/String;)Lnet/minecraft/core/net/command/TextFormatting;", at = @At(value = "TAIL", shift = At.Shift.BEFORE), cancellable = true)
+    private static void getColorFormatting(String name, CallbackInfoReturnable<TextFormatting> cir){
+        for (int i2 = 22; i2 < 22 + ItemModDye.NUM_DYES; ++i2) {
+            TextFormatting color = TextFormatting.get(i2);
+            for (String name2 : color.getNames()) {
+                if (!name.equalsIgnoreCase(simpleName(name2))) continue;
+                cir.setReturnValue(color);
+                return;
+            }
+        }
+
     }
 
     static {
@@ -50,7 +70,19 @@ public abstract class TextFormattingMixin {
         FORMATTINGS[19] = TextFormatting.UNDERLINE;
         FORMATTINGS[20] = TextFormatting.ITALIC;
         FORMATTINGS[21] = TextFormatting.RESET;
-        for (int i=0;i<ItemModDye.NUM_DYES;i++) {
+        FORMATTINGS[22] = new TextFormatting(22).setNames("Crimson");
+        FORMATTINGS[23] = new TextFormatting(23).setNames("Maroon");
+        FORMATTINGS[24] = new TextFormatting(24).setNames("Ash Grey", "Ash Gray");
+        FORMATTINGS[25] = new TextFormatting(25).setNames("Olive");
+        FORMATTINGS[26] = new TextFormatting(26).setNames("Ochre");
+        FORMATTINGS[27] = new TextFormatting(27).setNames("Buff");
+        FORMATTINGS[28] = new TextFormatting(28).setNames("Verdigris");
+        FORMATTINGS[29] = new TextFormatting(29).setNames("Light Yellow");
+        FORMATTINGS[30] = new TextFormatting(30).setNames("Indigo");
+        FORMATTINGS[31] = new TextFormatting(31).setNames("Xanthic");
+        FORMATTINGS[32] = new TextFormatting(32).setNames("Cinnamon");
+        FORMATTINGS[33] = new TextFormatting(33).setNames("Navy Blue");
+        for (int i=22;i<22+ItemModDye.NUM_DYES-FORMATTINGS.length;i++) {
             FORMATTINGS[22+i] = new TextFormatting(22+i).setNames(getNameFromKey(ItemModDye.dyeColors[i]));
         }
     }
