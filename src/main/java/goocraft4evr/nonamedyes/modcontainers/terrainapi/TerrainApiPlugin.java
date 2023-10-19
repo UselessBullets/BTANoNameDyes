@@ -34,7 +34,7 @@ public class TerrainApiPlugin implements TerrainAPI {
 			new Biome[]{Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_PLAINS});
 		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureOchre(48), 6, -1, 1,
 			new Biome[]{Biomes.OVERWORLD_DESERT, Biomes.OVERWORLD_OUTBACK, Biomes.OVERWORLD_OUTBACK_GRASSY});
-		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(ModBlocks.flowerIndigo.id), 6, 1, 1,
+		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(ModBlocks.flowerIndigo.id), 2, 1, 1,
 			new Biome[]{Biomes.OVERWORLD_RAINFOREST, Biomes.OVERWORLD_SEASONAL_FOREST, ModBiomes.OVERWORLD_CINNAMON_FOREST});
 
 		ChunkDecoratorNetherAPI.randomFeatures.addComplexFeature(ComplexFunctions::getVileNetherrack, null, (Object[] x) -> 1, null, 1, 120/128f);
