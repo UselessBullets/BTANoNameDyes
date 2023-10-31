@@ -11,6 +11,7 @@ import net.minecraft.core.world.biome.Biomes;
 import net.minecraft.core.world.generate.feature.WorldFeatureFlowers;
 import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import useless.terrainapi.api.TerrainAPI;
+import useless.terrainapi.config.TerrainAPIConfig;
 import useless.terrainapi.generation.VanillaFunctions;
 import useless.terrainapi.generation.nether.ChunkDecoratorNetherAPI;
 import useless.terrainapi.generation.overworld.ChunkDecoratorOverworldAPI;
@@ -24,12 +25,19 @@ public class TerrainApiPlugin implements TerrainAPI {
 
     @Override
     public void onInitialize() {
+		TerrainAPIConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
+		ChunkDecoratorOverworldAPI.oreFeatures.setOreValues(getModID(), ModBlocks.oreMalachiteStone, 6, 2, 1/4f);
 		OverworldBiomeFeatures.treeDensityMap.put(ModBiomes.OVERWORLD_CINNAMON_FOREST, 8);
 		OverworldBiomeFeatures.treeDensityMap.put(ModBiomes.OVERWORLD_EBONY_FOREST, 4);
 		OverworldBiomeFeatures.grassDensityMap.put(ModBiomes.OVERWORLD_CINNAMON_FOREST, 10);
 		OverworldBiomeFeatures.grassDensityMap.put(ModBiomes.OVERWORLD_EBONY_FOREST, 2);
 		VanillaFunctions.biomeRandomGrassType.put(ModBiomes.OVERWORLD_CINNAMON_FOREST, Block.tallgrassFern.id);
-		ChunkDecoratorOverworldAPI.oreFeatures.addFeature(new WorldFeatureOre(ModBlocks.oreMalachiteStone.id, 6, true), 2, 1/4f);
+
+		ChunkDecoratorOverworldAPI.oreFeatures.addFeature(new WorldFeatureOre(ModBlocks.oreMalachiteStone.id,
+			overworldConfig.clusterSize.get(ModBlocks.oreMalachiteStone.getKey()), true),
+			overworldConfig.chancesPerChunk.get(ModBlocks.oreMalachiteStone.getKey()),
+			overworldConfig.verticalRange.get(ModBlocks.oreMalachiteStone.getKey()));
+
 		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(ModBlocks.mushroomInkCap.id), 48, -1, 1,
 			new Biome[]{Biomes.OVERWORLD_GRASSLANDS, Biomes.OVERWORLD_MEADOW, Biomes.OVERWORLD_PLAINS});
 		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureOchre(48), 6, -1, 1,
