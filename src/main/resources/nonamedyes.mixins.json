@@ -15,6 +15,7 @@
     "core.entity.animal.EntitySheepMixin",
     "core.entity.fx.EntityBubbleFXMixin",
     "core.item.ItemDyeMixin",
+    "core.net.command.ColorCommandMixin",
     "core.net.command.TextFormattingMixin",
     "core.player.inventory.ContainerPlayerCreativeMixin",
     "core.player.inventory.slot.SlotDyeMixin",

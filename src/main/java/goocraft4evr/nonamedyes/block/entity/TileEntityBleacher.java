@@ -11,7 +11,7 @@ import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 
 public class TileEntityBleacher extends TileEntity implements IInventory {
-    private final ItemStack[] bleacherItemStacks = new ItemStack[9];
+    public final ItemStack[] bleacherItemStacks = new ItemStack[9];
     public boolean hasWaterSource;
     public int maxFuelTime = 0;
     public int currentFuelTime = 0;
