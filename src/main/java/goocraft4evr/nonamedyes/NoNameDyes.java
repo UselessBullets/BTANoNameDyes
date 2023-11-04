@@ -22,8 +22,11 @@ public class NoNameDyes implements ModInitializer {
         Properties prop = new Properties();
         prop.setProperty("starting_block_id","1000");
         prop.setProperty("starting_item_id","17000");
+        prop.setProperty("starting_gui_id","8");
         ConfigHandler config = new ConfigHandler(MOD_ID,prop);
-        UtilIdRegistrar.initIds(config.getInt("starting_block_id"),config.getInt("starting_item_id"));
+        UtilIdRegistrar.initIds(config.getInt("starting_block_id")
+                ,config.getInt("starting_item_id")
+                ,config.getInt("starting_gui_id"));
         config.updateConfig();
     }
 
@@ -36,6 +39,9 @@ public class NoNameDyes implements ModInitializer {
 
         UtilIdRegistrar.setIdToItem();
         ModItems.register();
+
+        UtilIdRegistrar.setIdToGUI();
+        ModGuis.register();
 
         ModFuelFurnace.register();
         ModSmeltingManager.register();
