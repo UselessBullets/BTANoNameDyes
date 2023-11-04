@@ -47,7 +47,7 @@ public class NoNameDyes implements ModInitializer {
         ModSmeltingManager.register();
         ModCraftingManager.register();
 
-        CommandHelper.createCommand(new CommandFindBiome());
+        //CommandHelper.createCommand(new CommandFindBiome());
 
         LOGGER.info("NoName Dyes initialized.");
     }
