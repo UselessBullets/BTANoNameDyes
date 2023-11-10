@@ -14,5 +14,7 @@ public abstract class ModFuelFurnace {
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCocoa.id, 10);
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCinnamon.id, 300);
         LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCinnamon.id, 10);
+        LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logEbony.id, 300);
+        LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingEbony.id, 10);
     }
 }

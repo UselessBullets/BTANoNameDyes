@@ -68,7 +68,7 @@ item.nonamedyes.ceramic.desc=A smooth, glossy material.
 
 tile.nonamedyes.plaster.painted.white.name=White Plaster
 tile.nonamedyes.plaster.painted.white.desc=Plaster, stained white.
-tile.nonamedyes.plaster.painted.orange.name=White Plaster
+tile.nonamedyes.plaster.painted.orange.name=Orange Plaster
 tile.nonamedyes.plaster.painted.orange.desc=Plaster, stained orange.
 tile.nonamedyes.plaster.painted.magenta.name=Magenta Plaster
 tile.nonamedyes.plaster.painted.magenta.desc=Plaster, stained magenta.
@@ -101,7 +101,7 @@ tile.nonamedyes.plaster.painted.black.desc=Plaster, stained black.
 
 tile.nonamedyes.block.ceramic.painted.white.name=White Block of Ceramic
 tile.nonamedyes.block.ceramic.painted.white.desc=A block of solid ceramic, stained white.
-tile.nonamedyes.block.ceramic.painted.orange.name=White Block of Ceramic
+tile.nonamedyes.block.ceramic.painted.orange.name=Orange Block of Ceramic
 tile.nonamedyes.block.ceramic.painted.orange.desc=A block of solid ceramic, stained orange.
 tile.nonamedyes.block.ceramic.painted.magenta.name=Magenta Block of Ceramic
 tile.nonamedyes.block.ceramic.painted.magenta.desc=A block of solid ceramic, stained magenta.
@@ -134,7 +134,7 @@ tile.nonamedyes.block.ceramic.painted.black.desc=A block of solid ceramic, stain
 
 tile.nonamedyes.tile.ceramic.painted.white.name=White Tiled Ceramic
 tile.nonamedyes.tile.ceramic.painted.white.desc=Tiled ceramic, stained white.
-tile.nonamedyes.tile.ceramic.painted.orange.name=White Tiled Ceramic
+tile.nonamedyes.tile.ceramic.painted.orange.name=Orange Tiled Ceramic
 tile.nonamedyes.tile.ceramic.painted.orange.desc=Tiled ceramic, stained orange.
 tile.nonamedyes.tile.ceramic.painted.magenta.name=Magenta Tiled Ceramic
 tile.nonamedyes.tile.ceramic.painted.magenta.desc=Tiled ceramic, stained magenta.

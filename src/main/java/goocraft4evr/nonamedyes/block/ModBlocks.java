@@ -355,7 +355,7 @@ public abstract class ModBlocks {
     public static final Block plaster = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
-            .setTextures("plaster.png")
+            .setTextures("plaster/plaster.png")
             .build(new Block("plaster", UtilIdRegistrar.nextId(),Material.stone))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
@@ -363,7 +363,7 @@ public abstract class ModBlocks {
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
-            .setTextures("plaster_painted.png")
+            .setTextures("plaster/plaster_painted.png")
             .setBlockColor(new BlockColorPlasterPainted())
             .build(new BlockPlasterPainted("plaster.painted", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
@@ -371,14 +371,14 @@ public abstract class ModBlocks {
     public static final Block blockCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
-            .setTextures("ceramic_block.png")
+            .setTextures("ceramic/ceramic_block.png")
             .build(new BlockPlasterPainted("block.ceramic", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block tileCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
-            .setTextures("ceramic_tile.png")
+            .setTextures("ceramic/ceramic_tile.png")
             .build(new BlockPlasterPainted("tile.ceramic", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
@@ -386,7 +386,7 @@ public abstract class ModBlocks {
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
-            .setTextures("ceramic_block_painted.png")
+            .setTextures("ceramic/ceramic_block_painted.png")
             .setBlockColor(new BlockColorCeramicPainted())
             .build(new BlockPlasterPainted("block.ceramic.painted", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
@@ -395,7 +395,7 @@ public abstract class ModBlocks {
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
-            .setTextures("ceramic_tile_painted.png")
+            .setTextures("ceramic/ceramic_tile_painted.png")
             .setBlockColor(new BlockColorCeramicPainted())
             .build(new BlockPlasterPainted("tile.ceramic.painted", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);

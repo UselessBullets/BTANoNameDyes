@@ -23,5 +23,7 @@ public abstract class ModSmeltingManager {
         RecipesBlastFurnace blastSmeltingBase = RecipesBlastFurnace.smelting();
         ((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(Item.clay.id);
         blastSmeltingBase.addSmelting(Item.clay.id, new ItemStack(ModItems.ceramic));
+        ((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(ModBlocks.netherrackVile.id);
+        blastSmeltingBase.addSmelting(ModBlocks.netherrackVile.id, new ItemStack(new ItemStack(ModItems.dye,1,9)));
     }
 }
