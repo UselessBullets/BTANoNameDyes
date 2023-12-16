@@ -7,7 +7,7 @@ import net.minecraft.client.gui.drawing.IDrawableSurface;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.Container;
-import net.minecraft.core.util.helper.Colors;
+import net.minecraft.client.util.helper.Colors;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

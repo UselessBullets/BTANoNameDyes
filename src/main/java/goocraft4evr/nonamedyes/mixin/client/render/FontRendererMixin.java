@@ -5,7 +5,7 @@ import net.minecraft.client.option.GameSettings;
 import net.minecraft.client.render.FontRenderer;
 import net.minecraft.client.render.RenderEngine;
 import net.minecraft.core.util.helper.Color;
-import net.minecraft.core.util.helper.Colors;
+import net.minecraft.client.util.helper.Colors;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;

@@ -8,7 +8,7 @@ import goocraft4evr.nonamedyes.block.wood.*;
 import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.crafting.CraftingManager;
+import net.minecraft.core.crafting.legacy.CraftingManager;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.DyeColor;

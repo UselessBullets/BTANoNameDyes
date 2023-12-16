@@ -1,7 +1,7 @@
 package goocraft4evr.nonamedyes.block.blockcolor;
 
 import net.minecraft.client.render.block.color.BlockColor;
-import net.minecraft.core.util.helper.Colors;
+import net.minecraft.client.util.helper.Colors;
 import net.minecraft.core.world.World;
 
 public class BlockColorModPlanksPainted extends BlockColor {

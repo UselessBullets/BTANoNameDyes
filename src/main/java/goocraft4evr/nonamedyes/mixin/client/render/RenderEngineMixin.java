@@ -3,7 +3,7 @@ package goocraft4evr.nonamedyes.mixin.client.render;
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.mixin.client.render.colorizer.ColorPropertiesAccessor;
 import net.minecraft.client.render.RenderEngine;
-import net.minecraft.client.render.texturepack.TexturePackBase;
+import net.minecraft.client.render.texturepack.TexturePack;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,7 +16,7 @@ import java.util.Properties;
 @Mixin(value= RenderEngine.class, remap = false)
 public abstract class RenderEngineMixin {
     @Inject(method="refreshTextures",at=@At("TAIL"),locals = LocalCapture.CAPTURE_FAILHARD)
-    private void injected(CallbackInfo ci, TexturePackBase texturePack) {
+    private void injected(CallbackInfo ci, TexturePack texturePack) {
         Properties colors = new Properties();
         try {
             colors.load(texturePack.getResourceAsStream("/assets/"+ NoNameDyes.MOD_ID+"/misc/colors.properties"));
