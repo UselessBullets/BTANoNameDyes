@@ -17,10 +17,10 @@ import turniplabs.halplibe.helper.RecipeHelper;
 public class RecipesModDyes {
     public static void addRecipes(CraftingManager craftingmanager) {
         //delete plank recipes
-        RecipeHelper.removeRecipe(Block.fencePlanksOak,0);
-        RecipeHelper.removeRecipe(Block.fencegatePlanksOak,0);
-        RecipeHelper.removeRecipe(Block.slabPlanksOak,0);
-        RecipeHelper.removeRecipe(Block.stairsPlanksOak,0);
+        RecipeHelper.removeRecipe(Item.itemsList[Block.fencePlanksOak.id],0);
+        RecipeHelper.removeRecipe(Item.itemsList[Block.fencegatePlanksOak.id],0);
+        RecipeHelper.removeRecipe(Item.itemsList[Block.slabPlanksOak.id],0);
+        RecipeHelper.removeRecipe(Item.itemsList[Block.stairsPlanksOak.id],0);
         //add recipes for dyed blocks/items
         for (int dye = 0; dye < ItemModDye.NUM_DYES; ++dye) {
             //wood

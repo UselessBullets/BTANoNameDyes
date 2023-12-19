@@ -109,7 +109,7 @@ public abstract class ModCraftingManager {
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());
         //sort recipes
-        craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
+        //craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
     }
 
     /*

@@ -8,7 +8,6 @@
     "core.block.entity.TileEntityFlagMixin",
     "core.block.entity.TileEntityMixin",
     "core.block.entity.TileEntitySignMixin",
-    "core.block.entity.TileEntityTrommelMixin",
     "core.crafting.recipe.RecipeLabelMixin",
     "core.crafting.recipe.RecipesBlastFurnaceAccessor",
     "core.entity.animal.EntitySheepAccessor",

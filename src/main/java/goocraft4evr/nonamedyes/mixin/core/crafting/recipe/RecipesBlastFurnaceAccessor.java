@@ -8,6 +8,8 @@ import java.util.Map;
 
 @Mixin(value = RecipesBlastFurnace.class,remap = false)
 public interface RecipesBlastFurnaceAccessor {
+    /*
     @Accessor
     Map getSmeltingList();
+     */
 }

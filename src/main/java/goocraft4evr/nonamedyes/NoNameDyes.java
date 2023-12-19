@@ -43,9 +43,9 @@ public class NoNameDyes implements ModInitializer {
         UtilIdRegistrar.setIdToGUI();
         ModGuis.register();
 
-        ModFuelFurnace.register();
-        ModSmeltingManager.register();
-        ModCraftingManager.register();
+        //ModFuelFurnace.register();
+        //ModSmeltingManager.register();
+        //ModCraftingManager.register();
 
         //CommandHelper.createCommand(new CommandFindBiome());
 
