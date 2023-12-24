@@ -1,17 +1,30 @@
 package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
-import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.item.ModItems;
-import goocraft4evr.nonamedyes.mixin.core.crafting.recipe.RecipesBlastFurnaceAccessor;
-import net.minecraft.core.crafting.recipe.RecipesBlastFurnace;
-import net.minecraft.core.crafting.recipe.RecipesFurnace;
-import net.minecraft.core.item.Item;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.data.DataLoader;
+import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.data.registry.recipe.RecipeGroup;
+import net.minecraft.core.data.registry.recipe.RecipeNamespace;
+import net.minecraft.core.data.registry.recipe.RecipeSymbol;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.item.ItemStack;
+import turniplabs.halplibe.util.RecipeEntrypoint;
 
-public abstract class ModSmeltingManager {
+public class ModSmeltingManager implements RecipeEntrypoint {
+
+    public static final RecipeNamespace RN = new RecipeNamespace();
+    public static final RecipeGroup<RecipeEntryFurnace> FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceStoneIdle)));
+    @Override
+    public void onRecipesReady() {
+        RN.register("furnace", FURNACE);
+        Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
+        //DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
+    }
+
+    /*
     public static void register() {
-        RecipesFurnace smeltingBase = RecipesFurnace.smelting();
+        RecipesFurnace smeltingBase = RecipesFurnace.getInstance();
         smeltingBase.addSmelting(ModBlocks.oreMalachiteStone.id, new ItemStack(ModItems.dye, 1, 6));
         smeltingBase.addSmelting(ModBlocks.oreMalachiteBasalt.id, new ItemStack(ModItems.dye, 1, 6));
         smeltingBase.addSmelting(ModBlocks.oreMalachiteLimestone.id, new ItemStack(ModItems.dye, 1, 6));
@@ -20,10 +33,11 @@ public abstract class ModSmeltingManager {
         smeltingBase.addSmelting(ModBlocks.logCinnamon.id, new ItemStack(Item.coal, 1, 1));
         smeltingBase.addSmelting(ModBlocks.netherrackVile.id, new ItemStack(ModItems.vileShard));
         smeltingBase.addSmelting(ModItems.vileShard.id, new ItemStack(ModItems.dye,1,9));
-        RecipesBlastFurnace blastSmeltingBase = RecipesBlastFurnace.smelting();
-        ((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(Item.clay.id);
+        RecipesBlastFurnace blastSmeltingBase = RecipesBlastFurnace.getInstance();
+        //((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(Item.clay.id);
         blastSmeltingBase.addSmelting(Item.clay.id, new ItemStack(ModItems.ceramic));
-        ((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(ModBlocks.netherrackVile.id);
+        //((RecipesBlastFurnaceAccessor)blastSmeltingBase).getSmeltingList().remove(ModBlocks.netherrackVile.id);
         blastSmeltingBase.addSmelting(ModBlocks.netherrackVile.id, new ItemStack(new ItemStack(ModItems.dye,1,9)));
     }
+     */
 }

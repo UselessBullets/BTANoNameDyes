@@ -71,7 +71,7 @@ public class ItemModDye extends Item {
             //TODO: this will break if signs can have obfuscated text
             if (16+itemstack.getMetadata() != sign.getColor().id) {
                 sign.setColor(TextFormatting.get(16 + itemstack.getMetadata()));
-                if (entityplayer.getGamemode().consumeBlocks) --itemstack.stackSize;
+                if (entityplayer.getGamemode().consumeBlocks()) --itemstack.stackSize;
                 return true;
             }
         }

@@ -2,7 +2,7 @@ package goocraft4evr.nonamedyes.crafting.recipe;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.item.ModItems;
-import net.minecraft.core.crafting.recipe.IRecipe;
+import net.minecraft.core.crafting.legacy.recipe.IRecipe;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.tool.ItemToolAxe;
 import net.minecraft.core.player.inventory.InventoryCrafting;

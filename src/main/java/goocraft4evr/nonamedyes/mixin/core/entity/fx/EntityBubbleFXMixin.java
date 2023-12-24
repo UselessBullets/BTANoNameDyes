@@ -1,8 +1,8 @@
 package goocraft4evr.nonamedyes.mixin.core.entity.fx;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
-import net.minecraft.core.entity.fx.EntityBubbleFX;
-import net.minecraft.core.entity.fx.EntityFX;
+import net.minecraft.client.entity.fx.EntityBubbleFX;
+import net.minecraft.client.entity.fx.EntityFX;
 import net.minecraft.core.util.helper.MathHelper;
 import net.minecraft.core.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,7 +16,7 @@ public abstract class EntityBubbleFXMixin extends EntityFX {
         super(world, x, y, z, motionX, motionY, motionZ);
     }
 
-    @Redirect(method = "tick",at=@At(value="INVOKE",target = "Lnet/minecraft/core/entity/fx/EntityBubbleFX;remove()V",ordinal = 0))
+    @Redirect(method = "tick",at=@At(value="INVOKE",target = "Lnet/minecraft/client/entity/fx/EntityBubbleFX;remove()V",ordinal = 0))
     private void redirect(EntityBubbleFX instance) {
         if (world.getBlockId(MathHelper.floor_double(this.x),
                          MathHelper.floor_double(this.y)-1,

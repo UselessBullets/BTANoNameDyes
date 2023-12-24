@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nonamedyes",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "name": "NoName Dyes",
   "description": "Adds new dyes to the game.",
@@ -16,8 +16,8 @@
     "main": [
       "goocraft4evr.nonamedyes.NoNameDyes"
     ],
-    "btwaila": [
-      "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"
+    "recipesReady": [
+      "goocraft4evr.nonamedyes.crafting.ModSmeltingManager"
     ]
   },
   "mixins": [
@@ -26,7 +26,7 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "halplibe": ">=2.1.6"
+    "halplibe": ">=3.0.0"
   },
   "suggests": {
   }

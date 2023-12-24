@@ -6,7 +6,7 @@ import goocraft4evr.nonamedyes.crafting.recipe.RecipeLabelModDye;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipesModDyes;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
-import net.minecraft.core.crafting.CraftingManager;
+import net.minecraft.core.crafting.legacy.CraftingManager;
 import net.minecraft.core.crafting.recipe.*;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
@@ -109,7 +109,7 @@ public abstract class ModCraftingManager {
         craftingManager.getRecipeList().add(new RecipeLabelModDye());
         craftingManager.getRecipeList().add(new RecipeCinnamon());
         //sort recipes
-        craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
+        //craftingManager.getRecipeList().sort(new RecipeSorter(craftingManager));
     }
 
     /*

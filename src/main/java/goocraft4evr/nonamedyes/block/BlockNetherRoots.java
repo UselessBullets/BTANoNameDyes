@@ -32,10 +32,13 @@ public class BlockNetherRoots extends Block {
         return null;
     }
 
+    /*
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isBlockOpaqueCube() {
         return false;
     }
+
+     */
 
     @Override
     public boolean renderAsNormalBlock() {

@@ -18,7 +18,7 @@ public class BlockModLamp extends Block {
     public BlockModLamp(String key, int id, boolean isActivated) {
         super(key, id, Material.stone);
         this.isActive = isActivated;
-        this.setTickOnLoad(true);
+        this.setTicking(true);
     }
 
     @Override
