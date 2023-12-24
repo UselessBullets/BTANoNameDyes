@@ -19,7 +19,7 @@ public class ModSmeltingManager implements RecipeEntrypoint {
     public void onRecipesReady() {
         RN.register("furnace", FURNACE);
         Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
-        //DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
+        DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
     }
 
     /*
