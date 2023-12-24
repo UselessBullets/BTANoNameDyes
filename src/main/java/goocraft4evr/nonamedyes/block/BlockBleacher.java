@@ -1,5 +1,6 @@
 package goocraft4evr.nonamedyes.block;
 
+import goocraft4evr.nonamedyes.ModGuis;
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.TextureMap;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
@@ -27,6 +28,7 @@ import java.util.Random;
 
 public class BlockBleacher extends BlockTileEntity {
     public final TextureMap textures;
+
     protected Random bleacherRand = new Random();
 
     public BlockBleacher(String key, int id) {
@@ -87,7 +89,7 @@ public class BlockBleacher extends BlockTileEntity {
         ((EntityPlayerMPAccessor)player).invokeGetNextWindowId();
         player.playerNetServerHandler.sendPacket(new Packet100OpenWindow(
                 ((EntityPlayerMPAccessor)player).getCurrentWindowId(),
-                8,
+                ModGuis.bleacherId,
                 tileentitybleacher.getInvName(),
                 tileentitybleacher.getSizeInventory()));
         player.craftingInventory = new ContainerBleacher(player.inventory, tileentitybleacher);

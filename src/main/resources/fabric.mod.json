@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nonamedyes",
-  "version": "0.1.8",
+  "version": "1.0.1",
 
   "name": "NoName Dyes",
   "description": "Adds new dyes to the game.",
@@ -15,6 +15,9 @@
   "entrypoints": {
     "main": [
       "goocraft4evr.nonamedyes.NoNameDyes"
+    ],
+    "btwaila": [
+      "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"
     ]
   },
   "mixins": [
