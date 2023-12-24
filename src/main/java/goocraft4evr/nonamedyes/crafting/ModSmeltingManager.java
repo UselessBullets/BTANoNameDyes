@@ -1,17 +1,25 @@
 package goocraft4evr.nonamedyes.crafting;
 
-import goocraft4evr.nonamedyes.block.ModBlocks;
-import goocraft4evr.nonamedyes.item.ModItems;
-import net.minecraft.core.crafting.legacy.recipe.RecipesBlastFurnace;
-import net.minecraft.core.crafting.legacy.recipe.RecipesFurnace;
-import net.minecraft.core.item.Item;
+import goocraft4evr.nonamedyes.NoNameDyes;
+import net.minecraft.core.block.Block;
+import net.minecraft.core.data.DataLoader;
+import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.data.registry.recipe.RecipeGroup;
+import net.minecraft.core.data.registry.recipe.RecipeNamespace;
+import net.minecraft.core.data.registry.recipe.RecipeSymbol;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
-public abstract class ModSmeltingManager implements RecipeEntrypoint {
+public class ModSmeltingManager implements RecipeEntrypoint {
 
+    public static final RecipeNamespace RN = new RecipeNamespace();
+    public static final RecipeGroup<RecipeEntryFurnace> FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceStoneIdle)));
+    @Override
     public void onRecipesReady() {
-
+        RN.register("furnace", FURNACE);
+        Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
+        //DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
     }
 
     /*
