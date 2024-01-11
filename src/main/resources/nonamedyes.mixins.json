@@ -24,7 +24,6 @@
     "core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworldMixin"
   ],
   "client": [
-    "client.MinecraftMixin",
     "client.gui.GuiEditFlagMixin",
     "client.gui.GuiHeldItemTooltipMixin",
     "client.net.handler.NetClientHandlerMixin",

@@ -1,7 +1,9 @@
 package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
+import goocraft4evr.nonamedyes.block.ModBlocks;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.crafting.LookupFuelFurnace;
 import net.minecraft.core.data.DataLoader;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
@@ -14,6 +16,17 @@ import turniplabs.halplibe.util.RecipeEntrypoint;
 public class ModSmeltingManager implements RecipeEntrypoint {
     @Override
     public void onRecipesReady() {
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.planksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.slabPlanksOakPainted.id, 150);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencePlanksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencegatePlanksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCocoa.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCocoa.id, 10);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCinnamon.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCinnamon.id, 10);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logEbony.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingEbony.id, 10);
+
         DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
     }
 
