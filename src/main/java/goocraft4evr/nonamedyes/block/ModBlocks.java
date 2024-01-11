@@ -183,16 +183,16 @@ public abstract class ModBlocks {
             .build(new BlockFlower("flower.indigo", UtilIdRegistrar.nextId())))
             .setKilledByWeather()
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
-
     public static final Block logCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
             .setSideTextures("log_cocoa_sides.png")
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setVisualUpdateOnMetadata()
+			.setTickOnLoad()
             .setFlammability(5,5)
             .setBlockModel(new BlockModelRenderBlocks(27))
-            .build(new BlockLog("log.cocoa", UtilIdRegistrar.nextId()))
+            .build(new BlockLogCocoaRipe("log.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
     public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
@@ -200,6 +200,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.WOOD)
             .setHardness(2.0f)
             .setVisualUpdateOnMetadata()
+			.setTickOnLoad()
             .setFlammability(5,3)
             .build(new BlockLogCocoaRipe("log.cocoa.ripe", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);

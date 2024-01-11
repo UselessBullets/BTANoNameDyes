@@ -17,7 +17,7 @@
       "goocraft4evr.nonamedyes.NoNameDyes"
     ],
     "recipesReady": [
-      "goocraft4evr.nonamedyes.crafting.ModSmeltingManager"
+      "goocraft4evr.nonamedyes.crafting.ModRecipes"
     ],
     "btwaila": [
       "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"

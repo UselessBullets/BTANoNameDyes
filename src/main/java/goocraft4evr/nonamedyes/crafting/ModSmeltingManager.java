@@ -12,13 +12,8 @@ import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 public class ModSmeltingManager implements RecipeEntrypoint {
-
-    public static final RecipeNamespace RN = new RecipeNamespace();
-    public static final RecipeGroup<RecipeEntryFurnace> FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceStoneIdle)));
     @Override
     public void onRecipesReady() {
-        RN.register("furnace", FURNACE);
-        Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
         DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
     }
 
