@@ -18,6 +18,9 @@
     ],
     "recipesReady": [
       "goocraft4evr.nonamedyes.crafting.ModSmeltingManager"
+    ],
+    "btwaila": [
+      "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"
     ]
   },
   "mixins": [
