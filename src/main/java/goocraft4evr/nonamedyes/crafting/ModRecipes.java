@@ -6,6 +6,8 @@ import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Block;
+import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.data.DataLoader;
 import net.minecraft.core.data.registry.Registries;
 import net.minecraft.core.data.registry.recipe.RecipeGroup;
 import net.minecraft.core.data.registry.recipe.RecipeNamespace;
@@ -30,6 +32,7 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf(ModBlocks.plaster));
 		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf(ModBlocks.blockCeramic));
 		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf(ModBlocks.tileCeramic));
+		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
 			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramics").add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i^15));
@@ -47,9 +50,47 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesCinnamon.getDefaultStack());
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
 
+		craftingRecipes();
 		new ModCraftingManager().onRecipesReady();
-		new ModSmeltingManager().onRecipesReady();
+		furnaceRecipes();
 
+		trommelRecipes();
+	}
+	private void craftingRecipes(){
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/workbench.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/stairs.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/slabs.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/fences.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/fencegates.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/chests.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/planks.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/wools.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/lamps.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/plasters.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramics.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles2.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/dyes.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/vanilla_overrides.json", NoNameDyes.MOD_ID));
+	}
+	private void furnaceRecipes(){
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.planksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.slabPlanksOakPainted.id, 150);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencePlanksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.fencegatePlanksOakPainted.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCocoa.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCocoa.id, 10);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logCinnamon.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCinnamon.id, 10);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logEbony.id, 300);
+		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingEbony.id, 10);
+
+//		Registries.RECIPES.BLAST_FURNACE.removeItem("minecraft:blast_furnace/clay_to_brick_clay");
+
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/blast_furnace.json", NoNameDyes.MOD_ID));
+	}
+	private void trommelRecipes(){
 		RecipeGroup<RecipeEntryTrommel> trommel = Registries.RECIPES.TROMMEL;
 		trommel.getItem("rich_dirt").getOutput().addEntry(new WeightedRandomLootObject(new ItemStack(ModItems.dye, 1, 4), 4,8), 12.0);
 		trommel.getItem("sand").getOutput().addEntry(new WeightedRandomLootObject(new ItemStack(ModItems.dye, 1, 4), 4,8), 10.0);
