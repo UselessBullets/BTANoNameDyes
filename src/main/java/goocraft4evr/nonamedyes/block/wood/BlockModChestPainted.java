@@ -22,12 +22,12 @@ public class BlockModChestPainted extends BlockChest {
 
     @Override
     public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
-        return super.getBlockTexture(blockAccess, x, y, z, side) + BlockChestPainted.texCoordToIndex(9, 16);
+        return super.getBlockTexture(blockAccess, x, y, z, side);
     }
 
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-        return super.getBlockTextureFromSideAndMetadata(side, meta) + BlockChestPainted.texCoordToIndex(9, 16);
+        return super.getBlockTextureFromSideAndMetadata(side, meta);
     }
 
     public static int getMetaForDyeColor(int i) {

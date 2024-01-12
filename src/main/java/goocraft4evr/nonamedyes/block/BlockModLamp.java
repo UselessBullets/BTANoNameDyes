@@ -39,7 +39,7 @@ public class BlockModLamp extends Block {
 
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int j) {
-        return BlockLamp.texCoordToIndex(5, 12);
+        return BlockLamp.texCoordToIndex(19,31);
     }
 
     public static int getMetadataForColour(int i) {

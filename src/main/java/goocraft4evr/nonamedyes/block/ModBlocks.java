@@ -88,7 +88,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(22))
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
-            .withTexCoords(9, 1, 9, 1, 11, 1, 10, 1, 10, 1, 10, 1)
+            .withTexCoords(29, 29, 29, 29, 31, 29, 30, 29, 30, 29, 30, 29)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     //TODO: This used .setDisabledStats()
@@ -100,7 +100,7 @@ public abstract class ModBlocks {
             .setItemBlock(ItemModBlockPainted::new)
             .build(new BlockModLamp("lamp.idle",UtilIdRegistrar.nextId(),false)
             .withTags(BlockTags.MINEABLE_BY_PICKAXE, BlockTags.NOT_IN_CREATIVE_MENU))
-            .withTexCoords(4, 12);
+            .withTexCoords(17, 31); // TODO individual textures
 
 
     //TODO: luminance was initially 0.9375f, this block used setDisabledStats()
@@ -112,7 +112,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.GLASS)
             .build(new BlockModLamp("lamp.active",UtilIdRegistrar.nextId(),true)
             .withTags(BlockTags.NOT_IN_CREATIVE_MENU, BlockTags.MINEABLE_BY_PICKAXE))
-            .withTexCoords(5, 12);
+            .withTexCoords(19, 31); // TODO individual textures
     public static final Block wool = new BlockBuilder(NoNameDyes.MOD_ID)
             .setHardness(0.8f)
             .setVisualUpdateOnMetadata()
