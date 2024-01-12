@@ -23,14 +23,10 @@ public class RecipesModDyes {
         RecipeHelper.removeRecipe(Item.itemsList[Block.stairsPlanksOak.id],0);
         //add recipes for dyed blocks/items
         for (int dye = 0; dye < ItemModDye.NUM_DYES; ++dye) {
-			//ceramic
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.blockCeramicPainted, 8, 16+dye), "###", "#0#", "###", Character.valueOf('#'), ModItems.ceramic, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
             //ceramic tiles
             craftingmanager.addRecipe(new ItemStack(ModBlocks.tileCeramicPainted, 2, 16+dye), "#", "#", Character.valueOf('#'), new ItemStack(ModBlocks.blockCeramicPainted, 1, 16+dye));
         }
         for (int dye = 0; dye < 16; ++dye) {
-            //ceramic
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.blockCeramicPainted, 8, dye), "###", "#0#", "###", Character.valueOf('#'), ModItems.ceramic, Character.valueOf('0'), new ItemStack(Item.dye, 1, 15^dye));
             //ceramic tiles
             craftingmanager.addRecipe(new ItemStack(ModBlocks.tileCeramicPainted, 2, dye), "#", "#", Character.valueOf('#'), new ItemStack(ModBlocks.blockCeramicPainted, 1, dye));
         }

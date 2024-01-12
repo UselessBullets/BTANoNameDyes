@@ -30,6 +30,8 @@ public class ModCraftingManager implements RecipeEntrypoint {
 		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/lamps.json", NoNameDyes.MOD_ID));
 		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/plasters.json", NoNameDyes.MOD_ID));
 		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramics.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles2.json", NoNameDyes.MOD_ID));
 	}
 
     public static void register() {
