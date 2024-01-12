@@ -13,6 +13,7 @@ import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryTrommel;
+import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
@@ -26,15 +27,19 @@ public class ModRecipes implements RecipeEntrypoint {
 		RN.register("workbench", WORKBENCH);
 		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
 
+		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf(ModBlocks.plaster));
+		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
+			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, i^15));
+		}
 		for (int i = 0; i < ItemModDye.NUM_DYES; i++) {
+			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, 16 + i));
 			Registries.ITEM_GROUPS.getItem("minecraft:planks").add(new ItemStack(ModBlocks.planksOakPainted.id, 1, i));
+			Registries.ITEM_GROUPS.getItem("minecraft:wools").add(new ItemStack(ModBlocks.wool.id, 1, i));
+			Registries.ITEM_GROUPS.getItem("minecraft:lamps").add(new ItemStack(ModBlocks.lampIdle.id, 1, i));
 		}
 		Registries.ITEM_GROUPS.getItem("minecraft:logs").add(ModBlocks.logCinnamon.getDefaultStack());
 		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesCinnamon.getDefaultStack());
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
-		for (int i = 0; i < ItemModDye.NUM_DYES; i++) {
-			Registries.ITEM_GROUPS.getItem("minecraft:wools").add(new ItemStack(ModBlocks.wool.id, 1, i));
-		}
 
 		new ModCraftingManager().onRecipesReady();
 		new ModSmeltingManager().onRecipesReady();

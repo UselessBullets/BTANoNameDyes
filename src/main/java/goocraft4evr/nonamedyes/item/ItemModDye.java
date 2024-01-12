@@ -56,7 +56,7 @@ public class ItemModDye extends Item {
 
     @Override
     public String getLanguageKey(ItemStack itemstack) {
-        return super.getKey() + "." + dyeColors[itemstack.getMetadata()];
+        return super.getKey() + "." + dyeColors[itemstack.getMetadata()%dyeColors.length];
     }
 
     @Override
