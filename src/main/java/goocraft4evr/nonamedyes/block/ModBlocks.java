@@ -39,10 +39,9 @@ public abstract class ModBlocks {
 
     public static final Block planksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
-            .setBlockColor(new BlockColorModPlanksPainted(false))
             .build(new BlockModPlanksPainted("planks.oak.painted",UtilIdRegistrar.nextId()))
-            .withTexCoords(2, 3)
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
+			.withTexCoords(2, 3);
 
     public static final Block fencePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
