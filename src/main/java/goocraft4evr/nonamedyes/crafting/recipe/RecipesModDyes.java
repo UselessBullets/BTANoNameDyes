@@ -23,14 +23,6 @@ public class RecipesModDyes {
         RecipeHelper.removeRecipe(Item.itemsList[Block.stairsPlanksOak.id],0);
         //add recipes for dyed blocks/items
         for (int dye = 0; dye < ItemModDye.NUM_DYES; ++dye) {
-            //wood
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencePlanksOakPainted, 6, BlockModFencePainted.getMetadataForColour(dye)), "X#X", "X#X", Character.valueOf('#'), Item.stick, Character.valueOf('X'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.slabPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.stairsPlanksOakPainted, 6, BlockModSlabPainted.getMetadataForColour(dye)), "#  ", "## ", "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.fencegatePlanksOakPainted, 3, BlockModFenceGatePainted.getMetadataForColour(dye)), "X#X", "X#X", Character.valueOf('X'), Item.stick, Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, BlockModChestPainted.getMetaForDyeColor(dye)), "###", "# #", "###", Character.valueOf('#'), new ItemStack(ModBlocks.planksOakPainted, 1, BlockModPlanksPainted.getMetadataForColour(dye)));
-            craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.chestPlanksOakPainted, 1, BlockModChestPainted.getMetaForDyeColor(dye)), Block.chestPlanksOak, new ItemStack(ModItems.dye, 1, dye));
-            craftingmanager.addRecipe(new ItemStack(ModBlocks.planksOakPainted, 8, BlockModPlanksPainted.getMetadataForColour(dye)), "###", "#0#", "###", Character.valueOf('#'), Block.planksOak, Character.valueOf('0'), new ItemStack(ModItems.dye, 1, dye));
             //wool
             craftingmanager.addShapelessRecipe(new ItemStack(ModBlocks.wool, 1, BlockModWool.getMetadataForColour(dye)), Block.wool, new ItemStack(ModItems.dye, 1, dye));
             //lamp

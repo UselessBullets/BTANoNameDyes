@@ -2,6 +2,7 @@ package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.WeightedRandomLootObject;
 import net.minecraft.core.block.Block;
@@ -25,11 +26,15 @@ public class ModRecipes implements RecipeEntrypoint {
 		RN.register("workbench", WORKBENCH);
 		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
 
-		Registries.ITEM_GROUPS.getItem("minecraft:planks").add(ModBlocks.planksOakPainted.getDefaultStack());
+		for (int i = 0; i < ItemModDye.NUM_DYES; i++) {
+			Registries.ITEM_GROUPS.getItem("minecraft:planks").add(new ItemStack(ModBlocks.planksOakPainted.id, 1, i));
+		}
 		Registries.ITEM_GROUPS.getItem("minecraft:logs").add(ModBlocks.logCinnamon.getDefaultStack());
 		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesCinnamon.getDefaultStack());
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
-		Registries.ITEM_GROUPS.register("nonamedyes:wool", Registries.stackListOf(Block.wool, ModBlocks.wool));
+		for (int i = 0; i < ItemModDye.NUM_DYES; i++) {
+			Registries.ITEM_GROUPS.getItem("minecraft:wools").add(new ItemStack(ModBlocks.wool.id, 1, i));
+		}
 
 		new ModCraftingManager().onRecipesReady();
 		new ModSmeltingManager().onRecipesReady();
