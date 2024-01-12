@@ -2,6 +2,7 @@ package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.crafting.recipe.RecipeEntryLabelModDye;
 import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.WeightedRandomLootObject;
@@ -14,6 +15,7 @@ import net.minecraft.core.data.registry.recipe.RecipeNamespace;
 import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryLabelDye;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryTrommel;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
@@ -27,7 +29,12 @@ public class ModRecipes implements RecipeEntrypoint {
 	public void onRecipesReady() {
 		RN.register("furnace", FURNACE);
 		RN.register("workbench", WORKBENCH);
+
+		WORKBENCH.register("label_dye", new RecipeEntryLabelModDye());
+
 		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
+
+		Registries.RECIPE_TYPES.register("nonamedyes:crafting/label_dye", RecipeEntryLabelModDye.class);
 
 		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf(ModBlocks.plaster));
 		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf(ModBlocks.blockCeramic));
@@ -53,7 +60,6 @@ public class ModRecipes implements RecipeEntrypoint {
 		craftingRecipes();
 		new ModCraftingManager().onRecipesReady();
 		furnaceRecipes();
-
 		trommelRecipes();
 	}
 	private void craftingRecipes(){
@@ -84,8 +90,6 @@ public class ModRecipes implements RecipeEntrypoint {
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingCinnamon.id, 10);
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logEbony.id, 300);
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingEbony.id, 10);
-
-//		Registries.RECIPES.BLAST_FURNACE.removeItem("minecraft:blast_furnace/clay_to_brick_clay");
 
 		DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
 		DataLoader.loadRecipes(String.format("/assets/%s/recipes/blast_furnace.json", NoNameDyes.MOD_ID));
