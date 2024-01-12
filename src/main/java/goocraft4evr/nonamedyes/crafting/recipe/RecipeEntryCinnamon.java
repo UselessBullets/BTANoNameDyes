@@ -2,12 +2,13 @@ package goocraft4evr.nonamedyes.crafting.recipe;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.item.ModItems;
-import net.minecraft.core.crafting.legacy.recipe.IRecipe;
+import net.minecraft.core.data.registry.recipe.SearchQuery;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCraftingDynamic;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.item.tool.ItemToolAxe;
 import net.minecraft.core.player.inventory.InventoryCrafting;
 
-public class RecipeCinnamon implements IRecipe {
+public class RecipeEntryCinnamon extends RecipeEntryCraftingDynamic {
     @Override
     public boolean matches(InventoryCrafting crafting) {
         ItemStack logStack = null;
@@ -28,21 +29,19 @@ public class RecipeCinnamon implements IRecipe {
         return logStack != null && axeStack != null;
     }
 
-    @Override
+	@Override
+	public boolean matchesQuery(SearchQuery searchQuery) {
+		return false;
+	}
+
+	@Override
     public ItemStack getCraftingResult(InventoryCrafting inventoryCrafting) {
         return new ItemStack(ModItems.dye,4,10);
     }
-
     @Override
     public int getRecipeSize() {
         return 2;
     }
-
-    @Override
-    public ItemStack getRecipeOutput() {
-        return new ItemStack(ModItems.dye,4,10);
-    }
-
     @Override
     public ItemStack[] onCraftResult(InventoryCrafting crafting) {
         ItemStack[] returnStack = new ItemStack[9];

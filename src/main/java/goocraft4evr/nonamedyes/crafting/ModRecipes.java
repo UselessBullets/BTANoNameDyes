@@ -2,6 +2,7 @@ package goocraft4evr.nonamedyes.crafting;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.crafting.recipe.RecipeEntryCinnamon;
 import goocraft4evr.nonamedyes.crafting.recipe.RecipeEntryLabelModDye;
 import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.item.ModItems;
@@ -31,10 +32,12 @@ public class ModRecipes implements RecipeEntrypoint {
 		RN.register("workbench", WORKBENCH);
 
 		WORKBENCH.register("label_dye", new RecipeEntryLabelModDye());
+		WORKBENCH.register("cinnamon", new RecipeEntryCinnamon());
 
 		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
 
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/label_dye", RecipeEntryLabelModDye.class);
+		Registries.RECIPE_TYPES.register("nonamedyes:crafting/cinnamon", RecipeEntryCinnamon.class);
 
 		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf(ModBlocks.plaster));
 		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf(ModBlocks.blockCeramic));
@@ -58,7 +61,6 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
 
 		craftingRecipes();
-		new ModCraftingManager().onRecipesReady();
 		furnaceRecipes();
 		trommelRecipes();
 	}
