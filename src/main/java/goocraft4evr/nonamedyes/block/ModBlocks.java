@@ -45,7 +45,6 @@ public abstract class ModBlocks {
 
     public static final Block fencePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
-            .setBlockColor(new BlockColorModPlanksPainted(false))
             .setBlockModel(new BlockModelRenderBlocks(11))
             .build(new BlockModFencePainted("fence.planks.oak.painted",UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
@@ -53,7 +52,6 @@ public abstract class ModBlocks {
 
     public static final Block fencegatePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
-            .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(18))
             .build(new BlockModFenceGatePainted("fencegate.planks.oak.painted",UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
@@ -62,7 +60,6 @@ public abstract class ModBlocks {
     public static final Block slabPlanksOakPainted = woodBlockBuilder
             .setItemBlock(ItemModBlockSlabPainted::new)
             .setUseInternalLight()
-            .setBlockColor(new BlockColorModPlanksPainted(true))
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
             .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
@@ -70,7 +67,6 @@ public abstract class ModBlocks {
     public static final Block stairsPlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .setUseInternalLight()
-            .setBlockColor(new BlockColorModPlanksPainted(true))
             .setBlockModel(new BlockModelRenderBlocks(10))
             .build(new BlockModStairsPainted(planksOakPainted,UtilIdRegistrar.nextId()))
             .withTexCoords(2, 3)
@@ -83,8 +79,6 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.WOOD)
             .setImmovable()
             .setLightOpacity(3)
-            .setBlockColor(new BlockColorModPlanksPainted(true))
-            .setBlockModel(new BlockModelRenderBlocks(22))
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
             .withTexCoords(29, 29, 29, 29, 31, 29, 30, 29, 30, 29, 30, 29)
