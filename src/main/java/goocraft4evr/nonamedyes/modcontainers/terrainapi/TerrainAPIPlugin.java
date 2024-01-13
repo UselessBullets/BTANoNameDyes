@@ -15,7 +15,7 @@ import useless.terrainapi.generation.nether.api.ChunkDecoratorNetherAPI;
 import useless.terrainapi.generation.overworld.OverworldConfig;
 import useless.terrainapi.generation.overworld.api.ChunkDecoratorOverworldAPI;
 
-public class TerrainApiPlugin implements TerrainAPI {
+public class TerrainAPIPlugin implements TerrainAPI {
 	public static final OverworldConfig overworldConfig = ChunkDecoratorOverworldAPI.overworldConfig;
     @Override
     public String getModID() {
@@ -30,7 +30,7 @@ public class TerrainApiPlugin implements TerrainAPI {
 
 		overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_CINNAMON_FOREST, 10);
 		overworldConfig.addGrassDensity(ModBiomes.OVERWORLD_EBONY_FOREST, 2);
-		
+
 		overworldConfig.addRandomGrassBlock(ModBiomes.OVERWORLD_CINNAMON_FOREST, Block.tallgrassFern);
 
 		ChunkDecoratorOverworldAPI.randomFeatures.addFeature(new WorldFeatureFlowers(ModBlocks.mushroomInkCap.id), 48, -1, 1,
