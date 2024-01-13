@@ -21,10 +21,7 @@ public class BlockModPlanksPainted extends Block {
     }
 	@Override
 	public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
-		if (textures.size() > meta){
-			return textures.get(meta);
-		}
-		return textures.get(0);
+		return getIndexFromMeta(meta, false);
 	}
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         return new ItemStack[]{new ItemStack(this, 1, meta)};
@@ -33,6 +30,15 @@ public class BlockModPlanksPainted extends Block {
     public static int getMetadataForColour(int i) {
         return i;
     }
+	public static int getIndexFromMeta(int meta, boolean isUpper){
+		if (isUpper){
+			meta = meta >> 4;
+		}
+		if (textures.size() > meta){
+			return textures.get(meta);
+		}
+		return textures.get(0);
+	}
 	static {
 		for (String s : ItemModDye.dyeColors){
 			textures.add(TextureHelper.getOrCreateBlockTextureIndex(NoNameDyes.MOD_ID, "plank/" + s.replace(".", "_") + "_plank.png"));

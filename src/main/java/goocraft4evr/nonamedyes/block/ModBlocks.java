@@ -40,28 +40,24 @@ public abstract class ModBlocks {
     public static final Block planksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
             .build(new BlockModPlanksPainted("planks.oak.painted",UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU)
-			.withTexCoords(2, 3);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block fencePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,false))
             .setBlockModel(new BlockModelRenderBlocks(11))
             .build(new BlockModFencePainted("fence.planks.oak.painted",UtilIdRegistrar.nextId()))
-            .withTexCoords(2, 3)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.CAN_HANG_OFF, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block fencegatePlanksOakPainted = woodBlockBuilder
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .setBlockModel(new BlockModelRenderBlocks(18))
             .build(new BlockModFenceGatePainted("fencegate.planks.oak.painted",UtilIdRegistrar.nextId()))
-            .withTexCoords(2, 3)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block slabPlanksOakPainted = woodBlockBuilder
             .setItemBlock(ItemModBlockSlabPainted::new)
             .setUseInternalLight()
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
-            .withTexCoords(2, 3)
             .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block stairsPlanksOakPainted = woodBlockBuilder
@@ -69,7 +65,6 @@ public abstract class ModBlocks {
             .setUseInternalLight()
             .setBlockModel(new BlockModelRenderBlocks(10))
             .build(new BlockModStairsPainted(planksOakPainted,UtilIdRegistrar.nextId()))
-            .withTexCoords(2, 3)
             .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block chestPlanksOakPainted = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -81,7 +76,6 @@ public abstract class ModBlocks {
             .setLightOpacity(3)
             .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .build(new BlockModChestPainted("chest.planks.oak.painted",UtilIdRegistrar.nextId(), Material.wood))
-            .withTexCoords(29, 29, 29, 29, 31, 29, 30, 29, 30, 29, 30, 29)
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     //TODO: This used .setDisabledStats()
