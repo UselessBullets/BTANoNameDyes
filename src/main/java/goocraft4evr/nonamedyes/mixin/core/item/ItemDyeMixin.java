@@ -30,7 +30,7 @@ public abstract class ItemDyeMixin {
             if (blockId == ModBlocks.netherRoots.id) {
                 if (!world.isClientSide) {
                     (new WorldFeatureNetherRoots(6)).generate(world, new Random(world.getRandomSeed()), blockX, blockY, blockZ);
-                    if (entityplayer.getGamemode().consumeBlocks) {
+                    if (entityplayer.getGamemode().consumeBlocks()) {
                         --itemstack.stackSize;
                     }
                     cir.setReturnValue(true);

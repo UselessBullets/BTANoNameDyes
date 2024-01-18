@@ -1,8 +1,8 @@
 package goocraft4evr.nonamedyes.mixin.core.crafting.recipe;
 
 import goocraft4evr.nonamedyes.item.ModItems;
-import net.minecraft.core.crafting.recipe.IRecipe;
-import net.minecraft.core.crafting.recipe.RecipeLabel;
+import net.minecraft.core.crafting.legacy.recipe.IRecipe;
+import net.minecraft.core.crafting.legacy.type.RecipeLabel;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.InventoryCrafting;
 import org.spongepowered.asm.mixin.Mixin;

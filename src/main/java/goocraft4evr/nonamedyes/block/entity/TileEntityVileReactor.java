@@ -28,10 +28,10 @@ public class TileEntityVileReactor extends TileEntity {
     private static final WeightedRandomBag<WeightedRandomLootObject> reactorDrops = new WeightedRandomBag();
 
     @Override
-    public void updateEntity() {
+    public void tick() {
         if (!worldObj.isClientSide&&
             worldObj.dimension == Dimension.nether) {
-            List<Entity> list = worldObj.getEntitiesWithinAABB(Entity.class,AABB.getBoundingBoxFromPool(xCoord-range, yCoord-range, zCoord-range, xCoord+range, yCoord+range, zCoord+range));
+            List<Entity> list = worldObj.getEntitiesWithinAABB(Entity.class,AABB.getBoundingBoxFromPool(x-range, y-range, z-range, x+range, y+range, z+range));
             if (!list.isEmpty()) {
                 for (Entity e : list) {
                     if (!(e instanceof EntityLiving)) continue;
@@ -48,20 +48,20 @@ public class TileEntityVileReactor extends TileEntity {
 
     private void onEntityKilled() {
         if (killCount>=killLimit) {
-            worldObj.setBlockWithNotify(xCoord,yCoord,zCoord,0);
-            generateNetherrack(worldObj,worldObj.rand,xCoord,yCoord-1,zCoord);
-            generateItems(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
-            worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,xCoord,yCoord,zCoord,"random.explode",1.0f,1.0f);
-            doBusrtFx(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
-            worldObj.removeBlockTileEntity(xCoord,yCoord,zCoord);
+            worldObj.setBlockWithNotify(x,y,z,0);
+            generateNetherrack(worldObj,worldObj.rand,x,y-1,z);
+            generateItems(worldObj,worldObj.rand,x,y,z);
+            worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,x,y,z,"random.explode",1.0f,1.0f);
+            doBusrtFx(worldObj,worldObj.rand,x,y,z);
+            worldObj.removeBlockTileEntity(x,y,z);
             return;
         } else if (killCount==killMark*2) {
-            BlockVileReactor.updateReactorBlockState(worldObj,xCoord,yCoord,zCoord);
+            BlockVileReactor.updateReactorBlockState(worldObj,x,y,z);
         } else if (killCount==killMark) {
-            BlockVileReactor.updateReactorBlockState(worldObj,xCoord,yCoord,zCoord);
+            BlockVileReactor.updateReactorBlockState(worldObj,x,y,z);
         }
-        worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,xCoord,yCoord,zCoord,"random.fizz",1.0f,0.2f);
-        doSmokeFx(worldObj,worldObj.rand,xCoord,yCoord,zCoord);
+        worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,x,y,z,"random.fizz",1.0f,0.2f);
+        doSmokeFx(worldObj,worldObj.rand,x,y,z);
     }
 
     private  void doBusrtFx(World world, Random rand, int x, int y, int z) {

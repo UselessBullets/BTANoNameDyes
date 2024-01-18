@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "nonamedyes",
-  "version": "1.0.1",
+  "version": "1.0.2",
 
   "name": "NoName Dyes",
   "description": "Adds new dyes to the game.",
@@ -16,8 +16,14 @@
     "main": [
       "goocraft4evr.nonamedyes.NoNameDyes"
     ],
+    "recipesReady": [
+      "goocraft4evr.nonamedyes.crafting.ModRecipes"
+    ],
     "btwaila": [
       "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"
+    ],
+    "terrain-api": [
+      "goocraft4evr.nonamedyes.modcontainers.terrainapi.TerrainAPIPlugin"
     ]
   },
   "mixins": [
@@ -26,7 +32,7 @@
 
   "depends": {
     "fabricloader": ">=0.13.3",
-    "halplibe": ">=2.1.6"
+    "halplibe": ">=3.0.0"
   },
   "suggests": {
   }

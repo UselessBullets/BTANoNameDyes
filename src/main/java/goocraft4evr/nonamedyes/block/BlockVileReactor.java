@@ -12,7 +12,7 @@ public class BlockVileReactor extends BlockTileEntity {
     private static boolean addSoulless = false;
     public BlockVileReactor(String key, int id) {
         super(key,id,Material.stone);
-        BlockTileEntity.isBlockContainer[id] = false;
+        //BlockTileEntity.isBlockContainer[id] = false;
     }
 
     @Override

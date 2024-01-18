@@ -4,7 +4,7 @@ import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.client.render.FlagRenderer;
 import net.minecraft.core.block.entity.TileEntityFlag;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.util.helper.Colors;
+import net.minecraft.client.util.helper.Colors;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

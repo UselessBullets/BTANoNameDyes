@@ -18,7 +18,7 @@ public class BlockModLamp extends Block {
     public BlockModLamp(String key, int id, boolean isActivated) {
         super(key, id, Material.stone);
         this.isActive = isActivated;
-        this.setTickOnLoad(true);
+        this.setTicking(true);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class BlockModLamp extends Block {
 
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int j) {
-        return BlockLamp.texCoordToIndex(5, 12);
+        return BlockLamp.texCoordToIndex(19,31);
     }
 
     public static int getMetadataForColour(int i) {

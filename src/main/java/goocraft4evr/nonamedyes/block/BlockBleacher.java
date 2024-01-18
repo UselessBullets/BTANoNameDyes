@@ -44,10 +44,12 @@ public class BlockBleacher extends BlockTileEntity {
         return false;
     }
 
+    /*
     @Override
-    public boolean isOpaqueCube() {
+    public boolean isBlockOpaqueCube() {
         return false;
     }
+     */
 
     @Override
     public void randomDisplayTick(World world, int x, int y, int z, Random rand) {
@@ -115,7 +117,7 @@ public class BlockBleacher extends BlockTileEntity {
     }
 
     @Override
-    public void onBlockRemoval(World world, int x, int y, int z) {
+    public void onBlockRemoved(World world, int x, int y, int z, int data) {
         TileEntityBleacher tileentitybleacher = (TileEntityBleacher)world.getBlockTileEntity(x, y, z);
         for (int l = 0; l < tileentitybleacher.getSizeInventory(); ++l) {
             ItemStack itemstack = tileentitybleacher.getStackInSlot(l);
@@ -137,6 +139,6 @@ public class BlockBleacher extends BlockTileEntity {
                 world.entityJoinedWorld(entityitem);
             }
         }
-        super.onBlockRemoval(world, x, y, z);
+        super.onBlockRemoved(world, x, y, z, data);
     }
 }

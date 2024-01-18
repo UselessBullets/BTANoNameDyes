@@ -7,6 +7,9 @@ import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLeavesBase;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.util.helper.Side;
+import net.minecraft.core.world.World;
+
+import java.util.Random;
 
 public class BlockLeavesCocoa extends BlockLeavesBase {
     private static TextureMap textures;
@@ -17,6 +20,18 @@ public class BlockLeavesCocoa extends BlockLeavesBase {
         textures.addBlockTexture("leaves_cocoa_fancy.png");
         textures.addBlockTexture("leaves_cocoa.png");
     }
+	@Override
+	public void updateTick(World world, int x, int y, int z, Random rand) {
+		world.setBlockWithNotify(x, y, z, Block.leavesCacao.id);
+	}
+	@Override
+	public void onBlockAdded(World world, int x, int y, int z) {
+		updateTick(world, x, y, z, null);
+	}
+	@Override
+	public void onNeighborBlockChange(World world, int x, int y, int z, int blockId) {
+		updateTick(world, x, y, z, null);
+	}
 
     @Override
     public int getBlockTextureFromSideAndMetadata(Side side, int j) {

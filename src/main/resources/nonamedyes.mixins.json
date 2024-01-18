@@ -8,7 +8,7 @@
     "core.block.entity.TileEntityFlagMixin",
     "core.block.entity.TileEntityMixin",
     "core.block.entity.TileEntitySignMixin",
-    "core.block.entity.TileEntityTrommelMixin",
+    "core.crafting.recipe.RecipeEntryLabelMixin",
     "core.crafting.recipe.RecipeLabelMixin",
     "core.crafting.recipe.RecipesBlastFurnaceAccessor",
     "core.entity.animal.EntitySheepAccessor",
@@ -25,7 +25,6 @@
     "core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworldMixin"
   ],
   "client": [
-    "client.MinecraftMixin",
     "client.gui.GuiEditFlagMixin",
     "client.gui.GuiHeldItemTooltipMixin",
     "client.net.handler.NetClientHandlerMixin",

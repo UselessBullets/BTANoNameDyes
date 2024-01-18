@@ -9,9 +9,9 @@ import java.util.Map;
 
 public class RecipesBleacher {
     private static final RecipesBleacher bleachingBase = new RecipesBleacher();
-    private Map bleachingList = new HashMap();
+    private final Map<Integer, ItemStack> bleachingList = new HashMap<>();
 
-    public static final RecipesBleacher bleaching() {
+    public static RecipesBleacher bleaching() {
         return bleachingBase;
     }
 
@@ -44,10 +44,10 @@ public class RecipesBleacher {
     }
 
     public ItemStack getBleachingResult(int i) {
-        return (ItemStack)bleachingList.get(i);
+        return bleachingList.get(i);
     }
 
-    public Map getBleachingList() {
+    public Map<Integer, ItemStack> getBleachingList() {
         return bleachingList;
     }
 }

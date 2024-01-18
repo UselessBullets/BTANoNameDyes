@@ -4,10 +4,10 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.helper.ModColors;
 import goocraft4evr.nonamedyes.item.ItemModDye;
 import goocraft4evr.nonamedyes.mixin.core.entity.animal.EntitySheepAccessor;
-import net.minecraft.client.render.texturepack.TexturePackBase;
+import net.minecraft.client.render.texturepack.TexturePack;
 import net.minecraft.core.entity.animal.EntitySheep;
 import net.minecraft.core.util.helper.Color;
-import net.minecraft.core.util.helper.Colors;
+import net.minecraft.client.util.helper.Colors;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,8 +27,8 @@ public abstract class ColorsMixin {
     private static final Color[] allFlagColors = new Color[16+ItemModDye.NUM_DYES];
     @Final
     private static final Color[] allSignColors = new Color[16+ItemModDye.NUM_DYES];
-    @Redirect(method="loadColors",at=@At(value="INVOKE",target="Lnet/minecraft/core/util/helper/Colors;fillColorArray(Lnet/minecraft/client/render/texturepack/TexturePackBase;Ljava/lang/String;[Lnet/minecraft/core/util/helper/Color;)V"))
-    private static void loadColorsOrSomeShit(TexturePackBase stream, String imagePath, Color[] array) {
+    @Redirect(method="loadColors",at=@At(value="INVOKE",target="Lnet/minecraft/client/util/helper/Colors;fillColorArray(Lnet/minecraft/client/render/texturepack/TexturePack;Ljava/lang/String;[Lnet/minecraft/core/util/helper/Color;)V"))
+    private static void loadColorsOrSomeShit(TexturePack stream, String imagePath, Color[] array) {
         //only redirect methods that would throw an exception
         if (array.length != 16+ItemModDye.NUM_DYES) {
             Colors.fillColorArray(stream, imagePath, array);
@@ -47,7 +47,7 @@ public abstract class ColorsMixin {
     }
 
     @Inject(method="loadColors",at=@At("TAIL"))
-    private static void initializeFleeceArray(TexturePackBase texturePack, CallbackInfo ci) {
+    private static void initializeFleeceArray(TexturePack texturePack, CallbackInfo ci) {
         //initialize the fleece array
         float[][] vanillaRGB = EntitySheep.fleeceColorTable;
         Color[] fleeceColors = new Color[ItemModDye.NUM_DYES];
