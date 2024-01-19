@@ -34,7 +34,7 @@ public class RecipesBleacher {
         addBleaching(ModBlocks.wool.id, new ItemStack(Block.wool));
         addBleaching(ModBlocks.lampIdle.id, new ItemStack(Block.lampIdle));
 
-        addBleaching(ModBlocks.plasterPainted.id, new ItemStack(ModBlocks.plasterPainted));
+        addBleaching(ModBlocks.plasterMud.id, new ItemStack(ModBlocks.plasterMud));
         addBleaching(ModBlocks.blockCeramicPainted.id, new ItemStack(ModBlocks.blockCeramicPainted));
         addBleaching(ModBlocks.tileCeramicPainted.id, new ItemStack(ModBlocks.tileCeramicPainted));
     }

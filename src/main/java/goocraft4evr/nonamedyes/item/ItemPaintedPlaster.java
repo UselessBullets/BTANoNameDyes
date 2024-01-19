@@ -4,17 +4,12 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.ModBlocks;
 import goocraft4evr.nonamedyes.helper.ModColors;
 import net.minecraft.core.block.*;
-import net.minecraft.core.block.entity.TileEntitySign;
-import net.minecraft.core.block.tag.BlockTags;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.net.command.TextFormatting;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
-import net.minecraft.core.world.season.Seasons;
-import net.minecraft.core.world.type.WorldTypes;
 import turniplabs.halplibe.helper.TextureHelper;
 import useless.prismaticlibe.ColoredTexture;
 import useless.prismaticlibe.IColored;
@@ -33,7 +28,7 @@ public class ItemPaintedPlaster extends Item implements IColored {
         int blockId = world.getBlockId(blockX, blockY, blockZ);
 		if (blockId == Block.mud.id) {
 			if (!world.isClientSide) {
-				world.setBlockAndMetadataWithNotify(blockX,blockY,blockZ, ModBlocks.plasterPainted.id,itemstack.getMetadata());
+				world.setBlockAndMetadataWithNotify(blockX,blockY,blockZ, ModBlocks.plasterMud.id,itemstack.getMetadata());
 				if (entityplayer.getGamemode().consumeBlocks()) {
 					--itemstack.stackSize;
 				}

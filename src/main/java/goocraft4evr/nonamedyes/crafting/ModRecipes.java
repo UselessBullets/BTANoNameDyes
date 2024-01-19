@@ -17,7 +17,6 @@ import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryBlastFurnace;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCrafting;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
-import net.minecraft.core.data.registry.recipe.entry.RecipeEntryLabelDye;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryTrommel;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
@@ -47,12 +46,12 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
 		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
-			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, i^15));
+			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterMud, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramics").add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramic_tiles").add(new ItemStack(ModBlocks.tileCeramicPainted, 1, i^15));
 		}
 		for (int i = 0; i < ItemModDye.NUM_DYES; i++) {
-			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, 16 + i));
+			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterMud, 1, 16 + i));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramics").add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramic_tiles").add(new ItemStack(ModBlocks.tileCeramicPainted, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("minecraft:planks").add(new ItemStack(ModBlocks.planksOakPainted.id, 1, i));

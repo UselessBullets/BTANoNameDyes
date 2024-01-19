@@ -2,15 +2,10 @@ package goocraft4evr.nonamedyes.block;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
-import goocraft4evr.nonamedyes.block.blockcolor.BlockColorCeramicPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModLampsPainted;
-import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModPlanksPainted;
 import goocraft4evr.nonamedyes.block.blockcolor.BlockColorPlasterPainted;
 import goocraft4evr.nonamedyes.block.cinnamon.BlockLeavesCinnamon;
 import goocraft4evr.nonamedyes.block.cinnamon.BlockSaplingCinnamon;
-import goocraft4evr.nonamedyes.block.cocoa.BlockLeavesCocoa;
-import goocraft4evr.nonamedyes.block.cocoa.BlockLogCocoaRipe;
-import goocraft4evr.nonamedyes.block.cocoa.BlockSaplingCocoa;
 import goocraft4evr.nonamedyes.block.ebony.BlockLeavesEbony;
 import goocraft4evr.nonamedyes.block.ebony.BlockSaplingEbony;
 import goocraft4evr.nonamedyes.block.wood.*;
@@ -18,7 +13,6 @@ import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemBlockPlasterPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
-import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
@@ -353,13 +347,12 @@ public abstract class ModBlocks {
             .build(new BlockDeprecated("plaster", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
-    public static final Block plasterPainted = new BlockBuilder(NoNameDyes.MOD_ID)
+    public static final Block plasterMud = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
             .setTextures("plaster/plaster_painted.png")
-            .setBlockColor(new BlockColorPlasterPainted())
-            .build(new BlockPlasterPainted("plaster.painted", UtilIdRegistrar.nextId()))
+            .build(new BlockCeramicPainted("plaster.mud", UtilIdRegistrar.nextId(),Material.stone,"plaster/*_mud_plaster.png"))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 	//TODO: change
