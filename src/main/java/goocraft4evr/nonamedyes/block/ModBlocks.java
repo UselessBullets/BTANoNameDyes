@@ -351,7 +351,6 @@ public abstract class ModBlocks {
             .setItemBlock(ItemBlockPlasterPainted::new)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
-            .setTextures("plaster/plaster_painted.png")
             .build(new BlockCeramicPainted("plaster.mud", UtilIdRegistrar.nextId(),Material.stone,"plaster/*_mud_plaster.png"))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
@@ -389,8 +388,16 @@ public abstract class ModBlocks {
             .build(new BlockCeramicPainted("tile.ceramic.painted", UtilIdRegistrar.nextId(),Material.stone,"ceramic/*_ceramic_tile.png"))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
+	public static final Block plasterLime = new BlockBuilder(NoNameDyes.MOD_ID)
+		.setItemBlock(ItemBlockPlasterPainted::new)
+		.setBlockSound(BlockSounds.STONE)
+		.setHardness(1.5f)
+		.setResistance(10.0f)
+		.build(new BlockCeramicPainted("plaster.lime", UtilIdRegistrar.nextId(),Material.stone,"plaster/*_lime_plaster.png"))
+		.withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
-    public static void register() {
+
+	public static void register() {
 
     }
 }
