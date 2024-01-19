@@ -4,7 +4,7 @@ public class UtilIdRegistrar {
     private static int block_id;
     private static int item_id;
     private static int gui_id;
-    private static int curr_id = 0;
+    public static int curr_id = 0;
 
     public static void initIds(int blockId, int itemId, int guiId) {
         block_id = blockId;

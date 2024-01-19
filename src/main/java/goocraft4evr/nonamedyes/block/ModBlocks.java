@@ -18,6 +18,7 @@ import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemBlockPlasterPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
+import net.minecraft.client.render.RenderBlocks;
 import net.minecraft.client.render.block.color.BlockColorLeaves;
 import net.minecraft.client.render.block.model.BlockModelRenderBlocks;
 import net.minecraft.client.sound.block.BlockSounds;
@@ -180,7 +181,7 @@ public abstract class ModBlocks {
 			.setTickOnLoad()
             .setFlammability(5,5)
             .setBlockModel(new BlockModelRenderBlocks(27))
-            .build(new BlockLogCocoaRipe("log.cocoa", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("log.cocoa", UtilIdRegistrar.nextId(), Material.wood,Block.logOakMossy.id))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 	//TODO: change
 	public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -191,7 +192,7 @@ public abstract class ModBlocks {
             .setVisualUpdateOnMetadata()
 			.setTickOnLoad()
             .setFlammability(5,3)
-            .build(new BlockLogCocoaRipe("log.cocoa.ripe", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("log.cocoa.ripe", UtilIdRegistrar.nextId(), Material.wood,Block.logOakMossy.id))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
     //HAS DISABLED STATS
@@ -204,7 +205,7 @@ public abstract class ModBlocks {
             .setTickOnLoad()
             .setBlockColor(new BlockColorLeaves("cocoa"))
             .setFlammability(30,60)
-            .build(new BlockLeavesCocoa("leaves.cocoa", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("leaves.cocoa", UtilIdRegistrar.nextId(), Material.leaves,Block.leavesCacao.id))
             .withDisabledStats()
             .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
 
@@ -215,7 +216,7 @@ public abstract class ModBlocks {
             .setHardness(0.0f)
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
-            .build(new BlockSaplingCocoa("sapling.cocoa", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("sapling.cocoa", UtilIdRegistrar.nextId(),Material.wood,Block.saplingCacao.id))
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
 
     public static final Block brickMalachite = malachiteBuilder
@@ -343,11 +344,12 @@ public abstract class ModBlocks {
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingEbony("sapling.ebony", UtilIdRegistrar.nextId()));
 
+	//TODO: change
     public static final Block plaster = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
             .setTextures("plaster/plaster.png")
-            .build(new Block("plaster", UtilIdRegistrar.nextId(),Material.stone))
+            .build(new BlockDeprecated("plaster", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block plasterPainted = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -359,18 +361,20 @@ public abstract class ModBlocks {
             .build(new BlockPlasterPainted("plaster.painted", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
+	//TODO: change
     public static final Block blockCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_block.png")
-            .build(new BlockPlasterPainted("block.ceramic", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("block.ceramic", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id+1))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
+	//TODO: change
     public static final Block tileCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_tile.png")
-            .build(new BlockPlasterPainted("tile.ceramic", UtilIdRegistrar.nextId()))
+            .build(new BlockDeprecated("tile.ceramic", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id+1))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
     public static final Block blockCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
