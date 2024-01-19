@@ -13,7 +13,7 @@ import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
 
 public class BlockCeramicPainted extends Block {
-    private static TextureMap textures;
+    private TextureMap textures;
 
     public BlockCeramicPainted(String key, int id, Material material, String path) {
         super(key, id, material);

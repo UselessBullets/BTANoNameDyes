@@ -170,7 +170,8 @@ public abstract class ModBlocks {
             .build(new BlockFlower("flower.indigo", UtilIdRegistrar.nextId())))
             .setKilledByWeather()
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
-    public static final Block logCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
+	//TODO: change
+	public static final Block logCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
             .setSideTextures("log_cocoa_sides.png")
             .setBlockSound(BlockSounds.WOOD)
@@ -181,7 +182,8 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockLogCocoaRipe("log.cocoa", UtilIdRegistrar.nextId()))
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
-    public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
+	//TODO: change
+	public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_cocoa_top.png")
             .setSideTextures("log_cocoa_ripe_sides.png")
             .setBlockSound(BlockSounds.WOOD)
@@ -193,6 +195,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
 
     //HAS DISABLED STATS
+	//TODO: change
     public static final Block leavesCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.2f)
@@ -375,8 +378,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_block_painted.png")
-            .setBlockColor(new BlockColorCeramicPainted())
-            .build(new BlockPlasterPainted("block.ceramic.painted", UtilIdRegistrar.nextId()))
+            .build(new BlockCeramicPainted("block.ceramic.painted", UtilIdRegistrar.nextId(),Material.stone,"ceramic/*_ceramic_block.png"))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block tileCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
@@ -384,8 +386,7 @@ public abstract class ModBlocks {
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_tile_painted.png")
-            .setBlockColor(new BlockColorCeramicPainted())
-            .build(new BlockPlasterPainted("tile.ceramic.painted", UtilIdRegistrar.nextId()))
+            .build(new BlockCeramicPainted("tile.ceramic.painted", UtilIdRegistrar.nextId(),Material.stone,"ceramic/*_ceramic_tile.png"))
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 
