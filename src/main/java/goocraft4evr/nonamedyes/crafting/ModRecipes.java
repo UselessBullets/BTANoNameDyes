@@ -42,9 +42,9 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/label_dye", RecipeEntryLabelModDye.class);
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/cinnamon", RecipeEntryCinnamon.class);
 
-		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf(ModBlocks.plaster));
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf(ModBlocks.blockCeramic));
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf(ModBlocks.tileCeramic));
+		Registries.ITEM_GROUPS.register("nonamedyes:plasters", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
 		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
 			Registries.ITEM_GROUPS.getItem("nonamedyes:plasters").add(new ItemStack(ModBlocks.plasterPainted, 1, i^15));

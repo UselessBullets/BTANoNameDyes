@@ -345,6 +345,7 @@ public abstract class ModBlocks {
             .build(new BlockSaplingEbony("sapling.ebony", UtilIdRegistrar.nextId()));
 
 	//TODO: change
+	@Deprecated
     public static final Block plaster = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(0.3f)
@@ -362,6 +363,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 	//TODO: change
+	@Deprecated
     public static final Block blockCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
@@ -370,6 +372,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.MINEABLE_BY_PICKAXE);
 
 	//TODO: change
+	@Deprecated
     public static final Block tileCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
