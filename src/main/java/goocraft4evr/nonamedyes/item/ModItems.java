@@ -34,6 +34,12 @@ public class ModItems {
             "ceramic",
             "ceramic.png");
 
+	public static Item limePowder = ItemHelper.createItem(
+		NoNameDyes.MOD_ID,
+		new Item(UtilIdRegistrar.nextId()),
+		"lime.powder",
+		"lime_powder.png");
+
     public static void register() {
 
     }

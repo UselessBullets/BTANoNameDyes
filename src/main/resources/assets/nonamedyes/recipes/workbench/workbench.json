@@ -110,7 +110,7 @@
       },
       {
         "stack": {
-          "key": "tile.cobble.limestone",
+          "key": "item.nonamedyes.lime.powder",
           "amount": 1,
           "meta": 0
         }
@@ -118,6 +118,24 @@
     ],
     "result": {
       "key":  "item.nonamedyes.bleaching.powder",
+      "amount": 3,
+      "meta": 0
+    }
+  },
+  {
+    "name": "minecraft:workbench/lime_powder",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "tile.cobble.limestone",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key":  "item.nonamedyes.lime.powder",
       "amount": 4,
       "meta": 0
     }
