@@ -123,7 +123,7 @@
     }
   },
   {
-    "name": "minecraft:workbench/lime_powder",
+    "name": "minecraft:workbench/lime.powder",
     "type": "minecraft:crafting/shapeless",
     "inputs": [
       {
@@ -338,5 +338,79 @@
       "meta": 0
     },
     "consumeContainers": false
+  },
+  {
+    "name": "minecraft:workbench/wet_plaster",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "item.nonamedyes.lime.powder",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.nonamedyes.lime.powder",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.nonamedyes.lime.powder",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.nonamedyes.lime.powder",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.clay",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.clay",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.clay",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "item.clay",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+	  {
+        "stack": {
+          "key": "tile.sand",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key":  "item.nonamedyes.wet.plaster",
+      "amount": 12,
+      "meta": 0
+    }
   }
 ]
