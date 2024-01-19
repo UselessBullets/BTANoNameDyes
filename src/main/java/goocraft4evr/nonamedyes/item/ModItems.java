@@ -40,11 +40,16 @@ public class ModItems {
 		"lime.powder",
 		"lime_powder.png");
 
-	public static Item wetPowder = ItemHelper.createItem(
+	public static Item wetPlaster = ItemHelper.createItem(
 		NoNameDyes.MOD_ID,
 		new Item(UtilIdRegistrar.nextId()),
-		"wet.plaster",
+		"plaster.wet",
 		"wet_plaster.png");
+
+	public static Item paintedPlaster = ItemHelper.createItem(
+		NoNameDyes.MOD_ID,
+		new ItemPaintedPlaster(UtilIdRegistrar.nextId()),
+		"plaster.painted");
 
     public static void register() {
 
