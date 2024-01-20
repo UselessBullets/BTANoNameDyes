@@ -35,7 +35,7 @@ public class ItemPaintedPlaster extends Item implements IColored {
 			}
             return true;
         }
-		if (blockId == Block.limestone.id) {
+		if (blockId == Block.cobbleLimestone.id) {
 			if (!world.isClientSide) {
 				world.setBlockAndMetadataWithNotify(blockX,blockY,blockZ, ModBlocks.plasterLime.id,itemstack.getMetadata());
 				if (entityplayer.getGamemode().consumeBlocks()) {

@@ -392,7 +392,7 @@ public abstract class ModBlocks {
 		.setBlockSound(BlockSounds.STONE)
 		.setHardness(1.5f)
 		.setResistance(10.0f)
-		.build(new BlockCeramicPainted("plaster.lime", UtilIdRegistrar.nextId(),Material.stone,"plaster/*_lime_plaster.png"))
+		.build(new BlockCeramicPainted("plaster.limestone", UtilIdRegistrar.nextId(),Material.stone,"plaster/*_limestone_plaster.png"))
 		.withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 

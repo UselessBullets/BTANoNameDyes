@@ -83,9 +83,12 @@ On a technical note, you can change the starting ID for all blocks and items, in
 + Ebony Sapling
   + Grows ebony trees.
   + Functions like other saplings.
-+ Plaster
-  + 4 clay, 2 tall grass, 2 sand and 1 water bucket crafts 4 plaster.
-  + Stone like block that can be dyed.
++ Plastered Mud
+  + Obtained by using dyed plaster on mud.
+  + Weak stone-like block, comes in different colours.
++ Plastered Limestone
+  + Obtained by using dyed plaster on cobbled limestone.
+  + Coloured stone.
 + Painted Plaster
   + 8 plaster and 1 dye crafts 8 painted plaster.
 + Block of Ceramic
@@ -99,10 +102,10 @@ On a technical note, you can change the starting ID for all blocks and items, in
 
 # Items
 + Bleaching Powder
-  + 1 bone meal, 1 cobbled limestone and 1 yields 4 bleaching powder.
+  + 1 bone meal, 1 lime powder and 1 sulphur yields 3 bleaching powder.
   + bleaches 8 blocks when used in a bleaching basin.
 + Snickerdoodles
-  + 2 wheat, 1 cinnamon and 1 sugar yield 8 snickerdoodles.
+  + 2 wheat, 1 cinnamon and 1 sugar yields 8 snickerdoodles.
   + heals half a heart
 + Vile Shards
   + Obtained from smelting vile netherrack.
@@ -110,6 +113,16 @@ On a technical note, you can change the starting ID for all blocks and items, in
 + Ceramic
   + Obtained from smelting clay in a blast furnace.
   + Used to craft ceramic blocks.
++ Lime Powder
+  + 1 cobbled limestone yields 4 lime powder.
+  + Used for bleaching powder and plaster.
++ Wet Plaster
+  + 4 lime powder, 4 clay and 1 sand yields 12 wet plaster.
+  + Used for crafting dyed plaster.
++ Dyed Plaster
+  + 8 wet plaster and 1 dye yields 8 dyed plaster.
+  + Right clicking mud or cobbled limestone will plaster them.
+  
 
 # Biomes
 + Cinnamon Forest
