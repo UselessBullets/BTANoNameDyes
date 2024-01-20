@@ -1,10 +1,14 @@
 package goocraft4evr.nonamedyes.block;
 
+import goocraft4evr.nonamedyes.NoNameDyes;
+import goocraft4evr.nonamedyes.TextureMap;
+import goocraft4evr.nonamedyes.item.ItemModDye;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockLamp;
 import net.minecraft.core.block.entity.TileEntity;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.enums.EnumDropCause;
+import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
@@ -14,6 +18,8 @@ import java.util.Random;
 
 public class BlockModLamp extends Block {
     boolean isActive;
+	private static final TextureMap texturesOff;
+	private static final TextureMap texturesOn;
 
     public BlockModLamp(String key, int id, boolean isActivated) {
         super(key, id, Material.stone);
@@ -32,15 +38,16 @@ public class BlockModLamp extends Block {
         world.scheduleBlockUpdate(i, j, k, this.id, this.tickRate());
     }
 
-    @Override
-    public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
-        return this.atlasIndices[side.getId()];
-    }
+	@Override
+	public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
+		return texturesOn.getTexture(meta);
+	}
 
-    @Override
-    public int getBlockTextureFromSideAndMetadata(Side side, int j) {
-        return BlockLamp.texCoordToIndex(19,31);
-    }
+	@Override
+	public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
+		int meta = blockAccess.getBlockMetadata(x, y, z);
+		return isActive?texturesOn.getTexture(meta):texturesOff.getTexture(meta);
+	}
 
     public static int getMetadataForColour(int i) {
         return i;
@@ -67,4 +74,13 @@ public class BlockModLamp extends Block {
     public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
         return new ItemStack[]{new ItemStack(ModBlocks.lampIdle, 1, meta)};
     }
+
+	static {
+		texturesOff = new TextureMap(NoNameDyes.MOD_ID, ItemModDye.dyeColors.length);
+		texturesOn = new TextureMap(NoNameDyes.MOD_ID, ItemModDye.dyeColors.length);
+		for (int i = 0; i< ItemModDye.dyeColors.length; i++) {
+			texturesOff.addBlockTexture("lamp/"+ItemModDye.getTextureName(ItemModDye.dyeColors[i])+"_lamp_off.png");
+			texturesOn.addBlockTexture("lamp/"+ItemModDye.getTextureName(ItemModDye.dyeColors[i])+"_lamp_on.png");
+		}
+	}
 }
