@@ -299,7 +299,7 @@ tile.nonamedyes.block.ceramic.painted.navy.blue.name=Navy Blue Block of Ceramic
 tile.nonamedyes.block.ceramic.painted.navy.blue.desc=A block of solid ceramic, stained navy blue.
 
 tile.nonamedyes.tile.ceramic.painted.white.name=White Tiled Ceramic
-tile.nonamedyes.tile.ceramic.painted.white.desc=Tiled ceramic, stained white.
+tile.nonamedyes.tile.ceramic.painted.white.desc=Tiled ceramic.
 tile.nonamedyes.tile.ceramic.painted.orange.name=Orange Tiled Ceramic
 tile.nonamedyes.tile.ceramic.painted.orange.desc=Tiled ceramic, stained orange.
 tile.nonamedyes.tile.ceramic.painted.magenta.name=Magenta Tiled Ceramic
