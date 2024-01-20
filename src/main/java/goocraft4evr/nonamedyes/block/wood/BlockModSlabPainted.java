@@ -1,12 +1,12 @@
 package goocraft4evr.nonamedyes.block.wood;
 
-import goocraft4evr.nonamedyes.NoNameDyes;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.block.BlockSlab;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 public class BlockModSlabPainted extends BlockSlab {
     public BlockModSlabPainted(Block modelBlock, int id) {
@@ -25,5 +25,10 @@ public class BlockModSlabPainted extends BlockSlab {
 	@Override
 	public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
 		return BlockModPlanksPainted.getIndexFromMeta(meta, true);
+	}
+
+	@Override
+	public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
+		return this.getBlockTextureFromSideAndMetadata(side, blockAccess.getBlockMetadata(x, y, z));
 	}
 }
