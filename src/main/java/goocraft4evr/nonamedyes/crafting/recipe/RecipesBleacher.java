@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.crafting.recipe;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.block.Block;
 import net.minecraft.core.item.ItemStack;
 
@@ -38,6 +39,7 @@ public class RecipesBleacher {
 		addBleaching(ModBlocks.plasterLime.id, new ItemStack(ModBlocks.plasterLime));
         addBleaching(ModBlocks.blockCeramicPainted.id, new ItemStack(ModBlocks.blockCeramicPainted));
         addBleaching(ModBlocks.tileCeramicPainted.id, new ItemStack(ModBlocks.tileCeramicPainted));
+		addBleaching(ModItems.paintedPlaster.id, new ItemStack(ModItems.wetPlaster));
     }
 
     public void addBleaching(int i, ItemStack itemstack) {
