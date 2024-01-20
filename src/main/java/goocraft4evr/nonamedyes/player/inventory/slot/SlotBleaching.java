@@ -1,7 +1,5 @@
 package goocraft4evr.nonamedyes.player.inventory.slot;
 
-import net.minecraft.core.achievement.AchievementList;
-import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
 import net.minecraft.core.player.inventory.IInventory;
 import net.minecraft.core.player.inventory.slot.Slot;

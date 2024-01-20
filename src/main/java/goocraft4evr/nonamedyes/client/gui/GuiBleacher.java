@@ -4,8 +4,24 @@ import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.block.entity.TileEntityBleacher;
 import goocraft4evr.nonamedyes.player.inventory.ContainerBleacher;
 import net.minecraft.client.gui.GuiContainer;
-import net.minecraft.core.player.inventory.InventoryPlayer;
+import net.minecraft.core.InventoryAction;
+import net.minecraft.core.block.entity.TileEntityBlastFurnace;
+import net.minecraft.core.crafting.LookupFuelFurnace;
+import net.minecraft.core.crafting.LookupFuelFurnaceBlast;
+import net.minecraft.core.data.registry.Registries;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryBlastFurnace;
+import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
+import net.minecraft.core.item.Item;
+import net.minecraft.core.item.ItemArmor;
+import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.player.inventory.*;
+import net.minecraft.core.player.inventory.slot.Slot;
+import net.minecraft.core.player.inventory.slot.SlotCrafting;
+import net.minecraft.core.player.inventory.slot.SlotCreative;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
+
+import java.util.Iterator;
 
 public class GuiBleacher extends GuiContainer {
     private final TileEntityBleacher bleacher;
