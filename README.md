@@ -29,22 +29,13 @@ On a technical note, you can change the starting ID for all blocks and items, in
   + Crafts 2 indigo dye.
   + Can grow on grass, but only in the biomes it spawns naturally in.
 + Cocoa Log
-  + Generates as part of cocoa trees.
-  + Crafts into oak planks.
-  + Functions like other logs.
+  + DEPRECATED, turns into mossy oak log
 + Ripe Cocoa Log
-  + Generates as part of cocoa trees.
-  + Drops 1+5 cocoa beans and 1 cocoa log.
-  + Does not necissarily function like other logs because this log is special.
+  + DEPRECATED, turns into mossy oak log
 + Cocoa Leaves
-  + Generates as part of cocoa trees.
-  + Drops cocoa saplings.
-  + Functions like other leaves.
+  + DEPRECATED, turns into cacao leaves
 + Cocoa Sapling
-  + Crafted from 1 oak sapling and 1 cocoa beans.
-  + Grows cocoa trees.
-      + Simple trees like oak and birch, but spawn with 1+3 cocoa logs.
-  + Functions like other saplings.
+  + DEPRECATED, turns into cacao sapling
 + Malachite Bricks
   + 4 malachite crafts 4 bricks.
 + Bleaching Basin
@@ -83,6 +74,8 @@ On a technical note, you can change the starting ID for all blocks and items, in
 + Ebony Sapling
   + Grows ebony trees.
   + Functions like other saplings.
++ Plaster
+  + DEPRECATED, turns into white plastered mud.
 + Plastered Mud
   + Obtained by using dyed plaster on mud.
   + Weak stone-like block, comes in different colours.
@@ -99,6 +92,7 @@ On a technical note, you can change the starting ID for all blocks and items, in
   + 8 ceramic and 1 dye crafts 8 painted ceramic blocks.
 + Tiled Ceramic
   + 2 ceramic blocks crafts 2 tiled ceramic blocks. (also works for painted ceramic)
+  + Undyed tiled ceramic deprecated, turns into white tiled ceramic
 
 # Items
 + Bleaching Powder
