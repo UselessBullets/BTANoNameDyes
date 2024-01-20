@@ -9,6 +9,7 @@ import goocraft4evr.nonamedyes.block.ebony.BlockLeavesEbony;
 import goocraft4evr.nonamedyes.block.ebony.BlockSaplingEbony;
 import goocraft4evr.nonamedyes.block.wood.*;
 import goocraft4evr.nonamedyes.client.render.block.model.BlockModelNo3dRender;
+import goocraft4evr.nonamedyes.item.ItemBlockDeprecated;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockPainted;
 import goocraft4evr.nonamedyes.item.block.ItemBlockPlasterPainted;
 import goocraft4evr.nonamedyes.item.block.ItemModBlockSlabPainted;
@@ -20,6 +21,7 @@ import net.minecraft.core.block.BlockFlower;
 import net.minecraft.core.block.BlockLog;
 import net.minecraft.core.block.material.Material;
 import net.minecraft.core.block.tag.BlockTags;
+import net.minecraft.core.item.Item;
 import turniplabs.halplibe.helper.BlockBuilder;
 
 public abstract class ModBlocks {
@@ -165,7 +167,9 @@ public abstract class ModBlocks {
             .setKilledByWeather()
             .withTags(BlockTags.BROKEN_BY_FLUIDS);
 	//TODO: change
+	@Deprecated
 	public static final Block logCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
+		.setItemBlock(b -> new ItemBlockDeprecated(b,Block.logOakMossy))
             .setTopBottomTexture("log_cocoa_top.png")
             .setSideTextures("log_cocoa_sides.png")
             .setBlockSound(BlockSounds.WOOD)
@@ -175,9 +179,11 @@ public abstract class ModBlocks {
             .setFlammability(5,5)
             .setBlockModel(new BlockModelRenderBlocks(27))
             .build(new BlockDeprecated("log.cocoa", UtilIdRegistrar.nextId(), Material.wood,Block.logOakMossy.id))
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE,BlockTags.NOT_IN_CREATIVE_MENU);
 	//TODO: change
+	@Deprecated
 	public static final Block logCocoaRipe = new BlockBuilder(NoNameDyes.MOD_ID)
+		.setItemBlock(b -> new ItemBlockDeprecated(b,Block.logOakMossy))
             .setTopBottomTexture("log_cocoa_top.png")
             .setSideTextures("log_cocoa_ripe_sides.png")
             .setBlockSound(BlockSounds.WOOD)
@@ -186,11 +192,13 @@ public abstract class ModBlocks {
 			.setTickOnLoad()
             .setFlammability(5,3)
             .build(new BlockDeprecated("log.cocoa.ripe", UtilIdRegistrar.nextId(), Material.wood,Block.logOakMossy.id))
-            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE);
+            .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     //HAS DISABLED STATS
 	//TODO: change
+	@Deprecated
     public static final Block leavesCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
+			.setItemBlock(b -> new ItemBlockDeprecated(b,Block.leavesCacao))
             .setBlockSound(BlockSounds.GRASS)
             .setHardness(0.2f)
             .setLightOpacity(1)
@@ -200,9 +208,11 @@ public abstract class ModBlocks {
             .setFlammability(30,60)
             .build(new BlockDeprecated("leaves.cocoa", UtilIdRegistrar.nextId(), Material.leaves,Block.leavesCacao.id))
             .withDisabledStats()
-            .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS);
+            .withTags(BlockTags.SHEARS_DO_SILK_TOUCH, BlockTags.MINEABLE_BY_AXE, BlockTags.MINEABLE_BY_HOE, BlockTags.MINEABLE_BY_SWORD, BlockTags.MINEABLE_BY_SHEARS,BlockTags.NOT_IN_CREATIVE_MENU);
 
-    public static final Block saplingCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
+    @Deprecated
+	public static final Block saplingCocoa = new BlockBuilder(NoNameDyes.MOD_ID)
+		.setItemBlock(b -> new ItemBlockDeprecated(b,Block.saplingCacao))
             .setTextures("sapling_cocoa.png")
             .setBlockSound(BlockSounds.GRASS)
             .setBlockModel(new BlockModelRenderBlocks(1))
@@ -210,7 +220,7 @@ public abstract class ModBlocks {
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .build(new BlockDeprecated("sapling.cocoa", UtilIdRegistrar.nextId(),Material.wood,Block.saplingCacao.id))
-            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+            .withTags(BlockTags.BROKEN_BY_FLUIDS,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block brickMalachite = malachiteBuilder
             .setResistance(10.0f)
@@ -344,7 +354,7 @@ public abstract class ModBlocks {
             .setHardness(0.3f)
             .setTextures("plaster/plaster.png")
             .build(new BlockDeprecated("plaster", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block plasterMud = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
@@ -356,20 +366,22 @@ public abstract class ModBlocks {
 	//TODO: change
 	@Deprecated
     public static final Block blockCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
+
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_block.png")
             .build(new BlockDeprecated("block.ceramic", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id+1))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
 	//TODO: change
 	@Deprecated
     public static final Block tileCeramic = new BlockBuilder(NoNameDyes.MOD_ID)
+
             .setBlockSound(BlockSounds.STONE)
             .setHardness(1.0f)
             .setTextures("ceramic/ceramic_tile.png")
             .build(new BlockDeprecated("tile.ceramic", UtilIdRegistrar.nextId(),Material.stone,UtilIdRegistrar.curr_id+1))
-            .withTags(BlockTags.MINEABLE_BY_PICKAXE);
+            .withTags(BlockTags.MINEABLE_BY_PICKAXE,BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block blockCeramicPainted = new BlockBuilder(NoNameDyes.MOD_ID)
             .setItemBlock(ItemBlockPlasterPainted::new)
@@ -397,6 +409,8 @@ public abstract class ModBlocks {
 
 
 	public static void register() {
-
+		Item.itemsList[plaster.id] = new ItemBlockDeprecated(plaster,plasterMud);
+		Item.itemsList[blockCeramic.id] = new ItemBlockDeprecated(blockCeramic,blockCeramicPainted);
+		Item.itemsList[tileCeramic.id] = new ItemBlockDeprecated(tileCeramic,tileCeramicPainted);
     }
 }
