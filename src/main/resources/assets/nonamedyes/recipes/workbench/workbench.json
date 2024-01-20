@@ -412,5 +412,29 @@
       "amount": 12,
       "meta": 0
     }
-  }
+  },
+  {
+    "name": "minecraft:workbench/block_ceramic",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "CC",
+      "CC"
+    ],
+    "symbols": [
+      {
+        "symbol": "C",
+        "stack": {
+          "key": "item.nonamedyes.ceramic",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.block.ceramic.painted",
+      "amount": 4,
+      "meta": 0
+    },
+    "consumeContainers": false
+  },
 ]

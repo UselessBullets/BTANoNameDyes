@@ -31,13 +31,13 @@ tile.nonamedyes.sapling.ebony.name = Ebony Sapling
 tile.nonamedyes.sapling.ebony.desc = Plant to grow an ebony tree.
 
 tile.nonamedyes.log.cocoa.name = Cocoa Log
-tile.nonamedyes.log.cocoa.desc = A log from a cocoa tree.
+tile.nonamedyes.log.cocoa.desc = DEPRECATED
 tile.nonamedyes.log.cocoa.ripe.name = Ripe Cocoa Log
-tile.nonamedyes.log.cocoa.ripe.desc = A log from a cocoa tree, ripe with cocoa pods.
+tile.nonamedyes.log.cocoa.ripe.desc = DEPRECATED
 tile.nonamedyes.leaves.cocoa.name = Cocoa Leaves
-tile.nonamedyes.leaves.cocoa.desc = Leaves from a cocoa tree.
+tile.nonamedyes.leaves.cocoa.desc = DEPRECATED
 tile.nonamedyes.sapling.cocoa.name = Cocoa Sapling
-tile.nonamedyes.sapling.cocoa.desc = Plant to grow a cocoa tree.
+tile.nonamedyes.sapling.cocoa.desc = DEPRECATED
 
 tile.nonamedyes.log.cinnamon.name = Cinnamon Log
 tile.nonamedyes.log.cinnamon.desc = A log from a cinnamon tree, can be harvested into cinnamon.
@@ -62,11 +62,11 @@ tile.nonamedyes.brick.malachite.name=Malachite Bricks
 tile.nonamedyes.brick.malachite.desc=Stacked bricks of malachite.
 
 tile.nonamedyes.plaster.name=Plaster
-tile.nonamedyes.plaster.desc=Tastes like drywall.
+tile.nonamedyes.plaster.desc=DEPRECATED
 tile.nonamedyes.block.ceramic.name=Block of Ceramic
-tile.nonamedyes.block.ceramic.desc=A block of solid ceramic.
+tile.nonamedyes.block.ceramic.desc=DEPRECATED
 tile.nonamedyes.tile.ceramic.name=Tiled Ceramic
-tile.nonamedyes.tile.ceramic.desc=Ceramic arranged into tiles.
+tile.nonamedyes.tile.ceramic.desc=DEPRECATED
 item.nonamedyes.ceramic.name=Ceramic
 item.nonamedyes.ceramic.desc=A smooth, glossy material.
 
@@ -242,7 +242,7 @@ tile.nonamedyes.plaster.limestone.navy.blue.name=Navy Blue Limestone Plaster
 tile.nonamedyes.plaster.limestone.navy.blue.desc=Plastered limestone, stained navy blue.
 
 tile.nonamedyes.block.ceramic.painted.white.name=White Block of Ceramic
-tile.nonamedyes.block.ceramic.painted.white.desc=A block of solid ceramic, stained white.
+tile.nonamedyes.block.ceramic.painted.white.desc=A block of solid ceramic.
 tile.nonamedyes.block.ceramic.painted.orange.name=Orange Block of Ceramic
 tile.nonamedyes.block.ceramic.painted.orange.desc=A block of solid ceramic, stained orange.
 tile.nonamedyes.block.ceramic.painted.magenta.name=Magenta Block of Ceramic
