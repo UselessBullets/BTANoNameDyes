@@ -7,7 +7,7 @@ import net.minecraft.core.item.block.ItemBlock;
 import net.minecraft.core.world.World;
 
 public class ItemBlockDeprecated extends ItemBlock {
-	private Block alt;
+	private final Block alt;
 	public ItemBlockDeprecated(Block block, Block alt) {
 		super(block);
 		this.alt = alt;

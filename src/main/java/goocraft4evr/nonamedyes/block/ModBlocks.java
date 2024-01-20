@@ -2,7 +2,6 @@ package goocraft4evr.nonamedyes.block;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.UtilIdRegistrar;
-import goocraft4evr.nonamedyes.block.blockcolor.BlockColorModLampsPainted;
 import goocraft4evr.nonamedyes.block.cinnamon.BlockLeavesCinnamon;
 import goocraft4evr.nonamedyes.block.cinnamon.BlockSaplingCinnamon;
 import goocraft4evr.nonamedyes.block.ebony.BlockLeavesEbony;
