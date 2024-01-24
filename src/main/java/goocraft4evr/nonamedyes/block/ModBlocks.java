@@ -50,7 +50,7 @@ public abstract class ModBlocks {
             .withTags(BlockTags.FENCES_CONNECT, BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);
 
     public static final Block slabPlanksOakPainted = woodBlockBuilder
-            .setItemBlock(ItemModBlockSlabPainted::new)
+            .setItemBlock(block -> new ItemModBlockPainted(block,true))
             .setUseInternalLight()
             .build(new BlockModSlabPainted(planksOakPainted,UtilIdRegistrar.nextId()))
             .withTags(BlockTags.MINEABLE_BY_AXE, BlockTags.NOT_IN_CREATIVE_MENU);

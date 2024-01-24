@@ -71,8 +71,8 @@ public class BlockBleacher extends BlockTileEntity {
     public boolean blockActivated(World world, int x, int y, int z, EntityPlayer player) {
         if (!world.isClientSide) {
             TileEntityBleacher tileEntityBleacher = (TileEntityBleacher) world.getBlockTileEntity(x,y,z);
-            if ((player instanceof EntityPlayerSP)) displayGUIBleacherClient((EntityPlayerSP) player, tileEntityBleacher);
-            else displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
+            if ((player instanceof EntityPlayerMP)) displayGUIBleacherServer((EntityPlayerMP) player, tileEntityBleacher);
+            else displayGUIBleacherClient((EntityPlayerSP) player, tileEntityBleacher);
         }
         return true;
     }

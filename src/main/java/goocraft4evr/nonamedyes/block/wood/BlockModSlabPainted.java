@@ -7,6 +7,7 @@ import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.util.helper.Direction;
 import net.minecraft.core.util.helper.Side;
 import net.minecraft.core.world.World;
+import net.minecraft.core.world.WorldSource;
 
 public class BlockModSlabPainted extends BlockSlab {
     public BlockModSlabPainted(Block modelBlock, int id) {
@@ -24,6 +25,11 @@ public class BlockModSlabPainted extends BlockSlab {
     }
 	@Override
 	public int getBlockTextureFromSideAndMetadata(Side side, int meta) {
+		return BlockModPlanksPainted.getIndexFromMeta(meta, true);
+	}
+	@Override
+	public int getBlockTexture(WorldSource blockAccess, int x, int y, int z, Side side) {
+		int meta = blockAccess.getBlockMetadata(x, y, z);
 		return BlockModPlanksPainted.getIndexFromMeta(meta, true);
 	}
 }

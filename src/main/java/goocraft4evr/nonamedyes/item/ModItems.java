@@ -6,6 +6,8 @@ import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemFoodStackable;
 import turniplabs.halplibe.helper.ItemHelper;
 
+import java.util.ArrayList;
+
 public class ModItems {
 
     public static Item dye = ItemModDye.createDyes("dye", UtilIdRegistrar.nextId()).setNotInCreativeMenu();
@@ -52,6 +54,5 @@ public class ModItems {
 		"plaster.painted");
 
     public static void register() {
-
     }
 }
