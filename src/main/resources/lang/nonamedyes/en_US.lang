@@ -22,6 +22,8 @@ item.nonamedyes.lime.powder.name = Lime Powder
 item.nonamedyes.lime.powder.desc = White powder from finely crushed limestone.
 item.nonamedyes.plaster.wet.name = Wet Plaster
 item.nonamedyes.plaster.wet.desc = Paste that can be applied to certain blocks. Needs a dye.
+item.nonamedyes.tool.paintscraper.name = Paint Scraper
+item.nonamedyes.tool.paintscraper.desc = Scrapes plaster off of blocks.
 
 tile.nonamedyes.log.ebony.name = Ebony Log
 tile.nonamedyes.log.ebony.desc = A log from an ebony tree.
