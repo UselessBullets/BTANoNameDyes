@@ -40,6 +40,6 @@ public class BlockLeavesCocoa extends BlockLeavesBase {
 
     @Override
     protected Block getSapling() {
-        return ModBlocks.saplingCocoa;
+        return ModBlocks.saplingPalm;
     }
 }

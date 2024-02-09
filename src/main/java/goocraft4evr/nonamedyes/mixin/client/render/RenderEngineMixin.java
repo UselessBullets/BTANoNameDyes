@@ -34,6 +34,7 @@ public abstract class RenderEngineMixin {
         ColorPropertiesAccessor.invokeRegisterLeavesColor("cocoa",colors);
         ColorPropertiesAccessor.invokeRegisterLeavesColor("cinnamon",colors);
         ColorPropertiesAccessor.invokeRegisterLeavesColor("ebony",colors);
+		ColorPropertiesAccessor.invokeRegisterLeavesColor("palm",colors);
     }
 }
 
