@@ -21,9 +21,11 @@ public class WorldFeatureTreePalm extends WorldFeature {
     public boolean generate(World world, Random random, int x, int y, int z) {
 		//actual height is this +4
         int treeHeight = 3 + random.nextInt(2);
+		int blockId;
 		if (y < 1 ||
 			y + treeHeight + 5 >= world.getHeightBlocks() ||
-			!Block.hasTag(world.getBlockId(x, y - 1, z), BlockTags.GROWS_TREES)) return false;
+			!(Block.hasTag(blockId = world.getBlockId(x, y - 1, z), BlockTags.GROWS_TREES)
+				|| blockId == Block.sand.id)) return false;
 
 		int stem1 = 1 + random.nextInt(treeHeight+1);
 		int stem2 = 1 + random.nextInt(treeHeight+2-stem1);
@@ -42,7 +44,6 @@ public class WorldFeatureTreePalm extends WorldFeature {
 
 
 		//trunk check
-		int blockId;
 		for (int i=0;i<stem1;i++) {
 			blockId = world.getBlockId(x, y+i, z);
 			if (!(blockId == 0 || blockId == this.leavesID)) return false;

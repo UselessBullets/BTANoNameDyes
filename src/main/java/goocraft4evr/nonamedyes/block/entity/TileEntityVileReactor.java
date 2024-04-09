@@ -12,7 +12,7 @@ import net.minecraft.core.entity.EntityItem;
 import net.minecraft.core.entity.EntityLiving;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
-import net.minecraft.core.sound.SoundType;
+import net.minecraft.core.sound.SoundCategory;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.Dimension;
 import net.minecraft.core.world.World;
@@ -51,8 +51,8 @@ public class TileEntityVileReactor extends TileEntity {
             worldObj.setBlockWithNotify(x,y,z,0);
             generateNetherrack(worldObj,worldObj.rand,x,y-1,z);
             generateItems(worldObj,worldObj.rand,x,y,z);
-            worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,x,y,z,"random.explode",1.0f,1.0f);
-            doBusrtFx(worldObj,worldObj.rand,x,y,z);
+            worldObj.playSoundEffect(null,SoundCategory.WORLD_SOUNDS,x,y,z,"random.explode",1.0f,1.0f);
+			doBusrtFx(worldObj,worldObj.rand,x,y,z);
             worldObj.removeBlockTileEntity(x,y,z);
             return;
         } else if (killCount==killMark*2) {
@@ -60,7 +60,7 @@ public class TileEntityVileReactor extends TileEntity {
         } else if (killCount==killMark) {
             BlockVileReactor.updateReactorBlockState(worldObj,x,y,z);
         }
-        worldObj.playSoundEffect(SoundType.WORLD_SOUNDS,x,y,z,"random.fizz",1.0f,0.2f);
+        worldObj.playSoundEffect(null,SoundCategory.WORLD_SOUNDS,x,y,z,"random.fizz",1.0f,0.2f);
         doSmokeFx(worldObj,worldObj.rand,x,y,z);
     }
 

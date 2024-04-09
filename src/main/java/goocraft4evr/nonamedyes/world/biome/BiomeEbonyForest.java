@@ -10,7 +10,11 @@ import net.minecraft.core.world.generate.feature.tree.*;
 import java.util.Random;
 
 public class BiomeEbonyForest extends Biome {
-    @Override
+	public BiomeEbonyForest(String key) {
+		super(key);
+	}
+
+	@Override
     public WorldFeature getRandomWorldGenForTrees(Random random) {
         if (random.nextInt(4) == 0) {
             if (random.nextInt(4) == 0) {

@@ -29,9 +29,6 @@ public class ModRecipes implements RecipeEntrypoint {
 	public static final RecipeGroup<RecipeEntryBlastFurnace> BLAST_FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceBlastActive)));
 	@Override
 	public void onRecipesReady() {
-		RN.register("furnace", FURNACE);
-		RN.register("blast_furnace", BLAST_FURNACE);
-		RN.register("workbench", WORKBENCH);
 
 		WORKBENCH.register("label_dye", new RecipeEntryLabelModDye());
 		WORKBENCH.register("cinnamon", new RecipeEntryCinnamon());
@@ -41,9 +38,6 @@ public class ModRecipes implements RecipeEntrypoint {
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/label_dye", RecipeEntryLabelModDye.class);
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/cinnamon", RecipeEntryCinnamon.class);
 
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf());
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
-		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramics").add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i^15));
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramic_tiles").add(new ItemStack(ModBlocks.tileCeramicPainted, 1, i^15));
@@ -63,22 +57,34 @@ public class ModRecipes implements RecipeEntrypoint {
 		furnaceRecipes();
 		trommelRecipes();
 	}
+
+	@Override
+	public void initNamespaces() {
+		RN.register("furnace", FURNACE);
+		RN.register("blast_furnace", BLAST_FURNACE);
+		RN.register("workbench", WORKBENCH);
+
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
+	}
+
 	private void craftingRecipes(){
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/workbench.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/stairs.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/slabs.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/fences.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/fencegates.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/chests.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/planks.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/wools.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/lamps.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/plasters.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramics.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/ceramic_tiles2.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/dyes.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/workbench/vanilla_overrides.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/workbench.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/stairs.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/slabs.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/fences.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/fencegates.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/chests.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/planks.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/wools.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/lamps.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/plasters.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/ceramics.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/ceramic_tiles.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/ceramic_tiles2.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/dyes.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/workbench/vanilla_overrides.json", NoNameDyes.MOD_ID));
 	}
 	private void furnaceRecipes(){
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.planksOakPainted.id, 300);
@@ -92,8 +98,8 @@ public class ModRecipes implements RecipeEntrypoint {
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.logEbony.id, 300);
 		LookupFuelFurnace.instance.addFuelEntry(ModBlocks.saplingEbony.id, 10);
 
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
-		DataLoader.loadRecipes(String.format("/assets/%s/recipes/blast_furnace.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/furnace.json", NoNameDyes.MOD_ID));
+		DataLoader.loadRecipesFromFile(String.format("/assets/%s/recipes/blast_furnace.json", NoNameDyes.MOD_ID));
 	}
 	private void trommelRecipes(){
 		RecipeGroup<RecipeEntryTrommel> trommel = Registries.RECIPES.TROMMEL;
