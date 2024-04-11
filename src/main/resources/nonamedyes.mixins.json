@@ -20,9 +20,7 @@
     "core.player.inventory.ContainerPlayerCreativeMixin",
     "core.player.inventory.slot.SlotDyeMixin",
     "core.util.helper.ColorsMixin",
-    "core.world.biome.provider.BiomeProviderOverworldMixin",
-    "core.world.generate.chunk.perlin.nether.ChunkDecoratorNetherMixin",
-    "core.world.generate.chunk.perlin.overworld.ChunkDecoratorOverworldMixin"
+    "core.world.biome.provider.BiomeProviderOverworldMixin"
   ],
   "client": [
     "client.gui.GuiEditFlagMixin",
