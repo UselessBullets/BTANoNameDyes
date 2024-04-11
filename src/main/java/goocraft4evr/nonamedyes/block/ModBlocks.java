@@ -164,7 +164,7 @@ public abstract class ModBlocks {
             .setBlockModel(new BlockModelRenderBlocks(1))
             .build(new BlockFlower("flower.indigo", UtilIdRegistrar.nextId())))
             .setKilledByWeather()
-            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+            .withTags(BlockTags.BROKEN_BY_FLUIDS,BlockTags.PLANTABLE_IN_JAR);
 
 	public static final Block logPalm = new BlockBuilder(NoNameDyes.MOD_ID)
             .setTopBottomTexture("log_palm_top.png")
@@ -213,7 +213,7 @@ public abstract class ModBlocks {
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingPalm("sapling.palm", UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+            .withTags(BlockTags.BROKEN_BY_FLUIDS,BlockTags.PLANTABLE_IN_JAR);
 
     public static final Block brickMalachite = malachiteBuilder
             .setResistance(10.0f)
@@ -271,7 +271,7 @@ public abstract class ModBlocks {
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
             .build(new BlockSaplingCinnamon("sapling.cinnamon", UtilIdRegistrar.nextId()))
-            .withTags(BlockTags.BROKEN_BY_FLUIDS);
+            .withTags(BlockTags.BROKEN_BY_FLUIDS,BlockTags.PLANTABLE_IN_JAR);
 
     public static final Block gallstone = new BlockBuilder(NoNameDyes.MOD_ID)
             .setBlockSound(BlockSounds.STONE)
@@ -338,7 +338,8 @@ public abstract class ModBlocks {
             .setTextures("sapling_ebony.png")
             .setTickOnLoad()
             .setVisualUpdateOnMetadata()
-            .build(new BlockSaplingEbony("sapling.ebony", UtilIdRegistrar.nextId()));
+            .build(new BlockSaplingEbony("sapling.ebony", UtilIdRegistrar.nextId()))
+			.withTags(BlockTags.BROKEN_BY_FLUIDS,BlockTags.PLANTABLE_IN_JAR);
 
 	//TODO: change
 	@Deprecated
