@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.modcontainers.terrainapi;
 
 import goocraft4evr.nonamedyes.block.ModBlocks;
+import goocraft4evr.nonamedyes.world.biome.ModBiomes;
 import net.minecraft.core.world.generate.feature.WorldFeature;
 import net.minecraft.core.world.generate.feature.WorldFeatureOre;
 import useless.terrainapi.generation.Parameters;
@@ -14,4 +15,8 @@ public class ComplexFunctions {
     public static Integer getNetherRootsDensity(Parameters parameters){
         return (8+ parameters.random.nextInt(4))<<2;
     }
+
+	public static Integer getTreePlamDensity(Parameters parameters){
+		return  parameters.biome == ModBiomes.OVERWORLD_PALM_BEACH ? parameters.random.nextInt(3) : 0;
+	}
 }
