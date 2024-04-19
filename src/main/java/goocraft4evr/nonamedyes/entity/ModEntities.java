@@ -12,7 +12,7 @@ public class ModEntities {
 	}
 
 	public static void register() {
-		EntityHelper.Client.assignEntityRenderer(EntitySeaSnail.class, new SeaSnailRenderer(new ModelSeaSnail(), 0.7f));
+		EntityHelper.Client.assignEntityRenderer(EntitySeaSnail.class, new SeaSnailRenderer());
 
 		/* RECIPE BOOK INFO
 		MobInfoRegistry.register(EntitySeaSnail.class, "sea.snail.name", "sea.snail.desc",
