@@ -16,8 +16,21 @@
     "main": [
       "goocraft4evr.nonamedyes.NoNameDyes"
     ],
+		"beforeGameStart": [
+			"goocraft4evr.nonamedyes.NoNameDyes"
+		],
+		"afterGameStart": [
+			"goocraft4evr.nonamedyes.NoNameDyes"
+		],
+		"beforeClientStart": [
+			"goocraft4evr.nonamedyes.NoNameDyes"
+		],
+		"afterClientStart": [
+			"goocraft4evr.nonamedyes.NoNameDyes"
+		],
     "recipesReady": [
-      "goocraft4evr.nonamedyes.crafting.ModRecipes"
+      "goocraft4evr.nonamedyes.crafting.ModRecipes",
+			"goocraft4evr.nonamedyes.NoNameDyes"
     ],
     "btwaila": [
       "goocraft4evr.nonamedyes.modcontainers.btwaila.BTWailaPlugin"
