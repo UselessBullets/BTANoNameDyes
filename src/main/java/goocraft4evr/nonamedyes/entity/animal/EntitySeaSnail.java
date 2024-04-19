@@ -10,6 +10,12 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 		super(world);
 		this.skinName = "seasnail";
 		this.setSize(0.9f, 0.9f);
+		moveSpeed = 0.02f;
+	}
+
+	@Override
+	public void onLivingUpdate() {
+
 	}
 
 	@Override
