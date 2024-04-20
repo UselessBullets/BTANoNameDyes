@@ -33,14 +33,27 @@ public class ModRecipes implements RecipeEntrypoint {
 	public static final RecipeGroup<RecipeEntryBlastFurnace> BLAST_FURNACE = new RecipeGroup<>(new RecipeSymbol(new ItemStack(Block.furnaceBlastActive)));
 	@Override
 	public void onRecipesReady() {
-
 		WORKBENCH.register("label_dye", new RecipeEntryLabelModDye());
 		WORKBENCH.register("cinnamon", new RecipeEntryCinnamon());
 
-		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
-
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/label_dye", RecipeEntryLabelModDye.class);
 		Registries.RECIPE_TYPES.register("nonamedyes:crafting/cinnamon", RecipeEntryCinnamon.class);
+
+		craftingRecipes();
+		furnaceRecipes();
+		trommelRecipes();
+	}
+
+	@Override
+	public void initNamespaces() {
+		Registries.RECIPES.register(NoNameDyes.MOD_ID, RN);
+		RN.register("furnace", FURNACE);
+		RN.register("blast_furnace", BLAST_FURNACE);
+		RN.register("workbench", WORKBENCH);
+
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
+		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 
 		for (int i = 0; i < ItemDye.dyeColors.length; i++) {
 			Registries.ITEM_GROUPS.getItem("nonamedyes:ceramics").add(new ItemStack(ModBlocks.blockCeramicPainted, 1, i^15));
@@ -63,20 +76,6 @@ public class ModRecipes implements RecipeEntrypoint {
 
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
 
-		craftingRecipes();
-		furnaceRecipes();
-		trommelRecipes();
-	}
-
-	@Override
-	public void initNamespaces() {
-		RN.register("furnace", FURNACE);
-		RN.register("blast_furnace", BLAST_FURNACE);
-		RN.register("workbench", WORKBENCH);
-
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramics", Registries.stackListOf());
-		Registries.ITEM_GROUPS.register("nonamedyes:ceramic_tiles", Registries.stackListOf());
-		Registries.ITEM_GROUPS.register("nonamedyes:ores_malachite", Registries.stackListOf(ModBlocks.oreMalachiteStone, ModBlocks.oreMalachiteBasalt, ModBlocks.oreMalachiteGranite, ModBlocks.oreMalachiteLimestone));
 	}
 
 	private void craftingRecipes(){

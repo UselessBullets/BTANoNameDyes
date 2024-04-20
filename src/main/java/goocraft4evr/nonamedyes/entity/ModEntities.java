@@ -10,11 +10,11 @@ import turniplabs.halplibe.helper.EntityHelper;
 public class ModEntities {
 
 	public static void registerClientside() {
-		EntityHelper.Core.createEntity(EntitySeaSnail.class, 200, "Seasnail");
+		EntityHelper.Client.assignEntityRenderer(EntitySeaSnail.class, new SeaSnailRenderer());
 	}
 
 	public static void register() {
-		EntityHelper.Client.assignEntityRenderer(EntitySeaSnail.class, new SeaSnailRenderer());
+		EntityHelper.Core.createEntity(EntitySeaSnail.class, 200, "Seasnail");
 
 		MobInfoRegistry.register(EntitySeaSnail.class, "sea.snail.name", "sea.snail.desc",
 			10, 400, new MobInfoRegistry.MobDrop[]{

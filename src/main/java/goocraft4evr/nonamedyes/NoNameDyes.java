@@ -9,12 +9,11 @@ import org.slf4j.LoggerFactory;
 import turniplabs.halplibe.util.ClientStartEntrypoint;
 import turniplabs.halplibe.util.ConfigHandler;
 import turniplabs.halplibe.util.GameStartEntrypoint;
-import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import java.util.Properties;
 
 
-public class NoNameDyes implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint, RecipeEntrypoint {
+public class NoNameDyes implements ModInitializer, ClientStartEntrypoint, GameStartEntrypoint {
     public static final String MOD_ID = "nonamedyes";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
@@ -59,11 +58,6 @@ public class NoNameDyes implements ModInitializer, ClientStartEntrypoint, GameSt
 
 	@Override
 	public void afterGameStart() {
-
-	}
-
-	@Override
-	public void onRecipesReady() {
 
 	}
 
