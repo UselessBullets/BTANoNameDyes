@@ -18,7 +18,7 @@ public class ModEntities {
 		EntityHelper.Core.createEntity(EntitySeaSnail.class, 200, "Seasnail");
 
 		MobInfoRegistry.register(EntitySeaSnail.class, "sea.snail.name", "sea.snail.desc",
-			10, 400, new MobInfoRegistry.MobDrop[]{
+			15, 10, new MobInfoRegistry.MobDrop[]{
 				new MobInfoRegistry.MobDrop(new ItemStack(ModItems.dye,1,12),
 					1.0f, 2, 5)});
 	}

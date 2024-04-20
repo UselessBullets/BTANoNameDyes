@@ -21,6 +21,7 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 		super(world);
 		skinName = "seasnail";
 		setSize(0.9f, 0.9f);
+		scoreValue = 10;
 		moveSpeed = 0.1f;
 		timeUntilNextGoo = this.random.nextInt(3000) + 3000;
 	}
