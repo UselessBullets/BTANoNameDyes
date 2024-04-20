@@ -107,7 +107,7 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 
 	@Override
 	public int getSkinVariant() {
-		int skinVariantCount = 1;
+		int skinVariantCount = 5;
 		return entityData.getByte(1) % skinVariantCount;
 	}
 
