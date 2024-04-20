@@ -25,6 +25,16 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 	}
 
 	@Override
+	protected String getHurtSound() {
+		return null;
+	}
+
+	@Override
+	protected String getDeathSound() {
+		return null;
+	}
+
+	@Override
 	public void onLivingUpdate() {
 		//vanilla code...
 		if (this.newPosRotationIncrements > 0) {
