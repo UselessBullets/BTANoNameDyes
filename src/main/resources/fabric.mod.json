@@ -1,13 +1,18 @@
 {
   "schemaVersion": 1,
   "id": "nonamedyes",
-  "version": "1.0.2",
+  "version": "1.2",
 
   "name": "NoName Dyes",
   "description": "Adds new dyes to the game.",
   "authors": [
     "Goocraft4Evr"
   ],
+	"icon": "logo.png",
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
 
   "license": "CC0-1.0",
 
