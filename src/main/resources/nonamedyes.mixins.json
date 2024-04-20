@@ -20,6 +20,7 @@
     "core.player.inventory.ContainerPlayerCreativeMixin",
     "core.player.inventory.slot.SlotDyeMixin",
     "core.util.helper.ColorsMixin",
+    "core.world.biome.BiomeMixin",
     "core.world.biome.provider.BiomeProviderOverworldMixin"
   ],
   "client": [

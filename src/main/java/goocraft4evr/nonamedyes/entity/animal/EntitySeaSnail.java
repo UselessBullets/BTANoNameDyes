@@ -1,6 +1,7 @@
 package goocraft4evr.nonamedyes.entity.animal;
 
 import goocraft4evr.nonamedyes.NoNameDyes;
+import net.minecraft.core.Global;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.animal.EntityWaterAnimal;
 import net.minecraft.core.item.Item;
@@ -26,21 +27,22 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 
 	@Override
 	public String getEntityTexture() {
-		return String.format("assets/%s/mob/%s/0.png", NoNameDyes.MOD_ID,skinName);
+		return String.format("assets/%s/mob/%s/%d.png", NoNameDyes.MOD_ID,skinName,getSkinVariant());
 	}
 
 	@Override
-	protected String getHurtSound() {
-		return "mob.creeper";
-	}
-
-	@Override
-	protected String getDeathSound() {
-		return "mob.creeperdeath";
+	public int getSkinVariant() {
+		int skinVariantCount = 1;
+		return entityData.getByte(1) % skinVariantCount;
 	}
 
 	@Override
 	protected int getDropItemId() {
 		return Item.sulphur.id;
+	}
+
+	@Override
+	protected boolean makeStepSound() {
+		return false;
 	}
 }
