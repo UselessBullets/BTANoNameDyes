@@ -670,6 +670,30 @@
       "meta": 27
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/ceramic_tile2_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "#",
+      "#"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "stack": {
+          "key": "tile.nonamedyes.block.ceramic.painted",
+          "amount": 1,
+          "meta": 28
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.tile.ceramic.painted",
+      "amount": 2,
+      "meta": 28
+    },
+    "consumeContainers": true
   }
 ]
 

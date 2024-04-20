@@ -896,6 +896,39 @@
       "meta": 27
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/painted_plaster_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "###",
+      "#d#",
+      "###"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "stack": {
+          "key": "item.nonamedyes.plaster.wet",
+          "amount": 1,
+          "meta": 0
+        }
+      },
+      {
+        "symbol": "d",
+        "stack": {
+          "key": "item.nonamedyes.dye",
+          "amount": 1,
+          "meta": 12
+        }
+      }
+    ],
+    "result": {
+      "key": "item.nonamedyes.plaster.painted",
+      "amount": 8,
+      "meta": 28
+    },
+    "consumeContainers": true
   }
 ]
 

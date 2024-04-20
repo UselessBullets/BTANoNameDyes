@@ -2,7 +2,6 @@ package goocraft4evr.nonamedyes.mixin.core.world.biome;
 
 import goocraft4evr.nonamedyes.entity.animal.EntitySeaSnail;
 import net.minecraft.core.entity.SpawnListEntry;
-import net.minecraft.core.entity.animal.EntitySquid;
 import net.minecraft.core.world.biome.Biome;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,6 +17,6 @@ public class BiomeMixin {
 	protected List<SpawnListEntry> spawnableWaterCreatureList;
 	@Inject(method="<init>",at=@At(value = "TAIL"))
 	private void inject(CallbackInfo ci) {
-		spawnableWaterCreatureList.add(new SpawnListEntry(EntitySeaSnail.class, 7));
+		spawnableWaterCreatureList.add(new SpawnListEntry(EntitySeaSnail.class, 8));
 	}
 }
