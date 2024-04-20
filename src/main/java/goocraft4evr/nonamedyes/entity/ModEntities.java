@@ -1,7 +1,6 @@
 package goocraft4evr.nonamedyes.entity;
 
 import goocraft4evr.nonamedyes.client.render.entity.SeaSnailRenderer;
-import goocraft4evr.nonamedyes.client.render.model.ModelSeaSnail;
 import goocraft4evr.nonamedyes.entity.animal.EntitySeaSnail;
 import turniplabs.halplibe.helper.EntityHelper;
 
