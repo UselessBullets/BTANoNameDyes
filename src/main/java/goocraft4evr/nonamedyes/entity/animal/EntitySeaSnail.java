@@ -3,11 +3,13 @@ package goocraft4evr.nonamedyes.entity.animal;
 import goocraft4evr.nonamedyes.NoNameDyes;
 import goocraft4evr.nonamedyes.item.ModItems;
 import net.minecraft.core.Global;
+import net.minecraft.core.block.material.Material;
 import net.minecraft.core.entity.Entity;
 import net.minecraft.core.entity.animal.EntityWaterAnimal;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import net.minecraft.core.item.ItemStack;
+import net.minecraft.core.util.helper.DamageType;
 import net.minecraft.core.util.phys.AABB;
 import net.minecraft.core.world.World;
 
@@ -47,6 +49,20 @@ public class EntitySeaSnail extends EntityWaterAnimal {
 			this.world.playSoundAtEntity(null, this, "mob.chickenplop", 1.0f, (this.random.nextFloat() - this.random.nextFloat()) * 0.2f + 1.0f);
 			this.spawnAtLocation(new ItemStack(ModItems.dye.id,1+this.random.nextInt(3),12),0);
 			this.timeUntilNextGoo = this.random.nextInt(3000) + 3000;
+		}
+	}
+
+	@Override
+	public void trySuffocate() {
+		if (this.isAlive() && !this.isUnderLiquid(Material.water) && this.canBreatheUnderwater()) {
+			--this.airSupply;
+			if (this.airSupply == -20) {
+				this.airSupply = 0;
+				this.hurt(null, 2, DamageType.DROWN);
+			}
+			this.remainingFireTicks = 0;
+		} else {
+			this.airSupply = this.airMaxSupply;
 		}
 	}
 
