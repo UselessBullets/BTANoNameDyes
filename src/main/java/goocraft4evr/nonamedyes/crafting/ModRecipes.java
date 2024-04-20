@@ -20,7 +20,11 @@ import net.minecraft.core.data.registry.recipe.entry.RecipeEntryFurnace;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryTrommel;
 import net.minecraft.core.item.ItemDye;
 import net.minecraft.core.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 import turniplabs.halplibe.util.RecipeEntrypoint;
+
+import java.util.Collection;
+import java.util.Iterator;
 
 public class ModRecipes implements RecipeEntrypoint {
 	public static final RecipeNamespace RN = new RecipeNamespace();
@@ -50,7 +54,13 @@ public class ModRecipes implements RecipeEntrypoint {
 			Registries.ITEM_GROUPS.getItem("minecraft:lamps").add(new ItemStack(ModBlocks.lampIdle.id, 1, i));
 		}
 		Registries.ITEM_GROUPS.getItem("minecraft:logs").add(ModBlocks.logCinnamon.getDefaultStack());
+		Registries.ITEM_GROUPS.getItem("minecraft:logs").add(ModBlocks.logEbony.getDefaultStack());
+		Registries.ITEM_GROUPS.getItem("minecraft:logs").add(ModBlocks.logPalm.getDefaultStack());
+
 		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesCinnamon.getDefaultStack());
+		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesEbony.getDefaultStack());
+		Registries.ITEM_GROUPS.getItem("minecraft:leaves").add(ModBlocks.leavesPalm.getDefaultStack());
+
 		Registries.ITEM_GROUPS.getItem("minecraft:chests").add(ModBlocks.chestPlanksOakPainted.getDefaultStack());
 
 		craftingRecipes();

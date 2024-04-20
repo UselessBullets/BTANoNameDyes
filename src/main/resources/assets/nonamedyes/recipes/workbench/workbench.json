@@ -467,5 +467,23 @@
       "meta": 0
     },
     "consumeContainers": false
+  },
+  {
+    "name": "minecraft:workbench/palm_log_to_planks",
+    "type": "minecraft:crafting/shapeless",
+    "inputs": [
+      {
+        "stack": {
+          "key": "tile.nonamedyes.log.palm",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key":  "tile.nonamedyes.planks.oak.painted",
+      "amount": 4,
+      "meta": 5
+    }
   }
 ]

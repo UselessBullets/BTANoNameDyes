@@ -32,14 +32,12 @@ tile.nonamedyes.leaves.ebony.desc = Leaves from an ebony tree.
 tile.nonamedyes.sapling.ebony.name = Ebony Sapling
 tile.nonamedyes.sapling.ebony.desc = Plant to grow an ebony tree.
 
-tile.nonamedyes.log.cocoa.name = Cocoa Log
-tile.nonamedyes.log.cocoa.desc = DEPRECATED
-tile.nonamedyes.log.cocoa.ripe.name = Ripe Cocoa Log
-tile.nonamedyes.log.cocoa.ripe.desc = DEPRECATED
-tile.nonamedyes.leaves.cocoa.name = Cocoa Leaves
-tile.nonamedyes.leaves.cocoa.desc = DEPRECATED
-tile.nonamedyes.sapling.cocoa.name = Cocoa Sapling
-tile.nonamedyes.sapling.cocoa.desc = DEPRECATED
+tile.nonamedyes.log.palm.name = Palm Log
+tile.nonamedyes.log.palm.desc = A log from a palm tree.
+tile.nonamedyes.leaves.palm.name = Palm Leaves
+tile.nonamedyes.leaves.palm.desc = Leaves from a palm tree.
+tile.nonamedyes.sapling.palm.name = Palm Sapling
+tile.nonamedyes.sapling.palm.desc = Plant to grow a palm tree.
 
 tile.nonamedyes.log.cinnamon.name = Cinnamon Log
 tile.nonamedyes.log.cinnamon.desc = A log from a cinnamon tree, can be harvested into cinnamon.
