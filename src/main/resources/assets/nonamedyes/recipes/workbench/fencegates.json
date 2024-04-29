@@ -382,5 +382,37 @@
       "meta": 176
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/wooden_fencegate_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "X#X",
+      "X#X"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "stack": {
+          "key": "tile.nonamedyes.planks.oak.painted",
+          "amount": 1,
+          "meta": 12
+        }
+      },
+      {
+        "symbol": "X",
+        "stack": {
+          "key": "item.stick",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.fencegate.planks.oak.painted",
+      "amount": 3,
+      "meta": 192
+    },
+    "consumeContainers": true
   }
 ]

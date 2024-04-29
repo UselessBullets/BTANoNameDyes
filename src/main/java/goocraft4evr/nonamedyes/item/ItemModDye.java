@@ -27,7 +27,8 @@ public class ItemModDye extends Item {
             "indigo",
             "xanthic",
             "cinnamon",
-            "navy.blue"};
+            "navy.blue",
+			"royal.purple"};
     public static final int NUM_DYES = dyeColors.length;
     private static TextureMap textures;
 

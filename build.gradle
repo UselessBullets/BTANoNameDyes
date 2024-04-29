@@ -1,5 +1,5 @@
 plugins {
-	id 'babric-loom' version '1.1.+'
+	id 'babric-loom' version '1.4.+'
 	id 'java'
 }
 
@@ -98,6 +98,22 @@ repositories {
 		}
 		metadataSources { artifact() }
 	}
+	repositories {
+		ivy {
+			url = "https://github.com/UselessSolutions"
+			patternLayout {
+				artifact "[organisation]/releases/download/v[revision]/[module]-[revision].jar"
+				m2compatible = true
+			}
+			metadataSources { artifact() }
+		}
+	}
+
+	dependencies {
+
+		modImplementation "TerrainAPI:terrainapi:${project.terrain_api_version}"
+
+	}
 }
 
 dependencies {
@@ -108,12 +124,10 @@ dependencies {
 	modImplementation "fabric-loader:fabric-loader:${project.loader_version}"
 
 	// Helper library
-	// If you do not need Halplibe you can comment this line out or delete this line
-//	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
-	modImplementation files("lib/halplibe-3.1.2-pre3.jar")
+	// If you do not need Halplibe you can comment this line out or delete this Dline
+	modImplementation "com.github.Turnip-Labs:bta-halplibe:${project.halplibe_version}"
 
-	modImplementation "TerrainAPI:terrainapi:1.4.2-7.1"
-	modImplementation "BTWaila:btwaila:1.0.6-7.1"
+	modImplementation "BTWaila:btwaila:${project.btwalia_version}"
 //	modImplementation "ModMenu:modmenu:2.0.3"
 	modImplementation "BTA_Babric_PrismaticLibe:prismaticlibe:${project.prismatic_version}"
 

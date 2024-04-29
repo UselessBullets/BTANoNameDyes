@@ -53,6 +53,12 @@ public class ModItems {
 		new ItemPaintedPlaster(UtilIdRegistrar.nextId()),
 		"plaster.painted");
 
+	public static Item paintScraper = ItemHelper.createItem(
+		NoNameDyes.MOD_ID,
+		new ItemToolPaintScraper("tool.paintscraper",UtilIdRegistrar.nextId()),
+		"tool.paintscraper",
+		"paint_scraper.png");
+
     public static void register() {
     }
 }

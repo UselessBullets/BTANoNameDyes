@@ -382,5 +382,37 @@
       "meta": 11
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/wooden_fence_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "#X#",
+      "#X#"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "stack": {
+          "key": "tile.nonamedyes.planks.oak.painted",
+          "amount": 1,
+          "meta": 12
+        }
+      },
+      {
+        "symbol": "X",
+        "stack": {
+          "key": "item.stick",
+          "amount": 1,
+          "meta": 0
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.fence.planks.oak.painted",
+      "amount": 6,
+      "meta": 12
+    },
+    "consumeContainers": true
   }
 ]

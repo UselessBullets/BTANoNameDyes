@@ -12,7 +12,11 @@ import net.minecraft.core.world.generate.feature.tree.WorldFeatureTreeShrub;
 import java.util.Random;
 
 public class BiomeCinnamonForest extends Biome {
-    @Override
+	public BiomeCinnamonForest(String key) {
+		super(key);
+	}
+
+	@Override
     public WorldFeature getRandomWorldGenForTrees(Random random) {
         if (random.nextInt(12) == 0) {
             return new WorldFeatureTreeFancyRainforest(Block.leavesOak.id, Block.logOak.id, 0);

@@ -346,5 +346,34 @@
       "meta": 11
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/wooden_planks_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "###",
+      "#0#",
+      "###"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "group" : "minecraft:planks"
+      },
+      {
+        "symbol": "0",
+        "stack": {
+          "key": "item.nonamedyes.dye",
+          "amount": 1,
+          "meta": 12
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.planks.oak.painted",
+      "amount": 8,
+      "meta": 12
+    },
+    "consumeContainers": true
   }
 ]

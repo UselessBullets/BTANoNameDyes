@@ -82,6 +82,7 @@ public abstract class TextFormattingMixin {
         FORMATTINGS[31] = new TextFormatting(31).setNames("Xanthic");
         FORMATTINGS[32] = new TextFormatting(32).setNames("Cinnamon");
         FORMATTINGS[33] = new TextFormatting(33).setNames("Navy Blue");
+		FORMATTINGS[34] = new TextFormatting(34).setNames("Royal Purple");
         for (int i=22;i<22+ItemModDye.NUM_DYES-FORMATTINGS.length;i++) {
             FORMATTINGS[22+i] = new TextFormatting(22+i).setNames(getNameFromKey(ItemModDye.dyeColors[i]));
         }

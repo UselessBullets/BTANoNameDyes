@@ -274,5 +274,28 @@
       "meta": 176
     },
     "consumeContainers": true
+  },
+  {
+    "name": "nonamedyes:workbench/wooden_slab_royal_purple",
+    "type": "minecraft:crafting/shaped",
+    "pattern": [
+      "###"
+    ],
+    "symbols": [
+      {
+        "symbol": "#",
+        "stack": {
+          "key": "tile.nonamedyes.planks.oak.painted",
+          "amount": 1,
+          "meta": 12
+        }
+      }
+    ],
+    "result": {
+      "key": "tile.nonamedyes.slab.planks.oak.painted",
+      "amount": 6,
+      "meta": 192
+    },
+    "consumeContainers": true
   }
 ]
